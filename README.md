@@ -13,11 +13,11 @@
 
 <br/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=22&duration=3500&pause=800&color=00F5FF&center=true&vCenter=true&multiline=true&repeat=true&random=false&width=700&height=80&lines=%F0%9F%94%92+Security+Researcher+%7C+Full-Stack+Engineer;%E2%9A%99%EF%B8%8F+System+Architect+%7C+DevSecOps+Specialist;%F0%9F%9A%80+Open-Source+Contributor+%7C+650%2B+Repos)](https://github.com/VarshuAi)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=500&size=22&duration=3500&pause=800&color=00FF88&center=true&vCenter=true&multiline=true&repeat=true&random=false&width=700&height=80&lines=%3E_+Security+Researcher+%7C+Full-Stack+Engineer;%3E_+System+Architect+%7C+DevSecOps+Specialist;%3E_+Open-Source+Contributor+%7C+650%2B+Repos)](https://github.com/VarshuAi)
 
 <!-- ============================== WAVE DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020108,25:0A0520,50:10082E,100:050215&height=80&section=header&text=&fontSize=0" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,25:001A0D,50:002A15,75:001A0D,100:000000&height=80&section=header&text=&fontSize=0" width="100%"/>
 
 </div>
 
@@ -125,7 +125,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=2,3,12,19,27&height=2&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:003318,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== GITHUB STATS ============================== -->
 
@@ -137,19 +137,19 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <div align="center">
 
 <a href="https://github.com/VarshuAi">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=VarshuAi&show_icons=true&theme=radical&bg_color=0D1117&border_color=30363d&title_color=00F5FF&icon_color=FF007F&text_color=9F9F9F&hide_border=false&count_private=true&include_all_commits=true" alt="GitHub Stats"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=VarshuAi&layout=compact&theme=radical&bg_color=0D1117&border_color=30363d&title_color=00F5FF&text_color=9F9F9F&hide_border=false&langs_count=10" alt="Top Languages"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=VarshuAi&show_icons=true&theme=dark&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A&hide_border=false&count_private=true&include_all_commits=true" alt="GitHub Stats"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=VarshuAi&layout=compact&theme=dark&bg_color=000000&border_color=003318&title_color=00FF88&text_color=7A9F7A&hide_border=false&langs_count=10" alt="Top Languages"/>
 </a>
 
 <br/><br/>
 
 <!-- Streak Stats -->
-<img src="https://github-readme-streak-stats.herokuapp.com?user=VarshuAi&theme=radical&background=0D1117&border=30363d&ring=FF007F&fire=FF007F&currStreakLabel=00F5FF&sideLabels=00F5FF&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=555555" alt="GitHub Streak" width="700"/>
+<img src="https://github-readme-streak-stats.herokuapp.com?user=VarshuAi&theme=dark&background=000000&border=003318&ring=00FF88&fire=FFB800&currStreakLabel=00FF88&sideLabels=00FF88&currStreakNum=EEFFEE&sideNums=EEFFEE&dates=2A5A2A" alt="GitHub Streak" width="700"/>
 
 <br/><br/>
 
 <!-- Activity Graph -->
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=VarshuAi&bg_color=0D1117&color=00F5FF&line=FF007F&point=BD93F9&area_color=0D1117&area=true&hide_border=true&custom_title=VarshuAi's%20Contribution%20Graph" width="95%"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=VarshuAi&bg_color=000000&color=00FF88&line=00FF88&point=FFB800&area_color=001A0D&area=true&hide_border=true&custom_title=%3E_%20VarshuAi%20//%20Contribution%20Log" width="95%"/>
 
 </div>
 
@@ -165,7 +165,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 </h2>
 
 <div align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=VarshuAi&theme=radical&no-frame=true&no-bg=true&margin-w=12&margin-h=12&column=7" width="100%"/>
+<img src="https://github-profile-trophy.vercel.app/?username=VarshuAi&theme=matrix&no-frame=true&no-bg=true&margin-w=12&margin-h=12&column=7" width="100%"/>
 </div>
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
@@ -214,7 +214,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <h3 align="center">Security Audit Toolkit</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=VarshuAi&repo=network-vulnerability-scanner&theme=radical&bg_color=0D1117&border_color=30363d&title_color=00F5FF&icon_color=FF007F)](https://github.com/VarshuAi/network-vulnerability-scanner)
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=VarshuAi&repo=network-vulnerability-scanner&theme=dark&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800)](https://github.com/VarshuAi/network-vulnerability-scanner)
 
 `Python` `Nmap` `Security` `Automation`
 
@@ -226,7 +226,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <h3 align="center">AI Code Assistant</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=VarshuAi&repo=neural-code-generator&theme=radical&bg_color=0D1117&border_color=30363d&title_color=00F5FF&icon_color=FF007F)](https://github.com/VarshuAi/neural-code-generator)
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=VarshuAi&repo=neural-code-generator&theme=dark&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800)](https://github.com/VarshuAi/neural-code-generator)
 
 `Python` `AI` `GPT` `Developer Tools`
 
@@ -240,7 +240,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <h3 align="center">Cloud Infrastructure</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=VarshuAi&repo=kubernetes-auto-scaler&theme=radical&bg_color=0D1117&border_color=30363d&title_color=00F5FF&icon_color=FF007F)](https://github.com/VarshuAi/kubernetes-auto-scaler)
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=VarshuAi&repo=kubernetes-auto-scaler&theme=dark&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800)](https://github.com/VarshuAi/kubernetes-auto-scaler)
 
 `Go` `Kubernetes` `Cloud` `DevOps`
 
@@ -252,7 +252,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <h3 align="center">Blockchain Explorer</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=VarshuAi&repo=smart-contract-auditor&theme=radical&bg_color=0D1117&border_color=30363d&title_color=00F5FF&icon_color=FF007F)](https://github.com/VarshuAi/smart-contract-auditor)
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=VarshuAi&repo=smart-contract-auditor&theme=dark&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800)](https://github.com/VarshuAi/smart-contract-auditor)
 
 `Solidity` `Web3` `Security` `Blockchain`
 
@@ -276,7 +276,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <div align="center">
 
 <!-- Profile Views -->
-<img src="https://komarev.com/ghpvc/?username=VarshuAi&label=PROFILE+VIEWS&style=for-the-badge&color=00F5FF"/>
+<img src="https://komarev.com/ghpvc/?username=VarshuAi&label=PROFILE+VIEWS&style=for-the-badge&color=00FF88"/>
 
 <br/><br/>
 
@@ -331,7 +331,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <div align="center">
 
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Random Dev Quote" width="600"/>
+<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Random Dev Quote" width="600"/>
 
 </div>
 
@@ -358,13 +358,13 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:050215,25:10082E,50:0A0520,100:020108&height=100&section=footer&text=&fontSize=0" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,25:001A0D,50:002A15,75:001A0D,100:000000&height=100&section=footer&text=&fontSize=0" width="100%"/>
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/BUILT_WITH-OBSESSION-FF007F?style=flat-square&labelColor=0D1117"/>
-<img src="https://img.shields.io/badge/POWERED_BY-CAFFEINE-00F5FF?style=flat-square&labelColor=0D1117"/>
-<img src="https://img.shields.io/badge/SECURED_BY-PARANOIA-BD93F9?style=flat-square&labelColor=0D1117"/>
+<img src="https://img.shields.io/badge/BUILT_WITH-OBSESSION-00FF88?style=flat-square&labelColor=000000"/>
+<img src="https://img.shields.io/badge/POWERED_BY-CAFFEINE-FFB800?style=flat-square&labelColor=000000"/>
+<img src="https://img.shields.io/badge/SECURED_BY-PARANOIA-00FF88?style=flat-square&labelColor=000000"/>
 
 <br/><br/>
 
