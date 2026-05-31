@@ -133,14 +133,14 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <div align="center">
 
 <a href="https://github.com/VarshuAi">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=VarshuAi&show_icons=true&theme=dark&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A&hide_border=false&count_private=true&include_all_commits=true" alt="GitHub Stats"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=VarshuAi&layout=compact&theme=dark&bg_color=000000&border_color=003318&title_color=00FF88&text_color=7A9F7A&hide_border=false&langs_count=10" alt="Top Languages"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=VarshuAi&show_icons=true&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A&ring_color=00FF88&count_private=true&include_all_commits=true" alt="GitHub Stats"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=VarshuAi&layout=compact&bg_color=000000&border_color=003318&title_color=00FF88&text_color=7A9F7A&langs_count=10&card_width=400" alt="Top Languages"/>
 </a>
 
 <br/><br/>
 
 <!-- Streak Stats -->
-<img src="https://github-readme-streak-stats.herokuapp.com?user=VarshuAi&theme=dark&background=000000&border=003318&ring=00FF88&fire=FFB800&currStreakLabel=00FF88&sideLabels=00FF88&currStreakNum=EEFFEE&sideNums=EEFFEE&dates=2A5A2A" alt="GitHub Streak" width="700"/>
+<img src="https://streak-stats.demolab.com?user=VarshuAi&background=000000&border=003318&ring=00FF88&fire=FFB800&currStreakLabel=00FF88&sideLabels=00FF88&currStreakNum=EEFFEE&sideNums=EEFFEE&dates=2A5A2A" alt="GitHub Streak" width="700"/>
 
 <br/><br/>
 
