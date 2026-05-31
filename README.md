@@ -151,7 +151,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=2,3,12,19,27&height=2&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:003318,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== TROPHIES ============================== -->
 
@@ -161,12 +161,12 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 </h2>
 
 <div align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=VarshuAi&theme=matrix&no-frame=true&no-bg=true&margin-w=12&margin-h=12&column=7" width="100%"/>
+<img src="https://github-profile-trophy.vercel.app/?username=VarshuAi&theme=darkhub&no-frame=true&no-bg=true&margin-w=12&margin-h=12&column=7" width="100%"/>
 </div>
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=2,3,12,19,27&height=2&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:003318,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== SKILL BARS (ANIMATED SVG) ============================== -->
 
@@ -193,7 +193,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=2,3,12,19,27&height=2&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:003318,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== FEATURED PROJECTS ============================== -->
 
@@ -260,7 +260,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=2,3,12,19,27&height=2&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:003318,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== METRICS ============================== -->
 
@@ -295,7 +295,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=2,3,12,19,27&height=2&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:003318,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== CERTIFICATIONS ============================== -->
 
@@ -321,7 +321,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=2,3,12,19,27&height=2&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:003318,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== QUOTES ============================== -->
 
