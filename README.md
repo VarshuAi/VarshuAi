@@ -133,8 +133,8 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <div align="center">
 
 <a href="https://github.com/VarshuAi">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=VarshuAi&show_icons=true&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A&ring_color=00FF88&count_private=true&include_all_commits=true" alt="GitHub Stats"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=VarshuAi&layout=compact&bg_color=000000&border_color=003318&title_color=00FF88&text_color=7A9F7A&langs_count=10&card_width=400" alt="Top Languages"/>
+  <img height="180em" src="https://github-readme-stats-sigma-five.vercel.app/api?username=VarshuAi&show_icons=true&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A&count_private=true&include_all_commits=true" alt="GitHub Stats"/>
+  <img height="180em" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=VarshuAi&layout=compact&bg_color=000000&border_color=003318&title_color=00FF88&text_color=7A9F7A&langs_count=10&card_width=400" alt="Top Languages"/>
 </a>
 
 <br/><br/>
@@ -210,7 +210,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <h3 align="center">Security Audit Toolkit</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=VarshuAi&repo=network-vulnerability-scanner&theme=dark&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800)](https://github.com/VarshuAi/network-vulnerability-scanner)
+[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=network-vulnerability-scanner&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/network-vulnerability-scanner)
 
 `Python` `Nmap` `Security` `Automation`
 
@@ -222,7 +222,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <h3 align="center">AI Code Assistant</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=VarshuAi&repo=neural-code-generator&theme=dark&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800)](https://github.com/VarshuAi/neural-code-generator)
+[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=neural-code-generator&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/neural-code-generator)
 
 `Python` `AI` `GPT` `Developer Tools`
 
@@ -236,7 +236,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <h3 align="center">Cloud Infrastructure</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=VarshuAi&repo=kubernetes-auto-scaler&theme=dark&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800)](https://github.com/VarshuAi/kubernetes-auto-scaler)
+[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=kubernetes-auto-scaler&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/kubernetes-auto-scaler)
 
 `Go` `Kubernetes` `Cloud` `DevOps`
 
@@ -248,7 +248,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <h3 align="center">Blockchain Explorer</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=VarshuAi&repo=smart-contract-auditor&theme=dark&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800)](https://github.com/VarshuAi/smart-contract-auditor)
+[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=smart-contract-auditor&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/smart-contract-auditor)
 
 `Solidity` `Web3` `Security` `Blockchain`
 
