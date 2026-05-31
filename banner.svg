@@ -1,261 +1,324 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
   <defs>
-    <!-- Background Gradient -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#05050C" />
-      <stop offset="50%" stop-color="#0B0916" />
-      <stop offset="100%" stop-color="#140D26" />
+      <stop offset="0%" stop-color="#020108"/>
+      <stop offset="30%" stop-color="#0A0520"/>
+      <stop offset="60%" stop-color="#10082E"/>
+      <stop offset="100%" stop-color="#050215"/>
     </linearGradient>
 
-    <!-- Neon Glow Filters -->
-    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur1" />
-      <feGaussianBlur stdDeviation="15" result="blur2" />
-      <feMerge>
-        <feMergeNode in="blur2" />
-        <feMergeNode in="blur1" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
+    <radialGradient id="orbGlow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00F5FF" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#00F5FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbGlow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF007F" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FF007F" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbGlow3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#BD93F9" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#BD93F9" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="neonCyan">
+      <feGaussianBlur stdDeviation="4" result="b1"/>
+      <feGaussianBlur stdDeviation="12" result="b2"/>
+      <feGaussianBlur stdDeviation="24" result="b3"/>
+      <feMerge><feMergeNode in="b3"/><feMergeNode in="b2"/><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="neonPink">
+      <feGaussianBlur stdDeviation="4" result="b1"/>
+      <feGaussianBlur stdDeviation="12" result="b2"/>
+      <feGaussianBlur stdDeviation="24" result="b3"/>
+      <feMerge><feMergeNode in="b3"/><feMergeNode in="b2"/><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8"/>
     </filter>
 
-    <filter id="magentaGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur1" />
-      <feGaussianBlur stdDeviation="15" result="blur2" />
-      <feMerge>
-        <feMergeNode in="blur2" />
-        <feMergeNode in="blur1" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-
-    <!-- Animations -->
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;family=Rajdhani:wght@500;700&amp;family=Share+Tech+Mono&amp;display=swap');
 
-      .font-header {
-        font-family: 'Orbitron', sans-serif;
-        font-weight: 900;
-        text-transform: uppercase;
+      /* === FLOATING ORB ANIMATIONS === */
+      @keyframes floatOrb1 {
+        0%,100% { transform: translate(0,0) scale(1); }
+        25% { transform: translate(30px,-20px) scale(1.1); }
+        50% { transform: translate(-10px,-40px) scale(0.9); }
+        75% { transform: translate(-30px,-10px) scale(1.05); }
       }
-
-      .font-mono {
-        font-family: 'Share Tech Mono', monospace;
+      @keyframes floatOrb2 {
+        0%,100% { transform: translate(0,0) scale(1); }
+        33% { transform: translate(-40px,25px) scale(1.15); }
+        66% { transform: translate(20px,-30px) scale(0.85); }
       }
+      @keyframes floatOrb3 {
+        0%,100% { transform: translate(0,0); }
+        50% { transform: translate(50px,30px); }
+      }
+      .orb1 { animation: floatOrb1 12s ease-in-out infinite; }
+      .orb2 { animation: floatOrb2 15s ease-in-out infinite; }
+      .orb3 { animation: floatOrb3 18s ease-in-out infinite; }
 
-      /* Grid Drawing Animation */
-      @keyframes gridMove {
+      /* === SCAN LINE === */
+      @keyframes scanLine {
+        0% { transform: translateY(-10px); opacity: 0; }
+        10% { opacity: 0.5; }
+        90% { opacity: 0.5; }
+        100% { transform: translateY(410px); opacity: 0; }
+      }
+      .scan-line { animation: scanLine 6s linear infinite; }
+
+      /* === GRID SCROLL === */
+      @keyframes gridScroll {
         0% { transform: translateY(0); }
-        100% { transform: translateY(40px); }
+        100% { transform: translateY(50px); }
+      }
+      .grid-anim { animation: gridScroll 3s linear infinite; }
+
+      /* === MATRIX RAIN === */
+      @keyframes matrixDrop {
+        0% { transform: translateY(-80px); opacity: 0; }
+        10% { opacity: 0.7; }
+        90% { opacity: 0.7; }
+        100% { transform: translateY(420px); opacity: 0; }
       }
 
-      .grid-lines {
-        animation: gridMove 2.5s linear infinite;
+      /* === RING ROTATION === */
+      @keyframes spinCW { 0%{transform:rotate(0deg)}100%{transform:rotate(360deg)} }
+      @keyframes spinCCW { 0%{transform:rotate(0deg)}100%{transform:rotate(-360deg)} }
+
+      /* === PULSE === */
+      @keyframes pulse {
+        0%,100% { opacity: 0.4; r: 3; }
+        50% { opacity: 1; r: 5; }
+      }
+      @keyframes pulseSlow {
+        0%,100% { opacity: 0.15; }
+        50% { opacity: 0.45; }
       }
 
-      /* Glowing / Pulsating Animation */
-      @keyframes pulseCyan {
-        0%, 100% { filter: drop-shadow(0 0 5px rgba(0, 245, 255, 0.6)) drop-shadow(0 0 15px rgba(0, 245, 255, 0.3)); }
-        50% { filter: drop-shadow(0 0 15px rgba(0, 245, 255, 0.9)) drop-shadow(0 0 30px rgba(0, 245, 255, 0.5)); }
+      /* === TITLE GLITCH === */
+      @keyframes glitch1 {
+        0%,92%,100% { transform: translate(0); }
+        93% { transform: translate(-4px,2px) skewX(-8deg); }
+        95% { transform: translate(3px,-1px) skewX(5deg); }
+        97% { transform: translate(-2px,-2px); }
+      }
+      @keyframes glitch2 {
+        0%,90%,100% { clip-path: inset(0 0 0 0); opacity:0; }
+        91% { clip-path: inset(20% 0 60% 0); opacity:0.8; transform: translate(-3px,0); }
+        93% { clip-path: inset(60% 0 10% 0); opacity:0.8; transform: translate(3px,0); }
+        95% { clip-path: inset(30% 0 40% 0); opacity:0.6; transform: translate(-2px,0); }
       }
 
-      @keyframes pulseMagenta {
-        0%, 100% { filter: drop-shadow(0 0 5px rgba(255, 0, 127, 0.6)) drop-shadow(0 0 15px rgba(255, 0, 127, 0.3)); }
-        50% { filter: drop-shadow(0 0 15px rgba(255, 0, 127, 0.9)) drop-shadow(0 0 30px rgba(255, 0, 127, 0.5)); }
+      /* === TYPING CURSOR === */
+      @keyframes blink { 0%,49%{opacity:1}50%,100%{opacity:0} }
+      @keyframes typeReveal {
+        0%,8% { width: 0; }
+        40%,60% { width: 440px; }
+        92%,100% { width: 0; }
       }
 
-      .glow-cyan {
-        animation: pulseCyan 3s ease-in-out infinite;
+      /* === HEX GRID PULSE === */
+      @keyframes hexPulse {
+        0%,100% { stroke-opacity: 0.03; }
+        50% { stroke-opacity: 0.12; }
       }
 
-      .glow-magenta {
-        animation: pulseMagenta 3s ease-in-out infinite;
-        animation-delay: 1.5s;
+      /* === WAVEFORM === */
+      @keyframes waveShift {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-200px); }
       }
+      .wave-move { animation: waveShift 4s linear infinite; }
 
-      /* Matrix Code Rain Simulation */
-      @keyframes rain {
-        0% { stroke-dashoffset: 500; opacity: 0; }
-        30% { opacity: 0.8; }
-        80% { opacity: 0.8; }
-        100% { stroke-dashoffset: 0; opacity: 0; }
+      /* === PARTICLE DRIFT === */
+      @keyframes drift1 { 0%,100%{transform:translate(0,0);opacity:0.2}25%{transform:translate(15px,-25px);opacity:0.9}50%{transform:translate(-10px,-45px);opacity:0.5}75%{transform:translate(20px,-15px);opacity:0.7} }
+      @keyframes drift2 { 0%,100%{transform:translate(0,0);opacity:0.3}50%{transform:translate(-20px,20px);opacity:0.8} }
+      @keyframes drift3 { 0%,100%{transform:translate(0,0);opacity:0.1}33%{transform:translate(25px,10px);opacity:0.6}66%{transform:translate(-15px,-20px);opacity:0.9} }
+
+      /* === DATA STREAM BARS === */
+      @keyframes dataBar {
+        0% { width: 0; }
+        50% { width: var(--bar-w); }
+        100% { width: 0; }
       }
-
-      .rain-line {
-        stroke-dasharray: 80 220;
-        animation: rain 4s linear infinite;
-      }
-
-      /* Glitch Effect on Header Text */
-      @keyframes glitch {
-        0%, 95%, 100% { transform: translate(0); }
-        96% { transform: translate(-3px, 2px); skewX(-5deg); }
-        97% { transform: translate(2px, -2px); skewX(5deg); }
-        98% { transform: translate(-1px, -1px); }
-        99% { transform: translate(3px, 1px); skewX(-3deg); }
-      }
-
-      .glitch-text {
-        animation: glitch 4s infinite;
-      }
-
-      /* Typing Effect Simulation */
-      @keyframes typing {
-        0%, 100% { width: 0; }
-        45%, 55% { width: 380px; }
-      }
-
-      .typing-mask {
-        animation: typing 8s steps(35, end) infinite;
-      }
-
-      /* Floating Cyber Ring */
-      @keyframes rotateRing {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-
-      .rotating-ring {
-        transform-origin: 660px 175px;
-        animation: rotateRing 20s linear infinite;
-      }
-
-      @keyframes floatParticle {
-        0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
-        50% { transform: translateY(-20px) translateX(10px); opacity: 0.8; }
-      }
-
-      .particle-1 { animation: floatParticle 6s ease-in-out infinite; }
-      .particle-2 { animation: floatParticle 8s ease-in-out infinite 2s; }
-      .particle-3 { animation: floatParticle 7s ease-in-out infinite 4s; }
     </style>
   </defs>
 
-  <!-- Background Base -->
-  <rect width="800" height="350" fill="url(#bgGrad)" />
+  <!-- ========== BACKGROUND ========== -->
+  <rect width="800" height="400" fill="url(#bgGrad)"/>
 
-  <!-- Cybernetic Grid Perspective Panel -->
-  <g opacity="0.15">
-    <rect width="800" height="350" fill="none" />
-    <g class="grid-lines" stroke="#00F5FF" stroke-width="1">
-      <!-- Horizontal lines -->
-      <line x1="0" y1="50" x2="800" y2="50" />
-      <line x1="0" y1="90" x2="800" y2="90" />
-      <line x1="0" y1="130" x2="800" y2="130" />
-      <line x1="0" y1="170" x2="800" y2="170" />
-      <line x1="0" y1="210" x2="800" y2="210" />
-      <line x1="0" y1="250" x2="800" y2="250" />
-      <line x1="0" y1="290" x2="800" y2="290" />
-      <line x1="0" y1="330" x2="800" y2="330" />
-    </g>
-    <!-- Perspective lines radiating outwards -->
-    <g stroke="#00F5FF" stroke-width="1.5">
-      <line x1="400" y1="-100" x2="-200" y2="350" />
-      <line x1="400" y1="-100" x2="0" y2="350" />
-      <line x1="400" y1="-100" x2="200" y2="350" />
-      <line x1="400" y1="-100" x2="400" y2="350" />
-      <line x1="400" y1="-100" x2="600" y2="350" />
-      <line x1="400" y1="-100" x2="800" y2="350" />
-      <line x1="400" y1="-100" x2="1000" y2="350" />
+  <!-- Floating Ambient Orbs -->
+  <g filter="url(#softGlow)">
+    <circle class="orb1" cx="120" cy="100" r="120" fill="url(#orbGlow1)"/>
+    <circle class="orb2" cx="680" cy="300" r="100" fill="url(#orbGlow2)"/>
+    <circle class="orb3" cx="400" cy="50" r="80" fill="url(#orbGlow3)"/>
+  </g>
+
+  <!-- Perspective Grid -->
+  <g opacity="0.08" class="grid-anim">
+    <g stroke="#00F5FF" stroke-width="0.5">
+      <line x1="0" y1="0" x2="800" y2="0"/><line x1="0" y1="50" x2="800" y2="50"/>
+      <line x1="0" y1="100" x2="800" y2="100"/><line x1="0" y1="150" x2="800" y2="150"/>
+      <line x1="0" y1="200" x2="800" y2="200"/><line x1="0" y1="250" x2="800" y2="250"/>
+      <line x1="0" y1="300" x2="800" y2="300"/><line x1="0" y1="350" x2="800" y2="350"/>
+      <line x1="0" y1="400" x2="800" y2="400"/><line x1="0" y1="450" x2="800" y2="450"/>
     </g>
   </g>
 
-  <!-- Glowing Matrix Code Rain Streams (Right Side Background) -->
-  <g stroke="#FF007F" stroke-width="1.5" opacity="0.3" fill="none">
-    <path class="rain-line" d="M 500,0 L 500,350" style="animation-delay: 0.5s; animation-duration: 5s;" />
-    <path class="rain-line" d="M 580,-50 L 580,300" style="animation-delay: 1.2s; animation-duration: 3.5s;" />
-    <path class="rain-line" d="M 640,-100 L 640,250" style="animation-delay: 0.2s; animation-duration: 4.5s;" />
-    <path class="rain-line" d="M 720,50 L 720,400" style="animation-delay: 2.1s; animation-duration: 6s;" />
-    <path class="rain-line" d="M 780,-80 L 780,270" style="animation-delay: 1.8s; animation-duration: 4s;" />
+  <!-- Hex Grid Pattern (Pulsing) -->
+  <g opacity="0.06">
+    <g stroke="#BD93F9" stroke-width="0.8" fill="none" style="animation: hexPulse 5s ease-in-out infinite">
+      <polygon points="60,30 90,15 120,30 120,60 90,75 60,60"/>
+      <polygon points="120,30 150,15 180,30 180,60 150,75 120,60"/>
+      <polygon points="180,30 210,15 240,30 240,60 210,75 180,60"/>
+      <polygon points="90,75 120,60 150,75 150,105 120,120 90,105"/>
+      <polygon points="150,75 180,60 210,75 210,105 180,120 150,105"/>
+      <polygon points="600,250 630,235 660,250 660,280 630,295 600,280"/>
+      <polygon points="660,250 690,235 720,250 720,280 690,295 660,280"/>
+      <polygon points="630,295 660,280 690,295 690,325 660,340 630,325"/>
+    </g>
   </g>
 
-  <!-- Glowing Matrix Code Rain Streams (Left Side Background) -->
-  <g stroke="#00F5FF" stroke-width="1.5" opacity="0.3" fill="none">
-    <path class="rain-line" d="M 50,20 L 50,370" style="animation-delay: 0s; animation-duration: 4s;" />
-    <path class="rain-line" d="M 120,-30 L 120,320" style="animation-delay: 1.5s; animation-duration: 5.5s;" />
-    <path class="rain-line" d="M 220,-80 L 220,270" style="animation-delay: 0.8s; animation-duration: 3.8s;" />
+  <!-- Scan Line -->
+  <rect class="scan-line" x="0" y="-10" width="800" height="2" fill="#00F5FF" opacity="0.15"/>
+
+  <!-- Matrix Code Rain Columns -->
+  <g font-family="Share Tech Mono, monospace" font-size="11" fill="#00F5FF" opacity="0.12">
+    <text x="42" y="0" style="animation: matrixDrop 5s linear infinite 0.5s">01001011</text>
+    <text x="140" y="0" style="animation: matrixDrop 4s linear infinite 1.2s">11010010</text>
+    <text x="720" y="0" style="animation: matrixDrop 6s linear infinite 0.8s">10110101</text>
+    <text x="580" y="0" style="animation: matrixDrop 4.5s linear infinite 2s">01110011</text>
+    <text x="340" y="0" style="animation: matrixDrop 5.5s linear infinite 3s">11001010</text>
   </g>
 
-  <!-- Floating Digital Dust Particles -->
-  <circle class="particle-1" cx="200" cy="80" r="2.5" fill="#00F5FF" />
-  <circle class="particle-2" cx="300" cy="280" r="1.5" fill="#FF007F" />
-  <circle class="particle-3" cx="550" cy="90" r="2" fill="#00F5FF" />
-  <circle class="particle-1" cx="700" cy="260" r="3" fill="#FF007F" />
-  <circle class="particle-2" cx="100" cy="220" r="2" fill="#00F5FF" />
+  <!-- Floating Drift Particles -->
+  <circle cx="100" cy="300" r="2" fill="#00F5FF" style="animation: drift1 7s ease-in-out infinite"/>
+  <circle cx="250" cy="80" r="1.5" fill="#FF007F" style="animation: drift2 9s ease-in-out infinite 1s"/>
+  <circle cx="500" cy="350" r="2.5" fill="#BD93F9" style="animation: drift3 11s ease-in-out infinite 2s"/>
+  <circle cx="700" cy="60" r="1.8" fill="#00F5FF" style="animation: drift1 8s ease-in-out infinite 3s"/>
+  <circle cx="380" cy="370" r="2" fill="#FF007F" style="animation: drift2 10s ease-in-out infinite 4s"/>
+  <circle cx="650" cy="180" r="1.5" fill="#39FF14" style="animation: drift3 12s ease-in-out infinite"/>
+  <circle cx="50" cy="180" r="3" fill="#BD93F9" style="animation: drift1 6s ease-in-out infinite 2s"/>
 
-  <!-- Cybernetic HUD Gear Ring (Right Side Focus) -->
-  <g opacity="0.6">
-    <circle class="rotating-ring" cx="660" cy="175" r="90" fill="none" stroke="#00F5FF" stroke-width="1.5" stroke-dasharray="10 30 50 20 80 40" />
-    <circle class="rotating-ring" cx="660" cy="175" r="75" fill="none" stroke="#FF007F" stroke-width="1" stroke-dasharray="150 20 40 10" style="animation-direction: reverse; animation-duration: 12s;" />
-    <circle class="rotating-ring" cx="660" cy="175" r="60" fill="none" stroke="#00F5FF" stroke-width="2" stroke-dasharray="5 5 10 5 20 10" />
-    <!-- Glowing Core -->
-    <circle cx="660" cy="175" r="25" fill="#0E0D22" stroke="#FF007F" stroke-width="2" filter="url(#magentaGlow)" />
-    <polygon points="660,163 670,181 650,181" fill="#00F5FF" class="rotating-ring" style="animation-duration: 8s;" />
+  <!-- ========== HUD ROTATING RINGS (Right Side) ========== -->
+  <g>
+    <g style="transform-origin:660px 200px; animation: spinCW 30s linear infinite">
+      <circle cx="660" cy="200" r="110" fill="none" stroke="#00F5FF" stroke-width="0.8" stroke-dasharray="8 40 20 60 5 30" opacity="0.25"/>
+    </g>
+    <g style="transform-origin:660px 200px; animation: spinCCW 22s linear infinite">
+      <circle cx="660" cy="200" r="95" fill="none" stroke="#FF007F" stroke-width="1" stroke-dasharray="50 15 30 25" opacity="0.3"/>
+    </g>
+    <g style="transform-origin:660px 200px; animation: spinCW 15s linear infinite">
+      <circle cx="660" cy="200" r="78" fill="none" stroke="#BD93F9" stroke-width="1.2" stroke-dasharray="5 5 15 5 25 10" opacity="0.35"/>
+    </g>
+    <g style="transform-origin:660px 200px; animation: spinCCW 10s linear infinite">
+      <circle cx="660" cy="200" r="58" fill="none" stroke="#00F5FF" stroke-width="1.5" stroke-dasharray="3 8 12 8" opacity="0.4"/>
+    </g>
+    <!-- Core Glow -->
+    <circle cx="660" cy="200" r="35" fill="#080418" stroke="#FF007F" stroke-width="1.5" filter="url(#neonPink)" opacity="0.8"/>
+    <circle cx="660" cy="200" r="18" fill="none" stroke="#00F5FF" stroke-width="2" filter="url(#neonCyan)" opacity="0.9"/>
+    <!-- Crosshairs -->
+    <line x1="640" y1="200" x2="632" y2="200" stroke="#00F5FF" stroke-width="1" opacity="0.6"/>
+    <line x1="680" y1="200" x2="688" y2="200" stroke="#00F5FF" stroke-width="1" opacity="0.6"/>
+    <line x1="660" y1="180" x2="660" y2="172" stroke="#00F5FF" stroke-width="1" opacity="0.6"/>
+    <line x1="660" y1="220" x2="660" y2="228" stroke="#00F5FF" stroke-width="1" opacity="0.6"/>
+    <!-- Core Pulse -->
+    <circle cx="660" cy="200" r="3" fill="#00F5FF" style="animation: pulse 2s ease-in-out infinite"/>
   </g>
 
-  <!-- Brand Name Focus Area -->
-  <g transform="translate(80, 0)">
-    
-    <!-- Cyber Badge Line -->
-    <path d="M 0,95 L 20,95 L 30,105 L 180,105" fill="none" stroke="#FF007F" stroke-width="2" />
-    <text class="font-mono" x="35" y="100" fill="#FF007F" font-size="10" letter-spacing="3">SYSTEM ARCHITECT</text>
-    
-    <!-- Main Glowing Title: VarshuAi -->
-    <!-- Magenta Shadow Layer -->
-    <text class="font-header glow-magenta glitch-text" x="0" y="175" fill="#FF007F" font-size="64" letter-spacing="4" opacity="0.9">VarshuAi</text>
-    <!-- Cyan Glowing Layer -->
-    <text class="font-header glow-cyan glitch-text" x="-3" y="172" fill="#00F5FF" font-size="64" letter-spacing="4" filter="url(#cyanGlow)">VarshuAi</text>
-    <!-- Crisp White Foreground layer -->
-    <text class="font-header glitch-text" x="-1" y="173" fill="#FFFFFF" font-size="64" letter-spacing="4">VarshuAi</text>
+  <!-- ========== MAIN CONTENT ========== -->
+  <g transform="translate(60, 0)">
 
-    <!-- Interactive Subtitle: Typing Simulator -->
-    <g transform="translate(0, 215)">
-      <!-- Transparent base text to allocate dimensions -->
-      <text class="font-mono" x="0" y="0" fill="#A0A0B0" font-size="16" letter-spacing="2" opacity="0.3">
-        &gt; Initializing systems validation...
-      </text>
+    <!-- Top Badge -->
+    <g transform="translate(0, 50)">
+      <line x1="0" y1="0" x2="14" y2="0" stroke="#FF007F" stroke-width="2"/>
+      <line x1="14" y1="0" x2="22" y2="8" stroke="#FF007F" stroke-width="2"/>
+      <line x1="22" y1="8" x2="200" y2="8" stroke="#FF007F" stroke-width="1" opacity="0.5"/>
+      <text x="28" y="5" font-family="Share Tech Mono, monospace" fill="#FF007F" font-size="10" letter-spacing="4" opacity="0.9">SYSTEM ARCHITECT // DEVSECOPS</text>
+    </g>
 
-      <!-- Masked Typing Layer -->
-      <clipPath id="typingClip">
-        <rect class="typing-mask" x="0" y="-20" width="0" height="30" />
+    <!-- ========== TITLE: VarshuAi ========== -->
+    <g transform="translate(0, 120)">
+      <!-- Deep shadow layer -->
+      <text font-family="Orbitron, sans-serif" font-weight="900" font-size="72" letter-spacing="6" fill="#0A0520" x="4" y="4">VarshuAi</text>
+      <!-- Magenta glow layer -->
+      <text font-family="Orbitron, sans-serif" font-weight="900" font-size="72" letter-spacing="6" fill="#FF007F" filter="url(#neonPink)" opacity="0.6" style="animation: glitch1 5s infinite" x="0" y="0">VarshuAi</text>
+      <!-- Cyan glow layer -->
+      <text font-family="Orbitron, sans-serif" font-weight="900" font-size="72" letter-spacing="6" fill="#00F5FF" filter="url(#neonCyan)" opacity="0.7" style="animation: glitch1 5s infinite 0.1s" x="-2" y="-2">VarshuAi</text>
+      <!-- Glitch clone slice -->
+      <text font-family="Orbitron, sans-serif" font-weight="900" font-size="72" letter-spacing="6" fill="#FF007F" style="animation: glitch2 4s infinite" x="3" y="0">VarshuAi</text>
+      <!-- Crisp white foreground -->
+      <text font-family="Orbitron, sans-serif" font-weight="900" font-size="72" letter-spacing="6" fill="#FFFFFF" style="animation: glitch1 5s infinite 0.05s" x="0" y="0">VarshuAi</text>
+    </g>
+
+    <!-- Subtitle with Typing Effect -->
+    <g transform="translate(0, 170)">
+      <text font-family="Share Tech Mono, monospace" font-size="15" fill="#3A3A5C" letter-spacing="2" x="0" y="0">&gt; Full-Stack Engineer | Security Researcher | Open Source</text>
+      <clipPath id="typeClip">
+        <rect x="0" y="-18" height="28" style="animation: typeReveal 10s steps(40, end) infinite">
+          <animate attributeName="width" values="0;440;440;0" keyTimes="0;0.4;0.6;1" dur="10s" repeatCount="indefinite"/>
+        </rect>
       </clipPath>
+      <text clip-path="url(#typeClip)" font-family="Share Tech Mono, monospace" font-size="15" fill="#00F5FF" letter-spacing="2" filter="url(#neonCyan)" x="0" y="0">&gt; Full-Stack Engineer | Security Researcher | Open Source</text>
+      <!-- Blinking cursor -->
+      <rect x="440" y="-14" width="2" height="18" fill="#00F5FF" style="animation: blink 1s step-end infinite"/>
+    </g>
 
-      <g clip-path="url(#typingClip)">
-        <text class="font-mono" x="0" y="0" fill="#00F5FF" font-size="16" letter-spacing="2" filter="url(#cyanGlow)">
-          &gt; High-Performance DevSecOps Suite Active
-        </text>
+    <!-- ========== WAVEFORM BAR ========== -->
+    <g transform="translate(0, 210)" opacity="0.35">
+      <clipPath id="waveClip"><rect x="0" y="-10" width="450" height="20"/></clipPath>
+      <g clip-path="url(#waveClip)" class="wave-move">
+        <path d="M0,0 Q25,-8 50,0 T100,0 T150,0 T200,0 T250,0 T300,0 T350,0 T400,0 T450,0 T500,0 T550,0 T600,0 T650,0" fill="none" stroke="#00F5FF" stroke-width="1.5"/>
+        <path d="M0,0 Q25,6 50,0 T100,0 T150,0 T200,0 T250,0 T300,0 T350,0 T400,0 T450,0 T500,0 T550,0 T600,0 T650,0" fill="none" stroke="#FF007F" stroke-width="1"/>
       </g>
     </g>
 
-    <!-- Mini Status Indicators (System Stats Look) -->
-    <g transform="translate(0, 260)" class="font-mono" font-size="11" letter-spacing="1">
-      <!-- Status Box 1 -->
-      <rect x="0" y="0" width="105" height="24" fill="rgba(0, 245, 255, 0.05)" stroke="rgba(0, 245, 255, 0.2)" stroke-width="1" rx="4" />
-      <circle cx="12" cy="12" r="3" fill="#39FF14" filter="url(#cyanGlow)" />
-      <text x="24" y="16" fill="#00F5FF">STATUS: ONLINE</text>
+    <!-- ========== STATUS DASHBOARD ========== -->
+    <g transform="translate(0, 245)">
+      <!-- Box 1: Status -->
+      <rect x="0" y="0" width="115" height="28" rx="5" fill="rgba(0,245,255,0.04)" stroke="rgba(0,245,255,0.2)" stroke-width="1"/>
+      <circle cx="14" cy="14" r="4" fill="#39FF14" style="animation: pulse 2.5s ease-in-out infinite"/>
+      <text x="26" y="18" font-family="Share Tech Mono, monospace" font-size="11" fill="#00F5FF" letter-spacing="1">SYS: ONLINE</text>
 
-      <!-- Status Box 2 -->
-      <rect x="120" y="0" width="105" height="24" fill="rgba(255, 0, 127, 0.05)" stroke="rgba(255, 0, 127, 0.2)" stroke-width="1" rx="4" />
-      <circle cx="132" cy="12" r="3" fill="#FF007F" />
-      <text x="144" y="16" fill="#FF007F">PORTFOLIO: 650</text>
+      <!-- Box 2: Repos -->
+      <rect x="125" y="0" width="120" height="28" rx="5" fill="rgba(255,0,127,0.04)" stroke="rgba(255,0,127,0.2)" stroke-width="1"/>
+      <circle cx="139" cy="14" r="4" fill="#FF007F" style="animation: pulse 3s ease-in-out infinite 1s"/>
+      <text x="151" y="18" font-family="Share Tech Mono, monospace" font-size="11" fill="#FF007F" letter-spacing="1">REPOS: 650+</text>
 
-      <!-- Status Box 3 -->
-      <rect x="240" y="0" width="105" height="24" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" rx="4" />
-      <rect x="248" y="10" width="4" height="4" fill="#A0A0B0" />
-      <text x="260" y="16" fill="#A0A0B0">CODENAME: NEON</text>
+      <!-- Box 3: Stack -->
+      <rect x="255" y="0" width="130" height="28" rx="5" fill="rgba(189,147,249,0.04)" stroke="rgba(189,147,249,0.2)" stroke-width="1"/>
+      <circle cx="269" cy="14" r="4" fill="#BD93F9" style="animation: pulse 3.5s ease-in-out infinite 2s"/>
+      <text x="281" y="18" font-family="Share Tech Mono, monospace" font-size="11" fill="#BD93F9" letter-spacing="1">STACK: 7 LANGS</text>
+    </g>
+
+    <!-- ========== BOTTOM DATA STREAM ========== -->
+    <g transform="translate(0, 310)">
+      <text font-family="Share Tech Mono, monospace" font-size="9" fill="#2A2A4A" letter-spacing="2">SECURITY</text>
+      <rect x="65" y="-8" rx="2" height="6" fill="#FF007F" opacity="0.5" width="0">
+        <animate attributeName="width" values="0;80;0" dur="4s" repeatCount="indefinite"/>
+      </rect>
+
+      <text x="160" font-family="Share Tech Mono, monospace" font-size="9" fill="#2A2A4A" letter-spacing="2">SYSTEMS</text>
+      <rect x="220" y="-8" rx="2" height="6" fill="#00F5FF" opacity="0.5" width="0">
+        <animate attributeName="width" values="0;60;0" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
+      </rect>
+
+      <text x="300" font-family="Share Tech Mono, monospace" font-size="9" fill="#2A2A4A" letter-spacing="2">AUTOMATION</text>
+      <rect x="380" y="-8" rx="2" height="6" fill="#BD93F9" opacity="0.5" width="0">
+        <animate attributeName="width" values="0;70;0" dur="5s" repeatCount="indefinite" begin="1s"/>
+      </rect>
     </g>
   </g>
 
-  <!-- Futuristic Border Borders -->
-  <!-- Top-Left -->
-  <path d="M 15,10 L 40,10 M 15,10 L 15,35" fill="none" stroke="#00F5FF" stroke-width="2" />
-  <!-- Bottom-Left -->
-  <path d="M 15,340 L 40,340 M 15,340 L 15,315" fill="none" stroke="#FF007F" stroke-width="2" />
-  <!-- Top-Right -->
-  <path d="M 785,10 L 760,10 M 785,10 L 785,35" fill="none" stroke="#FF007F" stroke-width="2" />
-  <!-- Bottom-Right -->
-  <path d="M 785,340 L 760,340 M 785,340 L 785,315" fill="none" stroke="#00F5FF" stroke-width="2" />
+  <!-- ========== CORNER BRACKETS ========== -->
+  <path d="M12,8 L35,8 M12,8 L12,32" fill="none" stroke="#00F5FF" stroke-width="2" opacity="0.7"/>
+  <path d="M788,8 L765,8 M788,8 L788,32" fill="none" stroke="#FF007F" stroke-width="2" opacity="0.7"/>
+  <path d="M12,392 L35,392 M12,392 L12,368" fill="none" stroke="#FF007F" stroke-width="2" opacity="0.7"/>
+  <path d="M788,392 L765,392 M788,392 L788,368" fill="none" stroke="#00F5FF" stroke-width="2" opacity="0.7"/>
 
-  <!-- Bottom Accent Panel Line -->
-  <line x1="80" y1="340" x2="720" y2="340" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-  <circle cx="400" cy="340" r="2" fill="#FF007F" />
+  <!-- Bottom accent -->
+  <line x1="60" y1="385" x2="740" y2="385" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <circle cx="400" cy="385" r="2" fill="#BD93F9" style="animation: pulse 3s ease-in-out infinite"/>
 </svg>
