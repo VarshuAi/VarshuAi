@@ -162,7 +162,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/650+-REPOSITORIES-00FF88?style=for-the-badge&labelColor=000000&logo=github&logoColor=00FF88"/>
+<img src="https://img.shields.io/github/repos/VarshuAi?style=for-the-badge&label=REPOSITORIES&color=00FF88&labelColor=000000&logo=github&logoColor=00FF88"/>
 <img src="https://img.shields.io/badge/11-LANGUAGES-FFB800?style=for-the-badge&labelColor=000000&logo=stackblitz&logoColor=FFB800"/>
 <img src="https://img.shields.io/badge/150+-SECURITY_TOOLS-00FF88?style=for-the-badge&labelColor=000000&logo=hackthebox&logoColor=00FF88"/>
 <img src="https://img.shields.io/badge/12+-FRAMEWORKS-FFB800?style=for-the-badge&labelColor=000000&logo=buffer&logoColor=FFB800"/>
