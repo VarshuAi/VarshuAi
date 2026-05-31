@@ -207,24 +207,24 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <tr>
 <td width="50%" valign="top">
 
-<h3 align="center">Security Audit Toolkit</h3>
+<h3 align="center">XSS Validator</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=network-vulnerability-scanner&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/network-vulnerability-scanner)
+[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=xss-validator-v73&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/xss-validator-v73)
 
-`Python` `Nmap` `Security` `Automation`
+`Rust` `Security` `XSS` `Validation`
 
 </div>
 </td>
 
 <td width="50%" valign="top">
 
-<h3 align="center">AI Code Assistant</h3>
+<h3 align="center">SQL Shield</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=neural-code-generator&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/neural-code-generator)
+[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=sql-shield-v50&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/sql-shield-v50)
 
-`Python` `AI` `GPT` `Developer Tools`
+`Python` `Security` `SQL` `Sanitization`
 
 </div>
 </td>
@@ -233,24 +233,24 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <tr>
 <td width="50%" valign="top">
 
-<h3 align="center">Cloud Infrastructure</h3>
+<h3 align="center">Password Hasher</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=kubernetes-auto-scaler&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/kubernetes-auto-scaler)
+[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=rust-passwd-v45&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/rust-passwd-v45)
 
-`Go` `Kubernetes` `Cloud` `DevOps`
+`Rust` `Crypto` `Blowfish` `Security`
 
 </div>
 </td>
 
 <td width="50%" valign="top">
 
-<h3 align="center">Blockchain Explorer</h3>
+<h3 align="center">Subdomain Finder</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=smart-contract-auditor&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/smart-contract-auditor)
+[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=sub-finder-v46&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/sub-finder-v46)
 
-`Solidity` `Web3` `Security` `Blockchain`
+`C++` `Networking` `Recon` `Security`
 
 </div>
 </td>
