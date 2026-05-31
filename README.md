@@ -216,24 +216,24 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <tr>
 <td width="50%" valign="top">
 
-<h3 align="center">XSS Validator</h3>
+<h3 align="center">Go SSH Auditor</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=xss-validator-v73&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/xss-validator-v73)
+[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=go-ssh-auditor&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/go-ssh-auditor)
 
-`Rust` `Security` `XSS` `Validation`
+`Go` `Security` `SSH` `Concurrent`
 
 </div>
 </td>
 
 <td width="50%" valign="top">
 
-<h3 align="center">SQL Shield</h3>
+<h3 align="center">Packet Sniffer</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=sql-shield-v50&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/sql-shield-v50)
+[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=py-packet-sniffer&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/py-packet-sniffer)
 
-`Python` `Security` `SQL` `Sanitization`
+`Python` `Networking` `Raw Sockets` `Sniffer`
 
 </div>
 </td>
@@ -242,24 +242,24 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <tr>
 <td width="50%" valign="top">
 
-<h3 align="center">Password Hasher</h3>
+<h3 align="center">Rust Port Scanner</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=rust-passwd-v45&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/rust-passwd-v45)
+[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=rust-port-scanner&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/rust-port-scanner)
 
-`Rust` `Crypto` `Blowfish` `Security`
+`Rust` `Networking` `Tokio` `Async`
 
 </div>
 </td>
 
 <td width="50%" valign="top">
 
-<h3 align="center">Subdomain Finder</h3>
+<h3 align="center">System Monitor Dashboard</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=sub-finder-v46&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/sub-finder-v46)
+[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=bash-sys-monitor&bg_color=000000&border_color=003318&title_color=00FF88&icon_color=FFB800&text_color=7A9F7A)](https://github.com/VarshuAi/bash-sys-monitor)
 
-`C++` `Networking` `Recon` `Security`
+`Bash` `Systems` `Monitor` `Webhook`
 
 </div>
 </td>
