@@ -153,15 +153,24 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:003318,100:000000&height=2&section=header" width="100%"/>
 
-<!-- ============================== TROPHIES ============================== -->
+<!-- ============================== ACHIEVEMENTS ============================== -->
 
 <h2>
 <img src="https://media.giphy.com/media/IdyAQJVN2kVPNUrojM/giphy.gif" width="28">
-<samp>&nbsp;TROPHY CABINET</samp>
+<samp>&nbsp;ACHIEVEMENTS</samp>
 </h2>
 
 <div align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=VarshuAi&theme=darkhub&no-frame=true&no-bg=true&margin-w=12&margin-h=12&column=7" width="100%"/>
+
+<img src="https://img.shields.io/badge/650+-REPOSITORIES-00FF88?style=for-the-badge&labelColor=000000&logo=github&logoColor=00FF88"/>
+<img src="https://img.shields.io/badge/11-LANGUAGES-FFB800?style=for-the-badge&labelColor=000000&logo=stackblitz&logoColor=FFB800"/>
+<img src="https://img.shields.io/badge/150+-SECURITY_TOOLS-00FF88?style=for-the-badge&labelColor=000000&logo=hackthebox&logoColor=00FF88"/>
+<img src="https://img.shields.io/badge/12+-FRAMEWORKS-FFB800?style=for-the-badge&labelColor=000000&logo=buffer&logoColor=FFB800"/>
+<img src="https://img.shields.io/badge/3-CLOUD_PLATFORMS-00FF88?style=for-the-badge&labelColor=000000&logo=icloud&logoColor=00FF88"/>
+<img src="https://img.shields.io/badge/500+-OPEN_SOURCE-FFB800?style=for-the-badge&labelColor=000000&logo=opensourceinitiative&logoColor=FFB800"/>
+<img src="https://img.shields.io/badge/343-CONTRIBUTIONS-00FF88?style=for-the-badge&labelColor=000000&logo=git&logoColor=00FF88"/>
+<img src="https://img.shields.io/badge/5_DAY-STREAK-FFB800?style=for-the-badge&labelColor=000000&logo=fireship&logoColor=FFB800"/>
+
 </div>
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
