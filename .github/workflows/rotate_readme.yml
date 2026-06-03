@@ -1,0 +1,24 @@
+name: Rotate README Themes
+
+on:
+  schedule:
+    # Runs at 00:00 UTC every day
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows manual execution of the rotation
+
+jobs:
+  rotate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout profile repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run README Rotator
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        run: python rotate_readmes.py
