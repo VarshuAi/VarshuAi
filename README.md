@@ -59,16 +59,6 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <samp>&nbsp;🐳 TECH ARSENAL</samp>
 </h2>
 
-<img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="28">
-
-<img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="28">
-
-<img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="28">
-
-<img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="28">
-
-<img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="28">
-
 <div align="center">
 
 #### `>> LANGUAGES`
@@ -153,6 +143,10 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
 
+<!-- ============================== ANIMATED DIVIDER ============================== -->
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
+
 <!-- ============================== GITHUB STATS ============================== -->
 
 <h2>
@@ -162,20 +156,31 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <div align="center">
 
-<a href="https://github.com/VarshuAi">
-  <img height="180em" src="https://github-readme-stats-sigma-five.vercel.app/api?username=VarshuAi&show_icons=true&bg_color=000000&border_color=00E5FF&title_color=6fb1fc&icon_color=4364f7&text_color=ffffff&count_private=true&include_all_commits=true" alt="GitHub Stats"/>
-  <img height="180em" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=VarshuAi&layout=compact&bg_color=000000&border_color=00E5FF&title_color=6fb1fc&text_color=ffffff&langs_count=10&card_width=400" alt="Top Languages"/>
-</a>
-
-<br/><br/>
-
-<!-- Streak Stats -->
-<img src="https://streak-stats.demolab.com?user=VarshuAi&background=000000&border=00E5FF&ring=6fb1fc&fire=00E5FF&currStreakLabel=ffffff&sideLabels=ffffff&currStreakNum=6fb1fc&sideNums=6fb1fc&dates=4364f7" alt="GitHub Streak" width="700"/>
+<table align="center" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="middle">
+      <a href="https://github.com/VarshuAi">
+        <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=VarshuAi&show_icons=true&bg_color=000000&border_color=00E5FF&title_color=6fb1fc&icon_color=4364f7&text_color=ffffff&count_private=true&include_all_commits=true" alt="GitHub Stats" height="195px" />
+      </a>
+    </td>
+    <td align="center" valign="middle">
+      <a href="https://github.com/VarshuAi">
+        <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=VarshuAi&layout=compact&bg_color=000000&border_color=00E5FF&title_color=6fb1fc&text_color=ffffff&langs_count=10&card_width=400" alt="Top Languages" height="195px" />
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" colspan="2">
+      <br/>
+      <img src="https://streak-stats.demolab.com?user=VarshuAi&background=000000&border=00E5FF&ring=6fb1fc&fire=00E5FF&currStreakLabel=ffffff&sideLabels=ffffff&currStreakNum=6fb1fc&sideNums=6fb1fc&dates=4364f7" alt="GitHub Streak" height="195px" />
+    </td>
+  </tr>
+</table>
 
 <br/><br/>
 
 <!-- Activity Graph -->
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=VarshuAi&bg_color=000000&color=00E5FF&line=00E5FF&point=6fb1fc&area_color=4364f7&area=true&hide_border=true&custom_title=%3E_%20VarshuAi%20//%20Contribution%20Log" width="95%"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=VarshuAi&bg_color=000000&color=00E5FF&line=00E5FF&point=6fb1fc&area_color=4364f7&area=true&hide_border=true&custom_title=%3E_%20VarshuAi%20//%20Contribution%20Log" alt="Activity Graph" width="98%"/>
 
 </div>
 
@@ -190,16 +195,6 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <samp>&nbsp;🐠 ACHIEVEMENTS</samp>
 </h2>
 
-<img src="https://media.giphy.com/media/IdyAQJVN2kVPNUrojM/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/IdyAQJVN2kVPNUrojM/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/IdyAQJVN2kVPNUrojM/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/IdyAQJVN2kVPNUrojM/giphy.gif" width="28">
-
-
-
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:FF007F,100:000000&height=2&section=header" width="100%"/>
@@ -215,6 +210,10 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:1B5E20,100:000000&height=2&section=header" width="100%"/>
+
+<!-- ============================== ANIMATED DIVIDER ============================== -->
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
@@ -227,16 +226,6 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <samp>&nbsp;🐙 SKILL PROFICIENCY</samp>
 </h2>
 
-<img src="https://media.giphy.com/media/uhQuegHFqkVYuFMXMQ/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/uhQuegHFqkVYuFMXMQ/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/uhQuegHFqkVYuFMXMQ/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/uhQuegHFqkVYuFMXMQ/giphy.gif" width="28">
-
-
-
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:FF007F,100:000000&height=2&section=header" width="100%"/>
@@ -257,22 +246,16 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
 
+<!-- ============================== ANIMATED DIVIDER ============================== -->
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
+
 <!-- ============================== FEATURED PROJECTS ============================== -->
 
 <h2>
 <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="28">
 <samp>&nbsp;🌊 FEATURED PROJECTS</samp>
 </h2>
-
-<img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="28">
 
 <div align="center">
 <table>
@@ -354,6 +337,10 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
 
+<!-- ============================== ANIMATED DIVIDER ============================== -->
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
+
 <!-- ============================== METRICS ============================== -->
 
 <h2>
@@ -361,22 +348,11 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <samp>&nbsp;🐬 SYSTEM DIAGNOSTICS</samp>
 </h2>
 
-<img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="28">
-
 <div align="center">
 
 <!-- Profile Views -->
 <img src="https://komarev.com/ghpvc/?username=VarshuAi&label=PROFILE+VIEWS&style=for-the-badge&color=00FF88"/>
 
-<br/><br/>
 
 <!-- Wakatime-style stats block -->
 ```diff
@@ -419,22 +395,16 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
 
+<!-- ============================== ANIMATED DIVIDER ============================== -->
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
+
 <!-- ============================== CERTIFICATIONS ============================== -->
 
 <h2>
 <img src="https://media.giphy.com/media/3oKIPEqDGUULpEU0aQ/giphy.gif" width="28">
 <samp>&nbsp;🐳 DOMAINS OF EXPERTISE</samp>
 </h2>
-
-<img src="https://media.giphy.com/media/3oKIPEqDGUULpEU0aQ/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/3oKIPEqDGUULpEU0aQ/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/3oKIPEqDGUULpEU0aQ/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/3oKIPEqDGUULpEU0aQ/giphy.gif" width="28">
-
-<img src="https://media.giphy.com/media/3oKIPEqDGUULpEU0aQ/giphy.gif" width="28">
 
 <div align="center">
 
@@ -483,6 +453,10 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
 
+<!-- ============================== ANIMATED DIVIDER ============================== -->
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
+
 <!-- ============================== CONNECT ============================== -->
 
 <br/>
@@ -491,26 +465,6 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="28">
 <samp>&nbsp;⚓ CONNECT</samp>
 </h2>
-
-<br/>
-
-<img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="28">
-
-<br/>
-
-<img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="28">
-
-<br/>
-
-<img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="28">
-
-<br/>
-
-<img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="28">
-
-<br/>
-
-<img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="28">
 
 <div align="center">
 
