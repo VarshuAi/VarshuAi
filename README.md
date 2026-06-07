@@ -121,30 +121,6 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:003318,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:FF007F,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00FF00,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:2E7D32,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:1B5E20,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== GITHUB STATS ============================== -->
@@ -195,25 +171,18 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <samp>&nbsp;🐠 ACHIEVEMENTS</samp>
 </h2>
 
-<!-- ============================== ANIMATED DIVIDER ============================== -->
+<div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:FF007F,100:000000&height=2&section=header" width="100%"/>
+<img src="https://img.shields.io/github/repos/VarshuAi?style=for-the-badge&label=REPOSITORIES&color=00FF88&labelColor=000000&logo=github&logoColor=00FF88"/>
+<img src="https://img.shields.io/badge/11-LANGUAGES-FFB800?style=for-the-badge&labelColor=000000&logo=stackblitz&logoColor=FFB800"/>
+<img src="https://img.shields.io/badge/150+-SECURITY_TOOLS-00FF88?style=for-the-badge&labelColor=000000&logo=hackthebox&logoColor=00FF88"/>
+<img src="https://img.shields.io/badge/12+-FRAMEWORKS-FFB800?style=for-the-badge&labelColor=000000&logo=buffer&logoColor=FFB800"/>
+<img src="https://img.shields.io/badge/3-CLOUD_PLATFORMS-00FF88?style=for-the-badge&labelColor=000000&logo=icloud&logoColor=00FF88"/>
+<img src="https://img.shields.io/badge/500+-OPEN_SOURCE-FFB800?style=for-the-badge&labelColor=000000&logo=opensourceinitiative&logoColor=FFB800"/>
+<img src="https://img.shields.io/badge/343-CONTRIBUTIONS-00FF88?style=for-the-badge&labelColor=000000&logo=git&logoColor=00FF88"/>
+<img src="https://img.shields.io/badge/5_DAY-STREAK-FFB800?style=for-the-badge&labelColor=000000&logo=fireship&logoColor=FFB800"/>
 
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00FF00,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:2E7D32,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:1B5E20,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
+</div>
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
@@ -226,25 +195,23 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <samp>&nbsp;🐙 SKILL PROFICIENCY</samp>
 </h2>
 
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:FF007F,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00FF00,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:2E7D32,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:1B5E20,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
+<img src="https://progress-bar.dev/93/?scale=100&title=Python&width=600&color=00E5FF" alt="Python Progress"/>
+<br/>
+<img src="https://progress-bar.dev/90/?scale=100&title=JavaScript&width=600&color=00E5FF" alt="JavaScript Progress"/>
+<br/>
+<img src="https://progress-bar.dev/87/?scale=100&title=TypeScript&width=600&color=00E5FF" alt="TypeScript Progress"/>
+<br/>
+<img src="https://progress-bar.dev/82/?scale=100&title=Go&width=600&color=00E5FF" alt="Go Progress"/>
+<br/>
+<img src="https://progress-bar.dev/75/?scale=100&title=Rust&width=600&color=00E5FF" alt="Rust Progress"/>
+<br/>
+<img src="https://progress-bar.dev/95/?scale=100&title=Security&width=600&color=00E5FF" alt="Security Progress"/>
+<br/>
+<img src="https://progress-bar.dev/92/?scale=100&title=Cloud/DevOps&width=600&color=00E5FF" alt="Cloud/DevOps Progress"/>
+<br/>
+<img src="https://progress-bar.dev/80/?scale=100&title=AI/ML&width=600&color=00E5FF" alt="AI/ML Progress"/>
+<br/>
+<img src="https://progress-bar.dev/93/?scale=100&title=System%20Design&width=600&color=00E5FF" alt="System Design Progress"/>
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
@@ -315,30 +282,6 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:003318,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:FF007F,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00FF00,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:2E7D32,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:1B5E20,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== METRICS ============================== -->
@@ -349,51 +292,22 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 </h2>
 
 <div align="center">
-
-<!-- Profile Views -->
-<img src="https://komarev.com/ghpvc/?username=VarshuAi&label=PROFILE+VIEWS&style=for-the-badge&color=00FF88"/>
-
-
-<!-- Wakatime-style stats block -->
-```diff
-@@                    VarshuAi System Status Report                    @@
-
-+  Repositories Created    ███████████████████████████████  650+
-+  Languages Mastered      █████████████████████████████░░  11
-+  Security Tools Built    ████████████████████████████░░░  150+
-+  Frameworks Used         █████████████████████████████░░  12+
-+  Cloud Platforms         ██████████████████████████████░  3
-+  Open Source Projects    ███████████████████████████████  500+
-
-!  Status: ACTIVELY BUILDING
-#  Last Updated: 2025
-```
-
+<img src="https://komarev.com/ghpvc/?username=VarshuAi&label=PROFILE+VIEWS&style=for-the-badge&color=00E5FF" alt="Profile Views"/>
 </div>
 
-<!-- ============================== ANIMATED DIVIDER ============================== -->
+<br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:003318,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:FF007F,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00FF00,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:2E7D32,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:1B5E20,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
+```diff
+@@            SUBMARINE SONAR TELEMETRY LOGS            @@
+------------------------------------------------------------
++ Depth Mapped: 650+ Fathoms (Repositories)
++ Navigation Dialects: 11 Frequencies (Languages)
++ Hull Shields: 150+ Torpedo Vectors (Security Tools)
++ Engine Compartments: 12+ Modules (Frameworks)
++ Deep sea Anchors: 3 Ocean Beds (Cloud Platforms)
++ Ocean Outflow: 500+ Currents (Open Source)
+! Submarine State: ACTIVELY BUILDING (Cruising Deep)
+```
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
@@ -423,35 +337,17 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:003318,100:000000&height=2&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== QUOTES ============================== -->
 
 <div align="center">
-
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Random Dev Quote" width="600"/>
-
+<br/>
+<samp>
+  <h3><i>"The sea, once it casts its spell, holds one in its net of wonder forever. — Jacques Cousteau"</i></h3>
+</samp>
+<br/>
 </div>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:FF007F,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00FF00,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:2E7D32,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:1B5E20,100:000000&height=2&section=header" width="100%"/>
-
-<!-- ============================== ANIMATED DIVIDER ============================== -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
