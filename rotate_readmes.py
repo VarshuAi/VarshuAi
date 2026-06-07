@@ -697,41 +697,29 @@ motto: "Build Fast. Ship Secure. Scale Infinite." """
     streak_card = f'https://streak-stats.demolab.com?user=VarshuAi&background={cfg["bg_color"]}&border={cfg["primary_color"]}&ring={cfg["title_color"]}&fire={cfg["primary_color"]}&currStreakLabel={cfg["text_color"]}&sideLabels={cfg["text_color"]}&currStreakNum={cfg["title_color"]}&sideNums={cfg["title_color"]}&dates={cfg["icon_color"]}'
     activity_card = f'https://github-readme-activity-graph.vercel.app/graph?username=VarshuAi&bg_color={cfg["bg_color"]}&color={cfg["primary_color"]}&line={cfg["primary_color"]}&point={cfg["title_color"]}&area_color={cfg["icon_color"]}&area=true&hide_border=true&custom_title=%3E_%20VarshuAi%20//%20Contribution%20Log'
 
-    # Re-extract other sections
-    tech_arsenal = profile_sections.get("TECH_ARSENAL", "")
-    # Strip existing headers from tech arsenal if they start with <h2> or ##
-    # We will write standard headers ourselves to match the theme
-    tech_arsenal_clean = []
-    for line in tech_arsenal.split('\n'):
-        if not (line.strip().startswith('<h2>') or line.strip().startswith('## ') or line.strip().startswith('</h') or line.strip().startswith('<samp>')):
-            tech_arsenal_clean.append(line)
-    tech_arsenal_text = '\n'.join(tech_arsenal_clean).strip()
+    # Helper to clean section text by stripping heading elements and redundant animated header GIFs
+    def clean_section_text(text):
+        clean_lines = []
+        for line in text.split('\n'):
+            s_line = line.strip()
+            # Skip HTML heading tags, legacy headers, break lines, and section header Giphy gifs
+            if (s_line.startswith('<h2>') or 
+                s_line.startswith('## ') or 
+                s_line.startswith('</h') or 
+                s_line.startswith('<samp>') or 
+                s_line.startswith('<br') or
+                (s_line.startswith('<img') and 'giphy.com' in s_line and ('width="28"' in s_line or 'width="30"' in s_line))):
+                continue
+            clean_lines.append(line)
+        return '\n'.join(clean_lines).strip()
 
-    achievements = profile_sections.get("ACHIEVEMENTS", "")
-    achievements_clean = []
-    for line in achievements.split('\n'):
-        if not (line.strip().startswith('<h2>') or line.strip().startswith('## ') or line.strip().startswith('</h') or line.strip().startswith('<samp>')):
-            achievements_clean.append(line)
-    achievements_text = '\n'.join(achievements_clean).strip()
+    # Re-extract and clean other sections
+    tech_arsenal_text = clean_section_text(profile_sections.get("TECH_ARSENAL", ""))
+    achievements_text = clean_section_text(profile_sections.get("ACHIEVEMENTS", ""))
+    skills_text = clean_section_text(profile_sections.get("SKILL_PROFICIENCY", ""))
+    projects_text = clean_section_text(profile_sections.get("FEATURED_PROJECTS", ""))
 
-    skills = profile_sections.get("SKILL_PROFICIENCY", "")
-    skills_clean = []
-    for line in skills.split('\n'):
-        if not (line.strip().startswith('<h2>') or line.strip().startswith('## ') or line.strip().startswith('</h') or line.strip().startswith('<samp>')):
-            skills_clean.append(line)
-    skills_text = '\n'.join(skills_clean).strip()
-
-    projects = profile_sections.get("FEATURED_PROJECTS", "")
-    projects_clean = []
-    for line in projects.split('\n'):
-        if not (line.strip().startswith('<h2>') or line.strip().startswith('## ') or line.strip().startswith('</h') or line.strip().startswith('<samp>')):
-            projects_clean.append(line)
-    projects_text = '\n'.join(projects_clean).strip()
     # Update project stats card color queries in projects HTML table
-    # We can perform simple replaces in table cards
-    for tc in ["bg_color=", "border_color=", "title_color=", "icon_color=", "text_color="]:
-        # Strip out old card theme configurations
-        pass
     # We can replace URLs of readme stats pin cards dynamically
     import re
     pin_pattern = r'https://github-readme-stats-sigma-five\.vercel\.app/api/pin/\?username=VarshuAi&repo=[a-zA-Z0-9_-]+(&[a-zA-Z0-9_=&%-]+)*'
@@ -745,26 +733,9 @@ motto: "Build Fast. Ship Secure. Scale Infinite." """
         return orig_url
     projects_text = re.sub(pin_pattern, replace_pin, projects_text)
 
-    metrics = profile_sections.get("METRICS", "")
-    metrics_clean = []
-    for line in metrics.split('\n'):
-        if not (line.strip().startswith('<h2>') or line.strip().startswith('## ') or line.strip().startswith('</h') or line.strip().startswith('<samp>')):
-            metrics_clean.append(line)
-    metrics_text = '\n'.join(metrics_clean).strip()
-
-    certifications = profile_sections.get("CERTIFICATIONS", "")
-    certifications_clean = []
-    for line in certifications.split('\n'):
-        if not (line.strip().startswith('<h2>') or line.strip().startswith('## ') or line.strip().startswith('</h') or line.strip().startswith('<samp>')):
-            certifications_clean.append(line)
-    certifications_text = '\n'.join(certifications_clean).strip()
-
-    connect = profile_sections.get("CONNECT", "")
-    connect_clean = []
-    for line in connect.split('\n'):
-        if not (line.strip().startswith('<h2>') or line.strip().startswith('## ') or line.strip().startswith('</h') or line.strip().startswith('<samp>')):
-            connect_clean.append(line)
-    connect_text = '\n'.join(connect_clean).strip()
+    metrics_text = clean_section_text(profile_sections.get("METRICS", ""))
+    certifications_text = clean_section_text(profile_sections.get("CERTIFICATIONS", ""))
+    connect_text = clean_section_text(profile_sections.get("CONNECT", ""))
 
     # Rebuild profile README
     themed_profile = f"""<!-- ========================================================================= -->
@@ -831,20 +802,31 @@ motto: "Build Fast. Ship Secure. Scale Infinite." """
 
 <div align="center">
 
-<a href="https://github.com/VarshuAi">
-  <img height="180em" src="{stats_card}" alt="GitHub Stats"/>
-  <img height="180em" src="{langs_card}" alt="Top Languages"/>
-</a>
-
-<br/><br/>
-
-<!-- Streak Stats -->
-<img src="{streak_card}" alt="GitHub Streak" width="700"/>
+<table align="center" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="middle">
+      <a href="https://github.com/VarshuAi">
+        <img src="{stats_card}" alt="GitHub Stats" height="195px" />
+      </a>
+    </td>
+    <td align="center" valign="middle">
+      <a href="https://github.com/VarshuAi">
+        <img src="{langs_card}" alt="Top Languages" height="195px" />
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" colspan="2">
+      <br/>
+      <img src="{streak_card}" alt="GitHub Streak" height="195px" />
+    </td>
+  </tr>
+</table>
 
 <br/><br/>
 
 <!-- Activity Graph -->
-<img src="{activity_card}" width="95%"/>
+<img src="{activity_card}" alt="Activity Graph" width="98%"/>
 
 </div>
 
