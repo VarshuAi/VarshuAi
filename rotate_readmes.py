@@ -323,42 +323,102 @@ def update_readme(repo_name, new_content, sha=None, theme_name=""):
         print(f"[FAILED] Could not update README for '{repo_name}': {data} (Status: {status})")
         return False
 
+def clean_repo_section_text(text):
+    if not text:
+        return ""
+    clean_lines = []
+    in_h2 = False
+    for line in text.split('\n'):
+        s_line = line.strip()
+        
+        # Handle multi-line <h2> block stripping
+        if s_line.startswith('<h2>') or s_line.startswith('<h2 '):
+            in_h2 = True
+            continue
+        if in_h2:
+            if '</h2>' in s_line:
+                in_h2 = False
+            continue
+            
+        if (s_line.startswith('## ') or 
+            s_line.startswith('</h') or 
+            s_line.startswith('<samp>') or 
+            s_line.startswith('<br') or
+            (s_line.startswith('<img') and 'giphy.com' in s_line and ('width="28"' in s_line or 'width="30"' in s_line)) or
+            (s_line.startswith('<img') and 'capsule-render.vercel.app' in s_line and 'type=rect' in s_line) or
+            s_line.startswith('<!-- ============================== ANIMATED DIVIDER') or
+            s_line.startswith('<!-- ============================== ABOUT') or
+            s_line.startswith('<!-- ============================== FEATURES') or
+            s_line.startswith('<!-- ============================== COMMANDS') or
+            s_line.startswith('<!-- ============================== TECH STACK') or
+            s_line.startswith('<!-- ============================== SETUP') or
+            s_line.startswith('<!-- ============================== STRUCTURE') or
+            s_line.startswith('<!-- ============================== FOOTER')):
+            continue
+        clean_lines.append(line)
+    return '\n'.join(clean_lines).strip()
+
 def parse_existing_readme(content):
     if not content:
         return {}
         
+    # Try splitting by standard HTML comment markers
+    markers = {
+        "ABOUT": "<!-- ============================== ABOUT ============================== -->",
+        "FEATURES": "<!-- ============================== FEATURES ============================== -->",
+        "COMMANDS": "<!-- ============================== COMMANDS ============================== -->",
+        "TECH_STACK": "<!-- ============================== TECH STACK ============================== -->",
+        "SETUP": "<!-- ============================== SETUP ============================== -->",
+        "STRUCTURE": "<!-- ============================== STRUCTURE ============================== -->",
+        "FOOTER": "<!-- ============================== FOOTER ============================== -->"
+    }
+    
     sections = {}
+    found_any = False
+    for key, val in markers.items():
+        if val in content:
+            found_any = True
+            break
+            
+    if found_any:
+        keys = list(markers.keys())
+        for i in range(len(keys) - 1):
+            start_key = keys[i]
+            end_key = keys[i + 1]
+            
+            start_marker = markers[start_key]
+            end_marker = markers[end_key]
+            
+            start_idx = content.find(start_marker)
+            end_idx = content.find(end_marker)
+            
+            if start_idx != -1 and end_idx != -1:
+                sec_content = content[start_idx + len(start_marker):end_idx].strip()
+                sections[start_key] = clean_repo_section_text(sec_content)
+        return sections
+
+    # Fallback to older header-based parsing
     lines = content.split('\n')
     current_section = None
     section_lines = []
     
-    # Check for legacy and custom markdown header formats
     for line in lines:
         stripped = line.strip()
-        if stripped.startswith('## ') or (stripped.startswith('<h2>') and 'samp' in stripped):
+        is_header = False
+        sec_name = None
+        
+        if stripped.startswith('## '):
+            is_header = True
+            sec_name = stripped[3:].strip().upper()
+        elif stripped.startswith('<h2>') or stripped.startswith('<h2 '):
+            is_header = True
+            sec_name = "HEADER"
+            
+        if is_header:
             if current_section:
                 sections[current_section] = '\n'.join(section_lines).strip()
-            
-            # Extract header name
-            if stripped.startswith('## '):
-                sec_header = stripped[3:].strip().upper()
-            else:
-                # Extract text inside <samp>
-                try:
-                    start_samp = stripped.find('&nbsp;')
-                    if start_samp == -1:
-                        start_samp = stripped.find('>')
-                    end_samp = stripped.find('</samp>')
-                    sec_header = stripped[start_samp+6:end_samp].strip().upper() if start_samp != -1 and end_samp != -1 else stripped
-                except:
-                    sec_header = stripped
-                    
-            sec_header_clean = ''.join(c for c in sec_header if c.isalnum() or c.isspace()).strip()
-            current_section = sec_header_clean
+            current_section = sec_name
             section_lines = []
-        elif stripped.startswith('# ') and not current_section:
-            # Main title line, ignore it
-            pass
         else:
             if current_section:
                 section_lines.append(line)
@@ -384,6 +444,7 @@ def parse_existing_readme(content):
             mapped["STRUCTURE"] = sec_text
             
     return mapped
+
 
 def generate_themed_repo_readme(repo_name, repo_desc, lang, index, parsed_sections, day_name):
     cfg = THEME_CONFIGS[day_name]
@@ -616,42 +677,51 @@ def parse_profile_readme(content):
     if not content:
         return {}
         
-    markers = {
-        "ABOUT_ME": "<!-- ============================== ABOUT ME ============================== -->",
-        "SNAKE_ANIMATION": "<!-- ============================== SNAKE ANIMATION ============================== -->",
-        "TECH_ARSENAL": "<!-- ============================== TECH ARSENAL ============================== -->",
-        "GITHUB_STATS": "<!-- ============================== GITHUB STATS ============================== -->",
-        "ACHIEVEMENTS": "<!-- ============================== ACHIEVEMENTS ============================== -->",
-        "SKILL_PROFICIENCY": "<!-- ============================== SKILL PROFICIENCY ============================== -->",
-        "FEATURED_PROJECTS": "<!-- ============================== FEATURED PROJECTS ============================== -->",
-        "METRICS": "<!-- ============================== METRICS ============================== -->",
-        "CERTIFICATIONS": "<!-- ============================== CERTIFICATIONS ============================== -->",
-        "CONNECT": "<!-- ============================== CONNECT ============================== -->",
-        "FOOTER_WAVE": "<!-- ============================== FOOTER WAVE ============================== -->"
+    marker_alts = {
+        "ABOUT_ME": ["<!-- ============================== ABOUT ME ============================== -->"],
+        "SNAKE_ANIMATION": ["<!-- ============================== SNAKE ANIMATION ============================== -->"],
+        "TECH_ARSENAL": ["<!-- ============================== TECH ARSENAL ============================== -->"],
+        "GITHUB_STATS": ["<!-- ============================== GITHUB STATS ============================== -->"],
+        "ACHIEVEMENTS": ["<!-- ============================== ACHIEVEMENTS ============================== -->"],
+        "SKILL_PROFICIENCY": [
+            "<!-- ============================== SKILL PROFICIENCY ============================== -->",
+            "<!-- ============================== SKILL BARS (ANIMATED SVG) ============================== -->"
+        ],
+        "FEATURED_PROJECTS": ["<!-- ============================== FEATURED PROJECTS ============================== -->"],
+        "METRICS": ["<!-- ============================== METRICS ============================== -->"],
+        "CERTIFICATIONS": ["<!-- ============================== CERTIFICATIONS ============================== -->"],
+        "QUOTES": ["<!-- ============================== QUOTES ============================== -->"],
+        "CONNECT": ["<!-- ============================== CONNECT ============================== -->"],
+        "FOOTER_WAVE": ["<!-- ============================== FOOTER WAVE ============================== -->"]
     }
     
+    resolved_markers = {}
+    for key, alts in marker_alts.items():
+        for alt in alts:
+            idx = content.find(alt)
+            if idx != -1:
+                resolved_markers[key] = (idx, alt)
+                break
+                
+    sorted_keys = sorted([k for k in resolved_markers], key=lambda x: resolved_markers[x][0])
+    
     sections = {}
-    keys = list(markers.keys())
-    for i in range(len(keys) - 1):
-        start_key = keys[i]
-        end_key = keys[i + 1]
+    for i in range(len(sorted_keys) - 1):
+        curr_key = sorted_keys[i]
+        next_key = sorted_keys[i + 1]
         
-        start_marker = markers[start_key]
-        end_marker = markers[end_key]
+        start_idx, start_marker = resolved_markers[curr_key]
+        end_idx, _ = resolved_markers[next_key]
         
-        start_idx = content.find(start_marker)
-        end_idx = content.find(end_marker)
+        sections[curr_key] = content[start_idx + len(start_marker):end_idx].strip()
         
-        if start_idx != -1 and end_idx != -1:
-            sections[start_key] = content[start_idx + len(start_marker):end_idx].strip()
-            
-    # Parse final footer wave section
-    footer_marker = markers["FOOTER_WAVE"]
-    footer_idx = content.find(footer_marker)
-    if footer_idx != -1:
-        sections["FOOTER_WAVE"] = content[footer_idx + len(footer_marker):].strip()
+    if sorted_keys:
+        last_key = sorted_keys[-1]
+        start_idx, start_marker = resolved_markers[last_key]
+        sections[last_key] = content[start_idx + len(start_marker):].strip()
         
     return sections
+
 
 def generate_themed_profile_readme(day_name, profile_sections):
     cfg = THEME_CONFIGS[day_name]
@@ -700,15 +770,41 @@ motto: "Build Fast. Ship Secure. Scale Infinite." """
     # Helper to clean section text by stripping heading elements and redundant animated header GIFs
     def clean_section_text(text):
         clean_lines = []
+        in_h2 = False
         for line in text.split('\n'):
             s_line = line.strip()
-            # Skip HTML heading tags, legacy headers, break lines, and section header Giphy gifs
-            if (s_line.startswith('<h2>') or 
-                s_line.startswith('## ') or 
+            # Strip multi-line h2 block
+            if s_line.startswith('<h2>') or s_line.startswith('<h2 '):
+                in_h2 = True
+                continue
+            if in_h2:
+                if '</h2>' in s_line:
+                    in_h2 = False
+                continue
+                
+            # Skip HTML heading tags, legacy headers, break lines, and section header Giphy gifs, capsule-render rect dividers
+            if (s_line.startswith('## ') or 
                 s_line.startswith('</h') or 
                 s_line.startswith('<samp>') or 
                 s_line.startswith('<br') or
-                (s_line.startswith('<img') and 'giphy.com' in s_line and ('width="28"' in s_line or 'width="30"' in s_line))):
+                (s_line.startswith('<img') and 'giphy.com' in s_line and ('width="28"' in s_line or 'width="30"' in s_line)) or
+                (s_line.startswith('<img') and 'capsule-render.vercel.app' in s_line and 'type=rect' in s_line) or
+                s_line.startswith('<!-- ============================== ANIMATED DIVIDER') or
+                s_line.startswith('<!-- ============================== ABOUT') or
+                s_line.startswith('<!-- ============================== FEATURES') or
+                s_line.startswith('<!-- ============================== COMMANDS') or
+                s_line.startswith('<!-- ============================== TECH STACK') or
+                s_line.startswith('<!-- ============================== SETUP') or
+                s_line.startswith('<!-- ============================== STRUCTURE') or
+                s_line.startswith('<!-- ============================== FOOTER') or
+                s_line.startswith('<!-- ============================== GITHUB STATS') or
+                s_line.startswith('<!-- ============================== ACHIEVEMENTS') or
+                s_line.startswith('<!-- ============================== SKILL PROFICIENCY') or
+                s_line.startswith('<!-- ============================== FEATURED PROJECTS') or
+                s_line.startswith('<!-- ============================== METRICS') or
+                s_line.startswith('<!-- ============================== CERTIFICATIONS') or
+                s_line.startswith('<!-- ============================== QUOTES') or
+                s_line.startswith('<!-- ============================== CONNECT')):
                 continue
             clean_lines.append(line)
         return '\n'.join(clean_lines).strip()
@@ -720,12 +816,10 @@ motto: "Build Fast. Ship Secure. Scale Infinite." """
     projects_text = clean_section_text(profile_sections.get("FEATURED_PROJECTS", ""))
 
     # Update project stats card color queries in projects HTML table
-    # We can replace URLs of readme stats pin cards dynamically
     import re
     pin_pattern = r'https://github-readme-stats-sigma-five\.vercel\.app/api/pin/\?username=VarshuAi&repo=[a-zA-Z0-9_-]+(&[a-zA-Z0-9_=&%-]+)*'
     def replace_pin(match):
         orig_url = match.group(0)
-        # Extract repo name
         repo_match = re.search(r'repo=([a-zA-Z0-9_-]+)', orig_url)
         if repo_match:
             repo = repo_match.group(1)
@@ -735,7 +829,130 @@ motto: "Build Fast. Ship Secure. Scale Infinite." """
 
     metrics_text = clean_section_text(profile_sections.get("METRICS", ""))
     certifications_text = clean_section_text(profile_sections.get("CERTIFICATIONS", ""))
+    quotes_raw = clean_section_text(profile_sections.get("QUOTES", ""))
     connect_text = clean_section_text(profile_sections.get("CONNECT", ""))
+
+    # Parse and format dynamic SVG progress bars
+    skills_list = []
+    for line in skills_text.split('\n'):
+        match = re.search(r'^\s*([a-zA-Z0-9+/._#\s-]+?)\s*(?:[█░]+)?\s*(\d+)%', line)
+        if match:
+            name = match.group(1).strip()
+            val = match.group(2).strip()
+            skills_list.append((name, val))
+            
+    if skills_list:
+        skills_html = []
+        for name, val in skills_list:
+            escaped_name = urllib.parse.quote(name)
+            skills_html.append(f'<img src="https://progress-bar.dev/{val}/?scale=100&title={escaped_name}&width=600&color={cfg["primary_color"]}" alt="{name} Progress"/>')
+        skills_output = '\n<br/>\n'.join(skills_html)
+    else:
+        skills_output = skills_text
+
+    # Extract views badge and recolor
+    profile_views_badge = f"https://komarev.com/ghpvc/?username=VarshuAi&label=PROFILE+VIEWS&style=for-the-badge&color={cfg['primary_color']}"
+
+    # Day-specific majestic quotes
+    quotes_map = {
+        "Monday": "If you don't like your destiny, don't accept it. Instead, have the courage to change it the way you want it to be! — Naruto Uzumaki",
+        "Tuesday": "First, solve the problem. Then, write the code. — John Johnson",
+        "Wednesday": "Even in the darkest times, there is always a light that guides us. — Kingdom Hearts",
+        "Thursday": "Technology is a useful servant but a dangerous master. — Christian Lous Lange",
+        "Friday": "To plant a garden is to believe in tomorrow. — Audrey Hepburn",
+        "Saturday": "The clearest way into the Universe is through a forest wilderness. — John Muir",
+        "Sunday": "The sea, once it casts its spell, holds one in its net of wonder forever. — Jacques Cousteau"
+    }
+    quote_val = quotes_map.get(day_name, "Build Fast. Ship Secure. Scale Infinite.")
+
+    # Day-specific majestic status HUD
+    if day_name == "Monday":
+        hud_output = f"""```yaml
+🌸 Character Profile: VarshuAi 🌸
+-------------------------------------
+Class: S-Rank Full-Stack Sorcerer
+Level: 99
+Affiliation: Independent Architect
+Mana Pool: 650+ Repositories Created
+Specialization: 11 Languages Mastered
+Arsenal: 150+ Security Tools Built
+Structures: 12+ Frameworks Used
+Realm Domain: 3 Cloud Platforms
+Aura Status: ACTIVELY BUILDING 🌸
+```"""
+    elif day_name == "Tuesday":
+        hud_output = f"""```bash
+$ varshuai --status
+[SYSTEM REPORT]
+-------------------------------------
+* REPOSITORIES  : 650+ active deployments
+* LANGUAGES     : 11 master profiles loaded
+* SECURITY      : 150+ security tools compiled
+* FRAMEWORKS    : 12+ libraries operational
+* CLOUD         : AWS, GCP, Azure connected
+* OUTFLOW       : 500+ open-source seeds
+* CORE STATE    : ACTIVELY BUILDING (daemon online)
+```"""
+    elif day_name == "Wednesday":
+        hud_output = f"""```diff
+@@          PLAYER_1: VARSHUAI // RPG STAT SHEET          @@
+------------------------------------------------------------
++ HP (Repositories)      ███████████████████████████████ 650+
++ MP (Languages)         █████████████████████████████░░ 11
++ ATK (Security Tools)   ████████████████████████████░░░ 150+
++ DEF (Frameworks)       █████████████████████████████░░ 12+
++ AGI (Cloud Platforms)  ██████████████████████████████░ 3
++ EXP (Open Source)      ███████████████████████████████ 500+
+! State: ACTIVELY BUILDING
+```"""
+    elif day_name == "Thursday":
+        hud_output = f"""```diff
+@@            MATRIX DECRYPTION LEVEL: MAXIMUM            @@
+------------------------------------------------------------
++ [INFO] Target decrypted: VarshuAi Profile Core
++ [DATA] Compiled Repos: 650+ archives verified
++ [DATA] Sourced Languages: 11 dialects matched
++ [DATA] Security Vectors: 150+ tools loaded
++ [DATA] Cloud Nodes: AWS, GCP, Azure active
++ [DATA] Open Source: 500+ nodes distributed
+! [WARN] Status: ACTIVELY BUILDING // BYPASS ACTIVE
+```"""
+    elif day_name == "Friday":
+        hud_output = f"""```yaml
+🌿 Ecological System Status Report 🌿
+-------------------------------------
+Botanical Seeds Sown: 650+ Repositories
+Active Species Mastered: 11 Languages
+Thorns Developed: 150+ Security Tools
+Roots Anchored: 12+ Frameworks
+Garden Domains: 3 Cloud Platforms
+Ecosystem Outflow: 500+ Open Source Seeds
+Current Growth Phase: ACTIVELY BUILDING (Sprouting) 🌿
+```"""
+    elif day_name == "Saturday":
+        hud_output = f"""```yaml
+🌲 Deep Forest Mycelium Node Telemetry 🌲
+-------------------------------------
+Mycelium Spores: 650+ Nodes (Repositories)
+Woodland Runes: 11 Mastered (Languages)
+Forest Barriers: 150+ Warded (Security Tools)
+Canopy Layers: 12+ Branches (Frameworks)
+Undergrowth Nodes: 3 Fields (Cloud Platforms)
+Spore Outflow: 500+ Distributed (Open Source)
+Core Rhythm: ACTIVELY BUILDING (Oak Stand Active) 🌲
+```"""
+    else:
+        hud_output = f"""```diff
+@@            SUBMARINE SONAR TELEMETRY LOGS            @@
+------------------------------------------------------------
++ Depth Mapped: 650+ Fathoms (Repositories)
++ Navigation Dialects: 11 Frequencies (Languages)
++ Hull Shields: 150+ Torpedo Vectors (Security Tools)
++ Engine Compartments: 12+ Modules (Frameworks)
++ Deep sea Anchors: 3 Ocean Beds (Cloud Platforms)
++ Ocean Outflow: 500+ Currents (Open Source)
+! Submarine State: ACTIVELY BUILDING (Cruising Deep)
+```"""
 
     # Rebuild profile README
     themed_profile = f"""<!-- ========================================================================= -->
@@ -854,7 +1071,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite." """
 <samp>&nbsp;{cfg['emojis'][4]} SKILL PROFICIENCY</samp>
 </h2>
 
-{skills_text}
+{skills_output}
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
@@ -880,7 +1097,13 @@ motto: "Build Fast. Ship Secure. Scale Infinite." """
 <samp>&nbsp;{cfg['emojis'][5]} SYSTEM DIAGNOSTICS</samp>
 </h2>
 
-{metrics_text}
+<div align="center">
+<img src="{profile_views_badge}" alt="Profile Views"/>
+</div>
+
+<br/>
+
+{hud_output}
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
@@ -894,6 +1117,20 @@ motto: "Build Fast. Ship Secure. Scale Infinite." """
 </h2>
 
 {certifications_text}
+
+<!-- ============================== ANIMATED DIVIDER ============================== -->
+
+{section_divider}
+
+<!-- ============================== QUOTES ============================== -->
+
+<div align="center">
+<br/>
+<samp>
+  <h3><i>"{quote_val}"</i></h3>
+</samp>
+<br/>
+</div>
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
