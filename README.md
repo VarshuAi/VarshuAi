@@ -196,21 +196,13 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 </h2>
 
 <img src="https://progress-bar.dev/93/?scale=100&title=Python&width=600&color=00E5FF" alt="Python Progress"/>
-<br/>
 <img src="https://progress-bar.dev/90/?scale=100&title=JavaScript&width=600&color=00E5FF" alt="JavaScript Progress"/>
-<br/>
 <img src="https://progress-bar.dev/87/?scale=100&title=TypeScript&width=600&color=00E5FF" alt="TypeScript Progress"/>
-<br/>
 <img src="https://progress-bar.dev/82/?scale=100&title=Go&width=600&color=00E5FF" alt="Go Progress"/>
-<br/>
 <img src="https://progress-bar.dev/75/?scale=100&title=Rust&width=600&color=00E5FF" alt="Rust Progress"/>
-<br/>
 <img src="https://progress-bar.dev/95/?scale=100&title=Security&width=600&color=00E5FF" alt="Security Progress"/>
-<br/>
 <img src="https://progress-bar.dev/92/?scale=100&title=Cloud/DevOps&width=600&color=00E5FF" alt="Cloud/DevOps Progress"/>
-<br/>
 <img src="https://progress-bar.dev/80/?scale=100&title=AI/ML&width=600&color=00E5FF" alt="AI/ML Progress"/>
-<br/>
 <img src="https://progress-bar.dev/93/?scale=100&title=System%20Design&width=600&color=00E5FF" alt="System Design Progress"/>
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
