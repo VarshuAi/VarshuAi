@@ -1,23 +1,23 @@
 <!-- ========================================================================= -->
 <!--                          VARSHUAI — PROFILE README                        -->
-<!--       Theme: Ocean | Day Rotated | Animated SVGs | Live Badges       -->
+<!--       Theme: Anime | Day Rotated | Animated SVGs | Live Badges       -->
 <!-- ========================================================================= -->
 
 <div align="center">
 
 <!-- ============================== BANNER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0052d4,4364f7,6fb1fc&height=180&section=header&text=VarshuAi&fontSize=50&fontColor=ffffff&fontAlignY=38&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=ff9eb5,ffb7c5,ffd6e0,c9b8ff&height=180&section=header&text=VarshuAi&fontSize=50&fontColor=ffffff&fontAlignY=38&animation=fadeIn" width="100%"/>
 
 <!-- ============================== TYPING SVG ============================== -->
 
 <br/>
 
-<a href="https://github.com/VarshuAi"><img src="https://readme-typing-svg.demolab.com?font=Architects%20Daughter&weight=500&size=22&duration=3500&pause=800&color=00E5FF&center=true&vCenter=true&multiline=true&repeat=true&random=false&width=700&height=80&lines=%F0%9F%8C%8A%20Sailing%20the%20Seas%20of%20Software%20%F0%9F%8C%8A;%F0%9F%90%B3%20Scale%20Infinite%20%E2%80%A2%20Dive%20Deep%20%E2%80%A2%20Docker%20Expert%20%F0%9F%90%B3;%E2%9A%93%20Anchor%20Secure%20%7C%20DevSecOps%20Ship%20Captain" alt="Typing SVG"/></a>
+<a href="https://github.com/VarshuAi"><img src="https://readme-typing-svg.demolab.com?font=Noto%20Sans%20JP&weight=500&size=22&duration=3500&pause=800&color=FF9EB5&center=true&vCenter=true&multiline=true&repeat=true&random=false&width=700&height=80&lines=%F0%9F%8C%B8%20Security%20Researcher%20%7C%20Full-Stack%20Engineer%20%F0%9F%8C%B8;%E2%9C%A8%20System%20Architect%20%7C%20DevSecOps%20Specialist%20%E2%9C%A8;%E3%80%8C%E6%9C%80%E5%BC%B7%E3%81%AE%E3%83%95%E3%83%AB%E3%82%B9%E3%82%BF%E3%83%83%E3%82%AF%E3%80%8D%E2%80%A2%20650%2B%20Repositories" alt="Typing SVG"/></a>
 
 <!-- ============================== WAVE DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0052d4,4364f7,6fb1fc&height=80&section=header&text=&fontSize=0" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=ff9eb5,ffb7c5,ffd6e0,c9b8ff&height=80&section=header&text=&fontSize=0" width="100%"/>
 
 </div>
 
@@ -25,7 +25,7 @@
 
 <h2>
 <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> 
-<samp>&nbsp;🌊 ABOUT ME</samp>
+<samp>&nbsp;🌸 ABOUT ME</samp>
 </h2>
 
 ```yaml
@@ -56,7 +56,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <h2>
 <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="28">
-<samp>&nbsp;🐳 TECH ARSENAL</samp>
+<samp>&nbsp;🍡 TECH ARSENAL</samp>
 </h2>
 
 <div align="center">
@@ -121,13 +121,13 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:FF9EB5,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== GITHUB STATS ============================== -->
 
 <h2>
 <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="30">
-<samp>&nbsp;⚓ PERFORMANCE METRICS</samp>
+<samp>&nbsp;✨ PERFORMANCE METRICS</samp>
 </h2>
 
 <div align="center">
@@ -136,19 +136,19 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
   <tr>
     <td align="center" valign="middle">
       <a href="https://github.com/VarshuAi">
-        <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=VarshuAi&show_icons=true&bg_color=000000&border_color=00E5FF&title_color=6fb1fc&icon_color=4364f7&text_color=ffffff&count_private=true&include_all_commits=true" alt="GitHub Stats" height="195px" />
+        <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=VarshuAi&show_icons=true&bg_color=000000&border_color=FF9EB5&title_color=FF9EB5&icon_color=c9b8ff&text_color=ffd6e0&count_private=true&include_all_commits=true" alt="GitHub Stats" height="195px" />
       </a>
     </td>
     <td align="center" valign="middle">
       <a href="https://github.com/VarshuAi">
-        <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=VarshuAi&layout=compact&bg_color=000000&border_color=00E5FF&title_color=6fb1fc&text_color=ffffff&langs_count=10&card_width=400" alt="Top Languages" height="195px" />
+        <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=VarshuAi&layout=compact&bg_color=000000&border_color=FF9EB5&title_color=FF9EB5&text_color=ffd6e0&langs_count=10&card_width=400" alt="Top Languages" height="195px" />
       </a>
     </td>
   </tr>
   <tr>
     <td align="center" valign="middle" colspan="2">
       <br/>
-      <img src="https://streak-stats.demolab.com?user=VarshuAi&background=000000&border=00E5FF&ring=6fb1fc&fire=00E5FF&currStreakLabel=ffffff&sideLabels=ffffff&currStreakNum=6fb1fc&sideNums=6fb1fc&dates=4364f7" alt="GitHub Streak" height="195px" />
+      <img src="https://streak-stats.demolab.com?user=VarshuAi&background=000000&border=FF9EB5&ring=FF9EB5&fire=FF9EB5&currStreakLabel=ffd6e0&sideLabels=ffd6e0&currStreakNum=FF9EB5&sideNums=FF9EB5&dates=c9b8ff" alt="GitHub Streak" height="195px" />
     </td>
   </tr>
 </table>
@@ -156,19 +156,19 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <br/><br/>
 
 <!-- Activity Graph -->
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=VarshuAi&bg_color=000000&color=00E5FF&line=00E5FF&point=6fb1fc&area_color=4364f7&area=true&hide_border=true&custom_title=%3E_%20VarshuAi%20//%20Contribution%20Log" alt="Activity Graph" width="98%"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=VarshuAi&bg_color=000000&color=FF9EB5&line=FF9EB5&point=FF9EB5&area_color=c9b8ff&area=true&hide_border=true&custom_title=%3E_%20VarshuAi%20//%20Contribution%20Log" alt="Activity Graph" width="98%"/>
 
 </div>
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:FF9EB5,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== ACHIEVEMENTS ============================== -->
 
 <h2>
 <img src="https://media.giphy.com/media/IdyAQJVN2kVPNUrojM/giphy.gif" width="28">
-<samp>&nbsp;🐠 ACHIEVEMENTS</samp>
+<samp>&nbsp;⚔️ ACHIEVEMENTS</samp>
 </h2>
 
 <div align="center">
@@ -186,13 +186,13 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:FF9EB5,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== SKILL PROFICIENCY ============================== -->
 
 <h2>
 <img src="https://media.giphy.com/media/uhQuegHFqkVYuFMXMQ/giphy.gif" width="28">
-<samp>&nbsp;🐙 SKILL PROFICIENCY</samp>
+<samp>&nbsp;💌 SKILL PROFICIENCY</samp>
 </h2>
 
 <img src="https://progress-bar.dev/93/?scale=100&title=Python&width=600&color=00E5FF" alt="Python Progress"/>
@@ -207,13 +207,13 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:FF9EB5,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== FEATURED PROJECTS ============================== -->
 
 <h2>
 <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="28">
-<samp>&nbsp;🌊 FEATURED PROJECTS</samp>
+<samp>&nbsp;🌸 FEATURED PROJECTS</samp>
 </h2>
 
 <div align="center">
@@ -224,7 +224,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <h3 align="center">Go SSH Auditor</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=go-ssh-auditor&bg_color=000000&border_color=00E5FF&title_color=6fb1fc&icon_color=4364f7&text_color=ffffff)](https://github.com/VarshuAi/go-ssh-auditor)
+[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=go-ssh-auditor&bg_color=000000&border_color=FF9EB5&title_color=FF9EB5&icon_color=c9b8ff&text_color=ffd6e0)](https://github.com/VarshuAi/go-ssh-auditor)
 
 `Go` `Security` `SSH` `Concurrent`
 
@@ -236,7 +236,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <h3 align="center">Packet Sniffer</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=py-packet-sniffer&bg_color=000000&border_color=00E5FF&title_color=6fb1fc&icon_color=4364f7&text_color=ffffff)](https://github.com/VarshuAi/py-packet-sniffer)
+[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=py-packet-sniffer&bg_color=000000&border_color=FF9EB5&title_color=FF9EB5&icon_color=c9b8ff&text_color=ffd6e0)](https://github.com/VarshuAi/py-packet-sniffer)
 
 `Python` `Networking` `Raw Sockets` `Sniffer`
 
@@ -250,7 +250,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <h3 align="center">Rust Port Scanner</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=rust-port-scanner&bg_color=000000&border_color=00E5FF&title_color=6fb1fc&icon_color=4364f7&text_color=ffffff)](https://github.com/VarshuAi/rust-port-scanner)
+[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=rust-port-scanner&bg_color=000000&border_color=FF9EB5&title_color=FF9EB5&icon_color=c9b8ff&text_color=ffd6e0)](https://github.com/VarshuAi/rust-port-scanner)
 
 `Rust` `Networking` `Tokio` `Async`
 
@@ -262,7 +262,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 <h3 align="center">System Monitor Dashboard</h3>
 <div align="center">
 
-[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=bash-sys-monitor&bg_color=000000&border_color=00E5FF&title_color=6fb1fc&icon_color=4364f7&text_color=ffffff)](https://github.com/VarshuAi/bash-sys-monitor)
+[![ReadMe Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=bash-sys-monitor&bg_color=000000&border_color=FF9EB5&title_color=FF9EB5&icon_color=c9b8ff&text_color=ffd6e0)](https://github.com/VarshuAi/bash-sys-monitor)
 
 `Bash` `Systems` `Monitor` `Webhook`
 
@@ -274,42 +274,44 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:FF9EB5,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== METRICS ============================== -->
 
 <h2>
 <img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="28">
-<samp>&nbsp;🐬 SYSTEM DIAGNOSTICS</samp>
+<samp>&nbsp;🔮 SYSTEM DIAGNOSTICS</samp>
 </h2>
 
 <div align="center">
-<img src="https://komarev.com/ghpvc/?username=VarshuAi&label=PROFILE+VIEWS&style=for-the-badge&color=00E5FF" alt="Profile Views"/>
+<img src="https://komarev.com/ghpvc/?username=VarshuAi&label=PROFILE+VIEWS&style=for-the-badge&color=FF9EB5" alt="Profile Views"/>
 </div>
 
 <br/>
 
-```diff
-@@            SUBMARINE SONAR TELEMETRY LOGS            @@
-------------------------------------------------------------
-+ Depth Mapped: 650+ Fathoms (Repositories)
-+ Navigation Dialects: 11 Frequencies (Languages)
-+ Hull Shields: 150+ Torpedo Vectors (Security Tools)
-+ Engine Compartments: 12+ Modules (Frameworks)
-+ Deep sea Anchors: 3 Ocean Beds (Cloud Platforms)
-+ Ocean Outflow: 500+ Currents (Open Source)
-! Submarine State: ACTIVELY BUILDING (Cruising Deep)
+```yaml
+🌸 Character Profile: VarshuAi 🌸
+-------------------------------------
+Class: S-Rank Full-Stack Sorcerer
+Level: 99
+Affiliation: Independent Architect
+Mana Pool: 650+ Repositories Created
+Specialization: 11 Languages Mastered
+Arsenal: 150+ Security Tools Built
+Structures: 12+ Frameworks Used
+Realm Domain: 3 Cloud Platforms
+Aura Status: ACTIVELY BUILDING 🌸
 ```
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:FF9EB5,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== CERTIFICATIONS ============================== -->
 
 <h2>
 <img src="https://media.giphy.com/media/3oKIPEqDGUULpEU0aQ/giphy.gif" width="28">
-<samp>&nbsp;🐳 DOMAINS OF EXPERTISE</samp>
+<samp>&nbsp;🍡 DOMAINS OF EXPERTISE</samp>
 </h2>
 
 <div align="center">
@@ -329,21 +331,21 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:FF9EB5,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== QUOTES ============================== -->
 
 <div align="center">
 <br/>
 <samp>
-  <h3><i>"The sea, once it casts its spell, holds one in its net of wonder forever. — Jacques Cousteau"</i></h3>
+  <h3><i>"If you don't like your destiny, don't accept it. Instead, have the courage to change it the way you want it to be! — Naruto Uzumaki"</i></h3>
 </samp>
 <br/>
 </div>
 
 <!-- ============================== ANIMATED DIVIDER ============================== -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00E5FF,100:000000&height=2&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:FF9EB5,100:000000&height=2&section=header" width="100%"/>
 
 <!-- ============================== CONNECT ============================== -->
 
@@ -351,7 +353,7 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <h2>
 <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="28">
-<samp>&nbsp;⚓ CONNECT</samp>
+<samp>&nbsp;✨ CONNECT</samp>
 </h2>
 
 <div align="center">
@@ -368,13 +370,13 @@ motto: "Build Fast. Ship Secure. Scale Infinite."
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0052d4,4364f7,6fb1fc&height=100&section=footer&text=&fontSize=0" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=ff9eb5,ffb7c5,ffd6e0,c9b8ff&height=100&section=footer&text=&fontSize=0" width="100%"/>
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/BUILT_WITH-OBSESSION-00E5FF?style=flat-square&labelColor=000000"/>
-<img src="https://img.shields.io/badge/POWERED_BY-CAFFEINE-00E5FF?style=flat-square&labelColor=000000"/>
-<img src="https://img.shields.io/badge/SECURED_BY-PARANOIA-00E5FF?style=flat-square&labelColor=000000"/>
+<img src="https://img.shields.io/badge/BUILT_WITH-OBSESSION-FF9EB5?style=flat-square&labelColor=000000"/>
+<img src="https://img.shields.io/badge/POWERED_BY-CAFFEINE-FF9EB5?style=flat-square&labelColor=000000"/>
+<img src="https://img.shields.io/badge/SECURED_BY-PARANOIA-FF9EB5?style=flat-square&labelColor=000000"/>
 
 <br/><br/>
 
