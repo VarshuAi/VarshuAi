@@ -1,438 +1,187 @@
 <!--
-  VarshuOS v40.1 "Midas" | Auto-rotated: 12 Jun 2026
-  This README IS an operating system. It boots daily into a new distro.
-  Come back tomorrow — it'll be a completely different OS.
+  VarshuOS v40.1 "Midas" | 12 Jun 2026 | This README is alive.
 -->
 
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0D1117&height=1" width="100%"/>
-</div>
 
-```
-                                                                              
-                                                                              
-  ██╗   ██╗ █████╗ ██████╗ ███████╗██╗  ██╗██╗   ██╗     ██████╗ ███████╗    
-  ██║   ██║██╔══██╗██╔══██╗██╔════╝██║  ██║██║   ██║    ██╔═══██╗██╔════╝    
-  ██║   ██║███████║██████╔╝███████╗███████║██║   ██║    ██║   ██║███████╗    
-  ╚██╗ ██╔╝██╔══██║██╔══██╗╚════██║██╔══██║██║   ██║    ██║   ██║╚════██║    
-   ╚████╔╝ ██║  ██║██║  ██║███████║██║  ██║╚██████╔╝    ╚██████╔╝███████║    
-    ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝      ╚═════╝ ╚══════╝    
-                                                                              
-```
+<!-- ANIMATED BOOT SEQUENCE -->
+<img src="https://raw.githubusercontent.com/VarshuAi/VarshuAi/main/assets/boot.svg" width="100%" alt="VarshuOS Boot Sequence"/>
 
-```
- ┌─────────────────────────────────────────────────────────────────────────┐
- │                        VARSHUOS BIOS v4.20.69                          │
- │─────────────────────────────────────────────────────────────────────────│
- │                                                                         │
- │  CPU      : Varshan Gowda @ mass_clock_speed          [  OK  ]         │
- │  RAM      : Mass Creativity (Unlimited GB)             [  OK  ]         │
- │  GPU      : Imagination RTX 9090 Ti                    [  OK  ]         │
- │  STORAGE  : 197+ Repositories (Expanding...)           [  OK  ]         │
- │  NETWORK  : Connected to Open Source Network           [  OK  ]         │
- │  CHAI     : Filter Coffee Module Loaded                [  OK  ]         │
- │                                                                         │
- │  Keyboard : Indian Standard (Chai-Resistant)           [  OK  ]         │
- │  Audio    : Lo-fi Hip Hop Radio                        [  OK  ]         │
- │  Clock    : 3:00 AM (Normal Operating Hours)           [  OK  ]         │
- │                                                                         │
- │  All systems nominal. Booting GoldRush OS v40.1...                       │
- │                                                                         │
- └─────────────────────────────────────────────────────────────────────────┘
-```
-
-```
-[    0.000000] VarshuOS kernel 6.8.0-goldrush booting...
-[    0.000001] Command line: BOOT_IMAGE=/vmlinuz root=/dev/mass_coding
-[    0.042069] India/Kolkata timezone loaded. Chai dependency resolved.
-[    0.100000] Loading distro: GoldRush OS v40.1 "Midas"
-[    0.200000] Mounting /dev/github ... 197+ repos found
-[    0.300000] Mounting /dev/brain ... creativity: UNLIMITED
-[    0.400000] Loading module: python3.12 .................... [ OK ]
-[    0.410000] Loading module: javascript-v8 ................. [ OK ]
-[    0.420000] Loading module: typescript-strict .............. [ OK ]
-[    0.430000] Loading module: golang-1.22 ................... [ OK ]
-[    0.440000] Loading module: rust-nightly .................. [ OK ]
-[    0.450000] Loading module: security-toolkit .............. [ OK ]
-[    0.460000] Loading module: chai-brewing-engine ........... [ OK ]
-[    0.500000] Loading module: mass-uploader-daemon .......... [ OK ]
-[    0.600000] Network: GitHub API connected (rate limit: mass_pushing)
-[    0.700000] Starting display manager...
-[    0.800000] Welcome to GoldRush OS. Ship it. Its Friday. YOLO.
-[    1.000000] Login: varshuai | Shell: /bin/mass_code
-```
-
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│  GoldRush OS v40.1 "Midas"                                               │
-│  Fri Jun 12 23:16:47 IST 2026                                              │
-│                                                                         │
-│  varshuai@mass-coder:~$                                                 │
-│                                                                         │
-│  Welcome back, Varshan.                                                 │
-│  Today is Friday. Distro: GoldRush OS.                                      │
-│  "Ship it. Its Friday. YOLO."                                                │
-│                                                                         │
-│  Last login: yesterday from mass-coding-session                         │
-│  Repos: 197+ | Languages: 11 | Uptime: mass_days                       │
-│  Chai consumed today: yes                                               │
-│                                                                         │
-│  Type 'help' or click an app below to explore.                          │
-└─────────────────────────────────────────────────────────────────────────┘
-```
-
-<div align="center">
-
-> **`GoldRush OS v40.1`** · `Kernel: 6.8.0-goldrush`  · `Theme rotates daily across 7 distros` · `Today: Friday`
+<br>
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 </div>
 
-<!-- ═══════════ DESKTOP — CLICKABLE APPS ═══════════ -->
+<!-- ═══════ APPS / CLICKABLE SECTIONS ═══════ -->
 
 <details>
-<summary><b>📂 /home/varshuai/about.txt</b> — <i>cat about.txt</i></summary>
+<summary>&nbsp;&nbsp;<b>📂 /home/varshuai/about.txt</b>&nbsp;&nbsp;—&nbsp;&nbsp;<code>cat about.txt</code></summary>
 
 <br>
-
-```
-varshuai@mass-coder:~$ cat about.txt
-```
-
-```yaml
-
-  ┌─────────────────────────────────────────────────────────────┐
-  │                                                             │
-  │  Name        Varshan Gowda                                  │
-  │  Handle      @VarshuAi                                      │
-  │  Location    India                                          │
-  │  Title       just a guy who codes                           │
-  │  Student     nope                                           │
-  │  Degree      doesn't matter                                 │
-  │  Why I code  because its fun                                │
-  │                                                             │
-  │  What I actually do:                                        │
-  │    > see a problem                                          │
-  │    > build a solution                                       │
-  │    > mass upload to GitHub at 3 AM                          │
-  │    > drink chai                                             │
-  │    > repeat                                                 │
-  │                                                             │
-  │  Repos       197+ and counting                              │
-  │  Languages   11 (lost count honestly)                       │
-  │  Sleep       optional                                       │
-  │  Chai        mandatory                                      │
-  │                                                             │
-  │  I'm not a "developer" or an "engineer".                    │
-  │  I'm an Indian guy who just loves coding                    │
-  │  and uploading stuff. That's the whole bio.                 │
-  │                                                             │
-  └─────────────────────────────────────────────────────────────┘
-
-```
-
-```
-varshuai@mass-coder:~$ _
-```
-
-</details>
-
----
-
-<details>
-<summary><b>📦 /usr/bin/dnf</b> — <i>dnf list --installed</i> (Tech Stack)</summary>
-
-<br>
-
-```
-varshuai@mass-coder:~$ dnf list --installed | grep -E "(lang|framework|tool)"
-```
-
-```apache
-PACKAGE                          VERSION        STATUS       PROFICIENCY
-─────────────────────────────────────────────────────────────────────────
-python3                          3.12.4         installed    ████████████████████ 93%
-javascript/node                  22.0.0         installed    ███████████████████░ 90%
-typescript                       5.5.0          installed    ██████████████████░░ 87%
-golang                           1.22.0         installed    █████████████████░░░ 82%
-rust                             nightly        installed    ███████████████░░░░░ 75%
-cpp/gcc                          14.0.0         installed    ████████████████░░░░ 78%
-dart                             3.4.0          installed    ████████████████░░░░ 80%
-java/openjdk                     21.0.0         installed    █████████████████░░░ 85%
-kotlin                           2.0.0          installed    ████████████████░░░░ 76%
-bash                             5.2.0          installed    ███████████████████░ 90%
-sql/postgresql                   16.0           installed    █████████████████░░░ 85%
-```
-
-```
-varshuai@mass-coder:~$ dnf list --installed | grep "framework"
-```
-
-```apache
-PACKAGE                          VERSION        STATUS       TYPE
-─────────────────────────────────────────────────────────────────────────
-react                            18.3.0         installed    frontend
-nextjs                           14.2.0         installed    fullstack
-nodejs/express                   4.19.0         installed    backend
-fastapi                          0.111.0        installed    backend
-flask                            3.0.0          installed    backend
-django                           5.0.0          installed    backend
-flutter                          3.22.0         installed    mobile
-tailwindcss                      3.4.0          installed    css
-vue                              3.4.0          installed    frontend
-svelte                           4.2.0          installed    frontend
-graphql                          16.8.0         installed    api
-```
-
-```
-varshuai@mass-coder:~$ dnf list --installed | grep "cloud"
-```
-
-```apache
-PACKAGE                          VERSION        STATUS
-─────────────────────────────────────────────────────────────────
-aws-cli                          2.15.0         installed
-gcloud-sdk                       472.0          installed
-azure-cli                        2.60.0         installed
-firebase-tools                   13.0.0         installed
-docker-ce                        26.0.0         installed
-kubectl                          1.30.0         installed
-terraform                        1.8.0          installed
-```
-
-```
-varshuai@mass-coder:~$ dnf list --installed | grep "ai"
-```
-
-```apache
-PACKAGE                          VERSION        STATUS
-─────────────────────────────────────────────────────────────────
-tensorflow                       2.16.0         installed
-pytorch                          2.3.0          installed
-openai-sdk                       1.30.0         installed
-huggingface-hub                  0.23.0         installed
-langchain                        0.2.0          installed
-```
-
-```
-varshuai@mass-coder:~$ echo "total packages: mass_amount"
-total packages: mass_amount
-varshuai@mass-coder:~$ _
-```
-
-</details>
-
----
-
-<details>
-<summary><b>🔐 /opt/security-arsenal</b> — <i>ls -la /opt/security-arsenal/</i></summary>
-
-<br>
-
-```
-varshuai@mass-coder:~$ ls -la /opt/security-arsenal/
-total 150+
-```
-
-```
-drwxr-xr-x  varshuai  recon/
-  ├── nmap                    # network discovery & port scanning
-  ├── masscan                 # mass IP port scanner  
-  ├── amass                   # subdomain enumeration
-  ├── subfinder               # passive subdomain discovery
-  └── shodan-cli              # internet-wide scanning
-
-drwxr-xr-x  varshuai  exploitation/
-  ├── metasploit-framework    # penetration testing framework
-  ├── sqlmap                  # SQL injection automation
-  ├── burpsuite-pro           # web vulnerability scanner
-  ├── cobalt-strike           # adversary simulation
-  └── hydra                   # brute force tool
-
-drwxr-xr-x  varshuai  analysis/
-  ├── wireshark               # packet analysis
-  ├── ghidra                  # reverse engineering (NSA)
-  ├── ida-pro                 # disassembler
-  ├── radare2                 # RE framework
-  └── volatility              # memory forensics
-
-drwxr-xr-x  varshuai  wireless/
-  ├── aircrack-ng             # WiFi security auditing
-  ├── wifite                  # automated wireless attack
-  └── bettercap               # MITM framework
-
-drwxr-xr-x  varshuai  web/
-  ├── owasp-zap               # web app scanner
-  ├── nikto                   # web server scanner
-  ├── ffuf                    # web fuzzer
-  └── nuclei                  # vulnerability scanner
-
-drwxr-xr-x  varshuai  osint/
-  ├── maltego                 # OSINT & graphing
-  ├── theHarvester            # email/domain recon
-  └── sherlock                # social media hunter
-
-150+ tools loaded. arsenal status: ARMED.
-```
-
-```
-varshuai@mass-coder:~$ _
-```
-
-</details>
-
----
-
-<details>
-<summary><b>📊 /proc/github-stats</b> — <i>cat /proc/github-stats</i> (Live Metrics)</summary>
-
-<br>
-
-```
-varshuai@mass-coder:~$ cat /proc/github-stats
-```
 
 <div align="center">
 
-<table align="center">
-  <tr>
-    <td align="center">
-      <a href="https://github.com/VarshuAi">
-        <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=VarshuAi&show_icons=true&bg_color=0D1117&border_color=B8860B&title_color=FFD700&icon_color=FFE066&text_color=8B949E&count_private=true&include_all_commits=true" alt="Stats" height="195px">
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/VarshuAi">
-        <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=VarshuAi&layout=compact&bg_color=0D1117&border_color=B8860B&title_color=FFD700&text_color=8B949E&langs_count=10&card_width=400" alt="Langs" height="195px">
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" colspan="2">
-      <br>
-      <img src="https://streak-stats.demolab.com?user=VarshuAi&background=0D1117&border=B8860B&ring=FFD700&fire=FFE066&currStreakLabel=FFE066&sideLabels=FFD700&currStreakNum=C9D1D9&sideNums=C9D1D9&dates=555555" alt="Streak" height="195px">
-    </td>
-  </tr>
-</table>
-
-<br>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=VarshuAi&bg_color=0D1117&color=FFD700&line=FFE066&point=FFD700&area_color=FFD70022&area=true&hide_border=true&custom_title=varshuai@mass-coder:~$+cat+/var/log/commits.log" width="98%">
+| | |
+|:--|:--|
+| **Name** | Varshan Gowda |
+| **Handle** | @VarshuAi |
+| **From** | India |
+| **What I am** | Just a guy who codes |
+| **Student?** | Nope |
+| **Why I code** | Because it's fun |
+| **Repos** | 197+ and I'm not stopping |
+| **Sleep** | Optional |
+| **Chai** | Mandatory |
 
 </div>
 
-```
-varshuai@mass-coder:~$ _
-```
+> *I'm not a "developer" or an "engineer". I'm an Indian guy who just loves coding and mass uploading stuff. I see a problem, I build a solution, I push it at 3 AM. That's the whole bio.*
 
+<br>
 </details>
 
 ---
 
 <details>
-<summary><b>📁 /home/varshuai/projects/</b> — <i>ls -la ~/projects/</i> (Featured Work)</summary>
+<summary>&nbsp;&nbsp;<b>📊 /proc/skill-levels</b>&nbsp;&nbsp;—&nbsp;&nbsp;<code>Animated proficiency bars</code></summary>
+
+<br>
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/VarshuAi/VarshuAi/main/assets/skills.svg" width="100%" alt="Skill Levels"/>
+</div>
+
+<br>
+</details>
+
+---
+
+<details>
+<summary>&nbsp;&nbsp;<b>📦 /usr/bin/packages</b>&nbsp;&nbsp;—&nbsp;&nbsp;<code>Installed tech stack</code></summary>
+
+<br>
+
+<div align="center">
+
+#### Languages
+<img src="https://skillicons.dev/icons?i=python,javascript,typescript,go,rust,cpp,dart,java,kotlin,bash&perline=10&theme=dark" />
+
+#### Frameworks
+<img src="https://skillicons.dev/icons?i=react,nextjs,nodejs,express,fastapi,flask,django,flutter,tailwind,vue,svelte,graphql&perline=12&theme=dark" />
+
+#### Security & DevOps
+<img src="https://skillicons.dev/icons?i=kali,docker,kubernetes,terraform,githubactions,linux,nginx,ansible&perline=8&theme=dark" />
+
+#### Cloud & Data
+<img src="https://skillicons.dev/icons?i=aws,gcp,azure,firebase,mongodb,postgres,redis,supabase&perline=8&theme=dark" />
+
+#### AI & ML
+<img src="https://skillicons.dev/icons?i=tensorflow,pytorch&perline=5&theme=dark" />
+
+</div>
+
+<br>
+</details>
+
+---
+
+<details>
+<summary>&nbsp;&nbsp;<b>🔐 /opt/security-arsenal</b>&nbsp;&nbsp;—&nbsp;&nbsp;<code>150+ tools loaded</code></summary>
 
 <br>
 
 ```
-varshuai@mass-coder:~$ ls -la ~/projects/
+ /opt/security-arsenal/
+ ├── recon/           nmap, masscan, amass, subfinder, shodan
+ ├── exploitation/    metasploit, sqlmap, burpsuite, hydra
+ ├── analysis/        wireshark, ghidra, ida-pro, radare2, volatility
+ ├── wireless/        aircrack-ng, wifite, bettercap
+ ├── web/             owasp-zap, nikto, ffuf, nuclei
+ └── osint/           maltego, theHarvester, sherlock
 
-drwxr-xr-x  varshuai  go-ssh-auditor/       # SSH security audit tool
-drwxr-xr-x  varshuai  py-packet-sniffer/    # raw socket packet capture
-drwxr-xr-x  varshuai  rust-port-scanner/    # async port scanner
-drwxr-xr-x  varshuai  bash-sys-monitor/     # system monitoring dashboard
-drwxr-xr-x  varshuai  ...194 more repos...  # I told you, MASS uploads
+ 150+ tools loaded. arsenal: ARMED.
 ```
+
+<br>
+</details>
+
+---
+
+<details>
+<summary>&nbsp;&nbsp;<b>📈 /proc/github-stats</b>&nbsp;&nbsp;—&nbsp;&nbsp;<code>Live surveillance data</code></summary>
+
+<br>
 
 <div align="center">
 
 <table>
-<tr>
-<td width="50%">
-<a href="https://github.com/VarshuAi/go-ssh-auditor"><img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=go-ssh-auditor&bg_color=0D1117&border_color=B8860B&title_color=FFD700&icon_color=FFE066&text_color=8B949E" alt="go-ssh-auditor"></a>
-</td>
-<td width="50%">
-<a href="https://github.com/VarshuAi/py-packet-sniffer"><img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=py-packet-sniffer&bg_color=0D1117&border_color=B8860B&title_color=FFD700&icon_color=FFE066&text_color=8B949E" alt="py-packet-sniffer"></a>
-</td>
-</tr>
-<tr>
-<td width="50%">
-<a href="https://github.com/VarshuAi/rust-port-scanner"><img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=rust-port-scanner&bg_color=0D1117&border_color=B8860B&title_color=FFD700&icon_color=FFE066&text_color=8B949E" alt="rust-port-scanner"></a>
-</td>
-<td width="50%">
-<a href="https://github.com/VarshuAi/bash-sys-monitor"><img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=bash-sys-monitor&bg_color=0D1117&border_color=B8860B&title_color=FFD700&icon_color=FFE066&text_color=8B949E" alt="bash-sys-monitor"></a>
-</td>
-</tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/VarshuAi">
+        <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=VarshuAi&show_icons=true&bg_color=0D1117&border_color=B8860B&title_color=FFD700&icon_color=FFE066&text_color=8B949E&count_private=true&include_all_commits=true" height="195px">
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/VarshuAi">
+        <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=VarshuAi&layout=compact&bg_color=0D1117&border_color=B8860B&title_color=FFD700&text_color=8B949E&langs_count=10&card_width=400" height="195px">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <br>
+      <img src="https://streak-stats.demolab.com?user=VarshuAi&background=0D1117&border=B8860B&ring=FFD700&fire=FFE066&currStreakLabel=FFE066&sideLabels=FFD700&currStreakNum=C9D1D9&sideNums=C9D1D9&dates=555555" height="195px">
+    </td>
+  </tr>
 </table>
+
+<br>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=VarshuAi&bg_color=0D1117&color=FFD700&line=FFE066&point=FFD700&area_color=FFD70022&area=true&hide_border=true" width="98%">
 
 </div>
 
-```
-varshuai@mass-coder:~$ _
-```
-
+<br>
 </details>
 
 ---
 
 <details>
-<summary><b>🗺️ /etc/varshuai/domains.conf</b> — <i>cat /etc/varshuai/domains.conf</i></summary>
+<summary>&nbsp;&nbsp;<b>📁 /home/varshuai/projects/</b>&nbsp;&nbsp;—&nbsp;&nbsp;<code>Featured repos</code></summary>
 
 <br>
 
-```
-varshuai@mass-coder:~$ cat /etc/varshuai/domains.conf
-```
+<div align="center">
+<table>
+<tr>
+<td width="50%">
+<a href="https://github.com/VarshuAi/go-ssh-auditor"><img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=go-ssh-auditor&bg_color=0D1117&border_color=B8860B&title_color=FFD700&icon_color=FFE066&text_color=8B949E"></a>
+</td>
+<td width="50%">
+<a href="https://github.com/VarshuAi/py-packet-sniffer"><img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=py-packet-sniffer&bg_color=0D1117&border_color=B8860B&title_color=FFD700&icon_color=FFE066&text_color=8B949E"></a>
+</td>
+</tr>
+<tr>
+<td width="50%">
+<a href="https://github.com/VarshuAi/rust-port-scanner"><img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=rust-port-scanner&bg_color=0D1117&border_color=B8860B&title_color=FFD700&icon_color=FFE066&text_color=8B949E"></a>
+</td>
+<td width="50%">
+<a href="https://github.com/VarshuAi/bash-sys-monitor"><img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=bash-sys-monitor&bg_color=0D1117&border_color=B8860B&title_color=FFD700&icon_color=FFE066&text_color=8B949E"></a>
+</td>
+</tr>
+</table>
+</div>
 
-```nginx
-# ╔═══════════════════════════════════════════════════════════════════╗
-# ║               VARSHUAI COMPETENCY MAP                            ║
-# ╠═══════════════════════════════════════════════════════════════════╣
-# ║                                                                   ║
-# ║   DOMAIN              SKILLS                       LEVEL          ║
-# ║   ─────────────────────────────────────────────────────────       ║
-# ║                                                                   ║
-# ║   Security            Pentesting, Vuln Research,   ██████ EXPERT  ║
-# ║                       SIEM, Red Teaming                           ║
-# ║                                                                   ║
-# ║   Backend             Microservices, APIs,         ██████ EXPERT  ║
-# ║                       Distributed Systems                         ║
-# ║                                                                   ║
-# ║   DevOps              CI/CD, IaC, K8s,             ██████ EXPERT  ║
-# ║                       Container Orchestration                     ║
-# ║                                                                   ║
-# ║   Cloud               Multi-cloud, Serverless,     ██████ EXPERT  ║
-# ║                       AWS + GCP + Azure                           ║
-# ║                                                                   ║
-# ║   Frontend            React, Next.js, Vue,         █████░ ADV     ║
-# ║                       Animation, WebGL                            ║
-# ║                                                                   ║
-# ║   AI/ML               NLP, CV, LLM Fine-tuning,   █████░ ADV     ║
-# ║                       RAG, Agents                                 ║
-# ║                                                                   ║
-# ║   Mobile              Flutter, React Native,       █████░ ADV     ║
-# ║                       Native Android                              ║
-# ║                                                                   ║
-# ╚═══════════════════════════════════════════════════════════════════╝
-```
-
-```
-varshuai@mass-coder:~$ _
-```
-
+<br>
 </details>
 
 ---
 
 <details>
-<summary><b>🐍 /var/log/contributions.log</b> — <i>tail -f /var/log/contributions.log</i></summary>
+<summary>&nbsp;&nbsp;<b>🐍 /var/log/contributions</b>&nbsp;&nbsp;—&nbsp;&nbsp;<code>Movement pattern</code></summary>
 
 <br>
-
-```
-varshuai@mass-coder:~$ tail -f /var/log/contributions.log
-```
 
 <div align="center">
 <picture>
@@ -442,96 +191,23 @@ varshuai@mass-coder:~$ tail -f /var/log/contributions.log
 </picture>
 </div>
 
-```
-varshuai@mass-coder:~$ _
-```
-
-</details>
-
----
-
-<details>
-<summary><b>⚙️ /etc/varshuai/distro-rotation.conf</b> — <i>How this README works</i></summary>
-
 <br>
-
-```
-varshuai@mass-coder:~$ cat /etc/varshuai/distro-rotation.conf
-```
-
-```bash
-# ╔══════════════════════════════════════════════════════════════════╗
-# ║         VARSHUOS DAILY DISTRO ROTATION TABLE                    ║
-# ╠══════════════════════════════════════════════════════════════════╣
-# ║                                                                  ║
-# ║   DAY          DISTRO             CODENAME     VIBE              ║
-# ║   ──────────────────────────────────────────────────────────     ║
-# ║   Monday       RedStrike OS       Inferno      attack mode       ║
-# ║   Tuesday      DeepBlue OS        Abyss        deep focus        ║
-# ║   Wednesday    NeonArc OS         Glitch       midweek chaos     ║
-# ║   Thursday     ForestRoot OS      Banyan       growth mode       ║
-# ║   Friday       GoldRush OS        Midas        ship everything   ║
-# ║   Saturday     CyberKali OS       Phantom      side projects     ║
-# ║   Sunday       ZenMint OS         Satori       chill (but code)  ║
-# ║                                                                  ║
-# ║   * This README auto-rotates at midnight IST via GitHub Actions  ║
-# ║   * Each distro has its own kernel, colors, and personality      ║
-# ║   * Come back tomorrow to see a different OS boot up             ║
-# ║                                                                  ║
-# ║   TODAY: Friday — GoldRush OS v40.1 "Midas"
-# ║                                                                  ║
-# ╚══════════════════════════════════════════════════════════════════╝
-```
-
-```
-varshuai@mass-coder:~$ _
-```
-
 </details>
 
 ---
 
+<!-- NEOFETCH -->
 <div align="center">
 
-```
-varshuai@mass-coder:~$ neofetch
-```
+<img src="https://raw.githubusercontent.com/VarshuAi/VarshuAi/main/assets/neofetch.svg" width="100%" alt="neofetch"/>
 
-```
-                            varshuai@mass-coder
-        .--.               ─────────────────────
-       |o_o |              OS      GoldRush OS v40.1 "Midas"
-       |:_/ |              Kernel  6.8.0-goldrush
-      //   \ \             Shell   /bin/mass_code
-     (|     | )            Uptime  mass_days (since mass_day_one)
-    /'\_   _/`\            Repos   197+
-    \___)=(___/            Lang    Python, JS, TS, Go, Rust, C++,
-                                   Dart, Java, Kotlin, Bash, SQL
-                           Chai    filter > instant (always)
-                           Editor  VS Code / Vim (depends on mood)
-                           Theme   GoldRush OS [Friday]
-                           Status  Ship it. Its Friday. YOLO.
-```
-
-```
-varshuai@mass-coder:~$ uptime
- mass_time up mass_days, 1 user, mass_load average: coding, coding, coding
-
-varshuai@mass-coder:~$ echo "thanks for visiting. star a repo if you vibe."
-thanks for visiting. star a repo if you vibe.
-
-varshuai@mass-coder:~$ exit
-logout
-Connection to github.com/VarshuAi closed.
-```
-
-<br>
+<br><br>
 
 <img src="https://komarev.com/ghpvc/?username=VarshuAi&label=ssh+connections&style=flat-square&color=FFD700" alt="visitors">
 
 <br>
 
-<sub><code>VarshuOS v40.1 "Midas" | kernel 6.8.0-goldrush | auto-rotated on 12 Jun 2026 | powered by mass chai</code></sub>
+<sub><code>VarshuOS v40.1 "Midas" | 6.8.0-goldrush | rotated 12 Jun 2026 | powered by mass chai</code></sub>
 
 <br>
 

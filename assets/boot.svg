@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="662" viewBox="0 0 850 662">
+  <style>
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+    @keyframes scanline { 0% { top: 0; } 100% { top: 100%; } }
+    @keyframes glowPulse { 0%,100% { opacity: 0.3; } 50% { opacity: 0.6; } }
+    
+    @keyframes bar0 { from { width: 0; } to { width: 111px; } }
+    @keyframes bar1 { from { width: 0; } to { width: 108px; } }
+    @keyframes bar2 { from { width: 0; } to { width: 104px; } }
+    @keyframes bar3 { from { width: 0; } to { width: 98px; } }
+    @keyframes bar4 { from { width: 0; } to { width: 90px; } }
+    @keyframes bar5 { from { width: 0; } to { width: 114px; } }
+    @keyframes bar6 { from { width: 0; } to { width: 110px; } }
+    @keyframes bar7 { from { width: 0; } to { width: 120px; } }
+    @keyframes bar8 { from { width: 0; } to { width: 118px; } }
+
+    .bg { fill: #0D1117; }
+    .border { fill: none; stroke: #FFD700; stroke-width: 1; opacity: 0.3; }
+    .title { font-family: 'Courier New', monospace; font-size: 14px; font-weight: bold; fill: #FFD700; }
+    .bios { font-family: 'Courier New', monospace; font-size: 13px; fill: #8B949E; animation: fadeIn 0.3s forwards; opacity: 0; }
+    .ok { fill: #FFD700; font-weight: bold; }
+    .log { font-family: 'Courier New', monospace; font-size: 12px; fill: #FFE066; animation: fadeIn 0.5s forwards; opacity: 0; }
+    .header { font-family: 'Courier New', monospace; font-size: 11px; fill: #FFD700; opacity: 0.5; }
+    .cursor { font-family: 'Courier New', monospace; font-size: 13px; fill: #FFD700; animation: blink 1s infinite; }
+    .motd { font-family: 'Courier New', monospace; font-size: 14px; fill: #FFD700; font-weight: bold; animation: fadeIn 0.5s forwards; opacity: 0; }
+    .glow { fill: #FFD70055; filter: blur(40px); animation: glowPulse 3s infinite; }
+  </style>
+
+  <!-- Background -->
+  <rect width="850" height="662" class="bg"/>
+  <rect x="5" y="5" width="840" height="652" rx="8" class="border"/>
+
+  <!-- Glow effect -->
+  <ellipse cx="425" cy="50" rx="200" ry="30" class="glow"/>
+
+  <!-- BIOS Header -->
+  <text x="30" y="35" class="title">VARSHUOS BIOS v4.20.69</text>
+  <text x="620" y="35" class="header">GoldRush OS 40.1</text>
+  <line x1="30" y1="45" x2="820" y2="45" stroke="#FFD700" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- System Checks -->
+  <text x="30" y="75" class="bios" style="animation-delay:0.1s">  CPU      : Varshan Gowda @ mass_clock_speed          <tspan class="ok">[  OK  ]</tspan></text>
+  <text x="30" y="100" class="bios" style="animation-delay:0.2s">  RAM      : Mass Creativity (Unlimited GB)             <tspan class="ok">[  OK  ]</tspan></text>
+  <text x="30" y="125" class="bios" style="animation-delay:0.3s">  GPU      : Imagination RTX 9090 Ti                    <tspan class="ok">[  OK  ]</tspan></text>
+  <text x="30" y="150" class="bios" style="animation-delay:0.4s">  STORAGE  : 197+ Repositories (Expanding...)           <tspan class="ok">[  OK  ]</tspan></text>
+  <text x="30" y="175" class="bios" style="animation-delay:0.5s">  NETWORK  : Connected to Open Source Network           <tspan class="ok">[  OK  ]</tspan></text>
+  <text x="30" y="200" class="bios" style="animation-delay:0.6s">  CHAI     : Filter Coffee Module Loaded                <tspan class="ok">[  OK  ]</tspan></text>
+  <text x="30" y="225" class="bios" style="animation-delay:0.7s">  AUDIO    : Lo-fi Hip Hop Radio                        <tspan class="ok">[  OK  ]</tspan></text>
+  <text x="30" y="250" class="bios" style="animation-delay:0.8s">  CLOCK    : 3:00 AM (Normal Operating Hours)           <tspan class="ok">[  OK  ]</tspan></text>
+
+  <line x1="30" y1="265" x2="820" y2="265" stroke="#FFD700" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Kernel Boot -->
+  <text x="30" y="290" class="title" style="animation: fadeIn 0.5s forwards; opacity:0; animation-delay:1.2s">Booting GoldRush OS v40.1 "Midas"  //  Kernel 6.8.0-goldrush</text>
+
+  <!-- Module Loading with animated bars -->
+  
+    <text x="30" y="310" class="log" style="animation-delay:1.5s">[  93%  ] Loading python3.12</text>
+    <rect x="520" y="298" width="0" height="14" rx="2" fill="#FFD700" opacity="0.8">
+      <animate attributeName="width" from="0" to="111" dur="0.8s" begin="1.5s" fill="freeze"/>
+    </rect>
+    <rect x="520" y="298" width="111" height="14" rx="2" fill="#FFD700" opacity="0.15"/>
+    <text x="30" y="338" class="log" style="animation-delay:1.9s">[  90%  ] Loading javascript-v8</text>
+    <rect x="520" y="326" width="0" height="14" rx="2" fill="#FFD700" opacity="0.8">
+      <animate attributeName="width" from="0" to="108" dur="0.8s" begin="1.9s" fill="freeze"/>
+    </rect>
+    <rect x="520" y="326" width="108" height="14" rx="2" fill="#FFD700" opacity="0.15"/>
+    <text x="30" y="366" class="log" style="animation-delay:2.3s">[  87%  ] Loading typescript-strict</text>
+    <rect x="520" y="354" width="0" height="14" rx="2" fill="#FFD700" opacity="0.8">
+      <animate attributeName="width" from="0" to="104" dur="0.8s" begin="2.3s" fill="freeze"/>
+    </rect>
+    <rect x="520" y="354" width="104" height="14" rx="2" fill="#FFD700" opacity="0.15"/>
+    <text x="30" y="394" class="log" style="animation-delay:2.7s">[  82%  ] Loading golang-1.22</text>
+    <rect x="520" y="382" width="0" height="14" rx="2" fill="#FFD700" opacity="0.8">
+      <animate attributeName="width" from="0" to="98" dur="0.8s" begin="2.7s" fill="freeze"/>
+    </rect>
+    <rect x="520" y="382" width="98" height="14" rx="2" fill="#FFD700" opacity="0.15"/>
+    <text x="30" y="422" class="log" style="animation-delay:3.1s">[  75%  ] Loading rust-nightly</text>
+    <rect x="520" y="410" width="0" height="14" rx="2" fill="#FFD700" opacity="0.8">
+      <animate attributeName="width" from="0" to="90" dur="0.8s" begin="3.1s" fill="freeze"/>
+    </rect>
+    <rect x="520" y="410" width="90" height="14" rx="2" fill="#FFD700" opacity="0.15"/>
+    <text x="30" y="450" class="log" style="animation-delay:3.5s">[  95%  ] Loading security-toolkit</text>
+    <rect x="520" y="438" width="0" height="14" rx="2" fill="#FFD700" opacity="0.8">
+      <animate attributeName="width" from="0" to="114" dur="0.8s" begin="3.5s" fill="freeze"/>
+    </rect>
+    <rect x="520" y="438" width="114" height="14" rx="2" fill="#FFD700" opacity="0.15"/>
+    <text x="30" y="478" class="log" style="animation-delay:3.9000000000000004s">[  92%  ] Loading docker-engine</text>
+    <rect x="520" y="466" width="0" height="14" rx="2" fill="#FFD700" opacity="0.8">
+      <animate attributeName="width" from="0" to="110" dur="0.8s" begin="3.9000000000000004s" fill="freeze"/>
+    </rect>
+    <rect x="520" y="466" width="110" height="14" rx="2" fill="#FFD700" opacity="0.15"/>
+    <text x="30" y="506" class="log" style="animation-delay:4.300000000000001s">[  100%  ] Loading chai-brewing-engine</text>
+    <rect x="520" y="494" width="0" height="14" rx="2" fill="#FFD700" opacity="0.8">
+      <animate attributeName="width" from="0" to="120" dur="0.8s" begin="4.300000000000001s" fill="freeze"/>
+    </rect>
+    <rect x="520" y="494" width="120" height="14" rx="2" fill="#FFD700" opacity="0.15"/>
+    <text x="30" y="534" class="log" style="animation-delay:4.7s">[  99%  ] Loading mass-uploader-daemon</text>
+    <rect x="520" y="522" width="0" height="14" rx="2" fill="#FFD700" opacity="0.8">
+      <animate attributeName="width" from="0" to="118" dur="0.8s" begin="4.7s" fill="freeze"/>
+    </rect>
+    <rect x="520" y="522" width="118" height="14" rx="2" fill="#FFD700" opacity="0.15"/>
+
+  <!-- Final -->
+  <text x="30" y="582" class="motd" style="animation-delay:5.6s">&gt; Ship it. Its Friday. YOLO.</text>
+  <text x="30" y="612" class="bios" style="animation-delay:5.8999999999999995s">varshuai@mass-coder:~$ <tspan class="cursor">_</tspan></text>
+
+  <!-- Scanline overlay -->
+  <rect x="0" y="0" width="850" height="2" fill="#FFD700" opacity="0.03">
+    <animate attributeName="y" from="0" to="662" dur="4s" repeatCount="indefinite"/>
+  </rect>
+</svg>
