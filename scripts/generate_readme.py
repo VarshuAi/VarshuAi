@@ -1,314 +1,472 @@
 """
-🎨 VarshuAi README Theme Rotator
-─────────────────────────────────
-Generates 7 unique themed README.md files — one for each day of the week.
-Run via GitHub Actions cron or manually with: python scripts/generate_readme.py
+VarshuOS — A Fake Operating System as a GitHub README
+─────────────────────────────────────────────────────
+Your profile IS a computer. Visitors watch it boot up,
+login, and can click "apps" to explore sections.
+
+Each day of the week = a different Linux distro theme.
 """
 
 import datetime
 import os
 import urllib.parse
 
-# ──────────────────────────────────────────────
-# TIMEZONE: IST (UTC+5:30)
-# ──────────────────────────────────────────────
 IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 today = datetime.datetime.now(IST)
-day = today.strftime("%A")  # Monday, Tuesday, etc.
+day = today.strftime("%A")
+date_str = today.strftime("%a %b %d %H:%M:%S IST %Y")
+short_date = today.strftime("%d %b %Y")
 
-# ──────────────────────────────────────────────
-# THEME CONFIGS — colors, moods, vibes per day
-# ──────────────────────────────────────────────
+# ── DAILY DISTRO THEMES ──────────────────────────────
 
-THEMES = {
-    "Monday": {
-        "name": "WARZONE",
-        "emoji": "🔴",
-        "icon": "⚔️",
-        "header_gradient": "0:0D1117,30:8B0000,60:FF0000,100:0D1117",
-        "accent": "FF0000",
-        "accent2": "FF6B6B",
-        "text": "C9D1D9",
-        "border": "8B0000",
-        "bg": "0D1117",
-        "vibe": "ATTACK MODE ACTIVATED",
-        "mood": "Monday doesn't scare me. I scare Monday.",
-        "typing_lines": [
-            "$ chai --load && mass_coding --begin",
-            "Monday? More like MONSTERday. Let's build.",
-            "new week = new repos. no excuses.",
-            "shipping code before the world wakes up.",
-        ],
-        "ascii_top": """
- ███╗   ███╗ ██████╗ ███╗   ██╗██████╗  █████╗ ██╗   ██╗
- ████╗ ████║██╔═══██╗████╗  ██║██╔══██╗██╔══██╗╚██╗ ██╔╝
- ██╔████╔██║██║   ██║██╔██╗ ██║██║  ██║███████║ ╚████╔╝ 
- ██║╚██╔╝██║██║   ██║██║╚██╗██║██║  ██║██╔══██║  ╚██╔╝  
- ██║ ╚═╝ ██║╚██████╔╝██║ ╚████║██████╔╝██║  ██║   ██║   
- ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝   ╚═╝   """,
-        "quote": "Mondays are for those who have unfinished code from Sunday night.",
-        "status": "🔴 LOCKED IN — DO NOT DISTURB",
-    },
-    "Tuesday": {
-        "name": "DEEP OCEAN",
-        "emoji": "🔵",
-        "icon": "🌊",
-        "header_gradient": "0:0D1117,30:001F54,60:0074D9,100:0D1117",
-        "accent": "0074D9",
-        "accent2": "7FDBFF",
-        "text": "C9D1D9",
-        "border": "001F54",
-        "bg": "0D1117",
-        "vibe": "DEEP FOCUS ENGAGED",
-        "mood": "Silence. Keyboard. Code. Repeat.",
-        "typing_lines": [
-            "$ diving deep into the codebase...",
-            "flow_state = ON | distractions = OFF",
-            "brain.exe running at 100 percent. don't interrupt.",
-            "second chai hit different on Tuesdays.",
-        ],
-        "ascii_top": """
- ████████╗██╗   ██╗███████╗███████╗██████╗  █████╗ ██╗   ██╗
- ╚══██╔══╝██║   ██║██╔════╝██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝
-    ██║   ██║   ██║█████╗  ███████╗██║  ██║███████║ ╚████╔╝ 
-    ██║   ██║   ██║██╔══╝  ╚════██║██║  ██║██╔══██║  ╚██╔╝  
-    ██║   ╚██████╔╝███████╗███████║██████╔╝██║  ██║   ██║   
-    ╚═╝    ╚═════╝ ╚══════╝╚══════╝╚═════╝ ╚═╝  ╚═╝   ╚═╝   """,
-        "quote": "The code doesn't care what day it is. Neither do I.",
-        "status": "🔵 IN THE ZONE — BUILDING SOMETHING",
-    },
-    "Wednesday": {
-        "name": "NEON ARCADE",
-        "emoji": "🟣",
-        "icon": "🕹️",
-        "header_gradient": "0:0D1117,25:6C0BA9,50:FF00FF,75:6C0BA9,100:0D1117",
-        "accent": "FF00FF",
-        "accent2": "DA70D6",
-        "text": "C9D1D9",
-        "border": "6C0BA9",
-        "bg": "0D1117",
-        "vibe": "MIDWEEK MADNESS",
-        "mood": "Halfway through the week. Code output: MAXIMUM.",
-        "typing_lines": [
-            "wednesday = level 4 of 7. boss fight incoming.",
-            "midweek energy? nah, EVERY day energy.",
-            "code hits different at 2 AM with lo-fi on.",
-            "treating every bug like a game boss -- and winning.",
-        ],
-        "ascii_top": """
- ██╗    ██╗███████╗██████╗ ███╗   ██╗███████╗███████╗██████╗  █████╗ ██╗   ██╗
- ██║    ██║██╔════╝██╔══██╗████╗  ██║██╔════╝██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝
- ██║ █╗ ██║█████╗  ██║  ██║██╔██╗ ██║█████╗  ███████╗██║  ██║███████║ ╚████╔╝ 
- ██║███╗██║██╔══╝  ██║  ██║██║╚██╗██║██╔══╝  ╚════██║██║  ██║██╔══██║  ╚██╔╝  
- ╚███╔███╔╝███████╗██████╔╝██║ ╚████║███████╗███████║██████╔╝██║  ██║   ██║   
-  ╚══╝╚══╝ ╚══════╝╚═════╝ ╚═╝  ╚═══╝╚══════╝╚══════╝╚═════╝ ╚═╝  ╚═╝   ╚═╝""",
-        "quote": "Wednesday: too late to quit, too early to celebrate. Just code.",
-        "status": "🟣 CODING THROUGH THE CHAOS",
-    },
-    "Thursday": {
-        "name": "EMERALD FOREST",
-        "emoji": "🟢",
-        "icon": "🌿",
-        "header_gradient": "0:0D1117,30:0B3D0B,60:00FF41,100:0D1117",
-        "accent": "00FF41",
-        "accent2": "A8E6CF",
-        "text": "C9D1D9",
-        "border": "0B3D0B",
-        "bg": "0D1117",
-        "vibe": "GROWTH MODE",
-        "mood": "Plant seeds today. Watch them compile tomorrow.",
-        "typing_lines": [
-            "$ growing one commit at a time.",
-            "thursday = almost there. keep pushing.",
-            "every project starts with one git init.",
-            "filter coffee is greater than energy drink. always.",
-        ],
-        "ascii_top": """
- ████████╗██╗  ██╗██╗   ██╗██████╗ ███████╗██████╗  █████╗ ██╗   ██╗
- ╚══██╔══╝██║  ██║██║   ██║██╔══██╗██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝
-    ██║   ███████║██║   ██║██████╔╝███████╗██║  ██║███████║ ╚████╔╝ 
-    ██║   ██╔══██║██║   ██║██╔══██╗╚════██║██║  ██║██╔══██║  ╚██╔╝  
-    ██║   ██║  ██║╚██████╔╝██║  ██║███████║██████╔╝██║  ██║   ██║   
-    ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═════╝ ╚═╝  ╚═╝   ╚═╝""",
-        "quote": "Code is the tree. The repo is the forest. Keep planting.",
-        "status": "🟢 SPROUTING NEW IDEAS",
-    },
-    "Friday": {
-        "name": "GOLDEN HOUR",
-        "emoji": "🟡",
-        "icon": "🏆",
-        "header_gradient": "0:0D1117,25:B8860B,50:FFD700,75:B8860B,100:0D1117",
-        "accent": "FFD700",
-        "accent2": "FFE066",
-        "text": "C9D1D9",
-        "border": "B8860B",
-        "bg": "0D1117",
-        "vibe": "VICTORY LAP",
-        "mood": "Friday night = deploy night. Ship it and chill.",
-        "typing_lines": [
-            "$ friday deploy? living on the edge.",
-            "week survived. code shipped. chai earned.",
-            "pushing to main on friday because YOLO.",
-            "weekend loading... but first, one more commit.",
-        ],
-        "ascii_top": """
- ███████╗██████╗ ██╗██████╗  █████╗ ██╗   ██╗
- ██╔════╝██╔══██╗██║██╔══██╗██╔══██╗╚██╗ ██╔╝
- █████╗  ██████╔╝██║██║  ██║███████║ ╚████╔╝ 
- ██╔══╝  ██╔══██╗██║██║  ██║██╔══██║  ╚██╔╝  
- ██║     ██║  ██║██║██████╔╝██║  ██║   ██║   
- ╚═╝     ╚═╝  ╚═╝╚═╝╚═════╝ ╚═╝  ╚═╝   ╚═╝   """,
-        "quote": "The weekend belongs to those who shipped on Friday.",
-        "status": "🟡 SHIPPING & VIBING",
-    },
-    "Saturday": {
-        "name": "CYBER PUNK",
-        "emoji": "🩷",
-        "icon": "⚡",
-        "header_gradient": "0:0D1117,25:FF1493,50:00FFFF,75:FF1493,100:0D1117",
-        "accent": "FF1493",
-        "accent2": "00FFFF",
-        "text": "C9D1D9",
-        "border": "FF1493",
-        "bg": "0D1117",
-        "vibe": "WEEKEND WARRIOR",
-        "mood": "No deadlines. No pressure. Pure passion projects.",
-        "typing_lines": [
-            "saturday = side project day. let's get weird.",
-            "no boss. no deadline. just me and vim.",
-            "lo-fi + dark room + code = perfection.",
-            "building things nobody asked for. that's the fun.",
-        ],
-        "ascii_top": """
- ███████╗ █████╗ ████████╗██╗   ██╗██████╗ ██████╗  █████╗ ██╗   ██╗
- ██╔════╝██╔══██╗╚══██╔══╝██║   ██║██╔══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝
- ███████╗███████║   ██║   ██║   ██║██████╔╝██║  ██║███████║ ╚████╔╝ 
- ╚════██║██╔══██║   ██║   ██║   ██║██╔══██╗██║  ██║██╔══██║  ╚██╔╝  
- ███████║██║  ██║   ██║   ╚██████╔╝██║  ██║██████╔╝██║  ██║   ██║   
- ╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝   ╚═╝""",
-        "quote": "The best code is written when nobody's watching.",
-        "status": "🩷 HACKING ON PASSION PROJECTS",
-    },
-    "Sunday": {
-        "name": "SUNSET CHILL",
-        "emoji": "🟠",
-        "icon": "🌅",
-        "header_gradient": "0:0D1117,25:8B4513,50:FF6347,75:FF8C00,100:0D1117",
-        "accent": "FF6347",
-        "accent2": "FF8C00",
-        "text": "C9D1D9",
-        "border": "8B4513",
-        "bg": "0D1117",
-        "vibe": "REST & RECHARGE",
-        "mood": "Even machines need a reboot. But maybe one tiny commit...",
-        "typing_lines": [
-            "$ sunday chill... opens laptop anyway.",
-            "rest day = refactoring day. same thing right?",
-            "sunday morning chai + cleaning up old code.",
-            "today's commit: inner peace. and maybe a bugfix.",
-        ],
-        "ascii_top": """
- ███████╗██╗   ██╗███╗   ██╗██████╗  █████╗ ██╗   ██╗
- ██╔════╝██║   ██║████╗  ██║██╔══██╗██╔══██╗╚██╗ ██╔╝
- ███████╗██║   ██║██╔██╗ ██║██║  ██║███████║ ╚████╔╝ 
- ╚════██║██║   ██║██║╚██╗██║██║  ██║██╔══██║  ╚██╔╝  
- ███████║╚██████╔╝██║ ╚████║██████╔╝██║  ██║   ██║   
- ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝   ╚═╝   """,
-        "quote": "Rest is not the enemy of productivity. Burnout is.",
-        "status": "🟠 RECHARGING... (but probably coding)",
-    },
+DISTROS = {
+    "Monday":    {"distro": "RedStrike OS",  "ver": "14.2",  "kernel": "6.8.0-redstrike",   "accent": "FF0000", "accent2": "FF6B6B", "border": "8B0000", "codename": "Inferno",     "motd": "New week. New exploits. No mercy.", "pkg_mgr": "dnf"},
+    "Tuesday":   {"distro": "DeepBlue OS",   "ver": "12.1",  "kernel": "6.8.0-deepblue",    "accent": "0074D9", "accent2": "7FDBFF", "border": "001F54", "codename": "Abyss",       "motd": "Silence the noise. Enter the flow.", "pkg_mgr": "apt"},
+    "Wednesday": {"distro": "NeonArc OS",    "ver": "3.7",   "kernel": "6.8.0-neonarc",     "accent": "FF00FF", "accent2": "DA70D6", "border": "6C0BA9", "codename": "Glitch",      "motd": "Midweek. Maximum output. No excuses.", "pkg_mgr": "pacman"},
+    "Thursday":  {"distro": "ForestRoot OS", "ver": "22.04", "kernel": "6.8.0-forestroot",  "accent": "00FF41", "accent2": "A8E6CF", "border": "0B3D0B", "codename": "Banyan",      "motd": "Grow one commit at a time.", "pkg_mgr": "apt"},
+    "Friday":    {"distro": "GoldRush OS",   "ver": "40.1",  "kernel": "6.8.0-goldrush",    "accent": "FFD700", "accent2": "FFE066", "border": "B8860B", "codename": "Midas",       "motd": "Ship it. Its Friday. YOLO.", "pkg_mgr": "dnf"},
+    "Saturday":  {"distro": "CyberKali OS",  "ver": "2024.3","kernel": "6.8.0-cyberkali",   "accent": "00FFFF", "accent2": "FF1493", "border": "008B8B", "codename": "Phantom",     "motd": "No rules. No deadlines. Pure chaos.", "pkg_mgr": "apt"},
+    "Sunday":    {"distro": "ZenMint OS",    "ver": "21.3",  "kernel": "6.8.0-zenmint",     "accent": "FF6347", "accent2": "FF8C00", "border": "8B4513", "codename": "Satori",      "motd": "Rest day. Opens laptop anyway.", "pkg_mgr": "apt"},
 }
 
+d = DISTROS[day]
 
-def generate_typing_url(lines, color):
-    """Generate readme-typing-svg URL from list of lines."""
-    encoded_lines = [urllib.parse.quote(line, safe='') for line in lines]
-    lines_param = ";".join(encoded_lines)
-    return (
-        f"https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=18"
-        f"&duration=3000&pause=1000&color={color}&center=true&vCenter=true"
-        f"&multiline=true&repeat=true&random=false&width=700&height=80&lines={lines_param}"
-    )
-
-
-def build_readme(t):
-    """Build the full README markdown for a given theme dict."""
-    typing_url = generate_typing_url(t["typing_lines"], t["accent"])
-
-    return f"""<!-- 
-  🎨 AUTO-GENERATED by VarshuAi Theme Rotator
-  📅 Today's Theme: {t["emoji"]} {t["name"]} ({day})
-  🤖 This README changes every day. Come back tomorrow for a new vibe.
-  ⏰ Last rotated: {today.strftime("%d %b %Y, %I:%M %p IST")}
+readme = f"""<!--
+  VarshuOS v{d["ver"]} "{d["codename"]}" | Auto-rotated: {short_date}
+  This README IS an operating system. It boots daily into a new distro.
+  Come back tomorrow — it'll be a completely different OS.
 -->
 
 <div align="center">
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0D1117&height=1" width="100%"/>
+</div>
 
-<!-- HEADER WAVE -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color={t["header_gradient"]}&height=200&section=header&text=VARSHU+AI&fontSize=70&fontColor={t["accent"]}&animation=fadeIn&fontAlignY=33&desc={t["vibe"].replace(" ", "+")}&descAlignY=55&descSize=16&descColor={t["accent2"]}" width="100%"/>
+```
+                                                                              
+                                                                              
+  ██╗   ██╗ █████╗ ██████╗ ███████╗██╗  ██╗██╗   ██╗     ██████╗ ███████╗    
+  ██║   ██║██╔══██╗██╔══██╗██╔════╝██║  ██║██║   ██║    ██╔═══██╗██╔════╝    
+  ██║   ██║███████║██████╔╝███████╗███████║██║   ██║    ██║   ██║███████╗    
+  ╚██╗ ██╔╝██╔══██║██╔══██╗╚════██║██╔══██║██║   ██║    ██║   ██║╚════██║    
+   ╚████╔╝ ██║  ██║██║  ██║███████║██║  ██║╚██████╔╝    ╚██████╔╝███████║    
+    ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝      ╚═════╝ ╚══════╝    
+                                                                              
+```
 
-<!-- TYPING ANIMATION — changes with theme -->
-<br>
+```
+ ┌─────────────────────────────────────────────────────────────────────────┐
+ │                        VARSHUOS BIOS v4.20.69                          │
+ │─────────────────────────────────────────────────────────────────────────│
+ │                                                                         │
+ │  CPU      : Varshan Gowda @ mass_clock_speed          [  OK  ]         │
+ │  RAM      : Mass Creativity (Unlimited GB)             [  OK  ]         │
+ │  GPU      : Imagination RTX 9090 Ti                    [  OK  ]         │
+ │  STORAGE  : 197+ Repositories (Expanding...)           [  OK  ]         │
+ │  NETWORK  : Connected to Open Source Network           [  OK  ]         │
+ │  CHAI     : Filter Coffee Module Loaded                [  OK  ]         │
+ │                                                                         │
+ │  Keyboard : Indian Standard (Chai-Resistant)           [  OK  ]         │
+ │  Audio    : Lo-fi Hip Hop Radio                        [  OK  ]         │
+ │  Clock    : 3:00 AM (Normal Operating Hours)           [  OK  ]         │
+ │                                                                         │
+ │  All systems nominal. Booting {d["distro"]} v{d["ver"]}...                       │
+ │                                                                         │
+ └─────────────────────────────────────────────────────────────────────────┘
+```
 
-<a href="https://git.io/typing-svg"><img src="{typing_url}" alt="Typing SVG" /></a>
+```
+[    0.000000] VarshuOS kernel {d["kernel"]} booting...
+[    0.000001] Command line: BOOT_IMAGE=/vmlinuz root=/dev/mass_coding
+[    0.042069] India/Kolkata timezone loaded. Chai dependency resolved.
+[    0.100000] Loading distro: {d["distro"]} v{d["ver"]} "{d["codename"]}"
+[    0.200000] Mounting /dev/github ... 197+ repos found
+[    0.300000] Mounting /dev/brain ... creativity: UNLIMITED
+[    0.400000] Loading module: python3.12 .................... [ OK ]
+[    0.410000] Loading module: javascript-v8 ................. [ OK ]
+[    0.420000] Loading module: typescript-strict .............. [ OK ]
+[    0.430000] Loading module: golang-1.22 ................... [ OK ]
+[    0.440000] Loading module: rust-nightly .................. [ OK ]
+[    0.450000] Loading module: security-toolkit .............. [ OK ]
+[    0.460000] Loading module: chai-brewing-engine ........... [ OK ]
+[    0.500000] Loading module: mass-uploader-daemon .......... [ OK ]
+[    0.600000] Network: GitHub API connected (rate limit: mass_pushing)
+[    0.700000] Starting display manager...
+[    0.800000] Welcome to {d["distro"]}. {d["motd"]}
+[    1.000000] Login: varshuai | Shell: /bin/mass_code
+```
 
-<br>
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│  {d["distro"]} v{d["ver"]} "{d["codename"]}"                                               │
+│  {date_str}                                              │
+│                                                                         │
+│  varshuai@mass-coder:~$                                                 │
+│                                                                         │
+│  Welcome back, Varshan.                                                 │
+│  Today is {day}. Distro: {d["distro"]}.                                      │
+│  "{d["motd"]}"                                                │
+│                                                                         │
+│  Last login: yesterday from mass-coding-session                         │
+│  Repos: 197+ | Languages: 11 | Uptime: mass_days                       │
+│  Chai consumed today: yes                                               │
+│                                                                         │
+│  Type 'help' or click an app below to explore.                          │
+└─────────────────────────────────────────────────────────────────────────┘
+```
 
-<!-- TODAY'S MOOD BADGE -->
-<img src="https://img.shields.io/badge/{day.upper()}-{t["name"].replace(" ", "_")}-{t["accent"]}?style=for-the-badge&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/STATUS-{t["status"].split(" ", 1)[1].replace(" ", "_").replace("—", "-")}-{t["accent2"]}?style=for-the-badge&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/THEME_ROTATES-DAILY_🔄-{t["accent"]}?style=for-the-badge&labelColor=0D1117" />
+<div align="center">
 
-<br><br>
-
-> **{t["icon"]} `{t["mood"]}`**
-
-<br>
+> **`{d["distro"]} v{d["ver"]}`** · `Kernel: {d["kernel"]}`  · `Theme rotates daily across 7 distros` · `Today: {day}`
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════ -->
-<!--                      WHO AM I                               -->
-<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- ═══════════ DESKTOP — CLICKABLE APPS ═══════════ -->
 
-## {t["emoji"]} `// WHO AM I`
-
-<img align="right" src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/gifs/code.gif" width="300px"/>
-
-```yaml
-┌──────────────────────────────────────────────┐
-│  name       : Varshan Gowda                  │
-│  aka        : VarshuAi                       │
-│  from       : India 🇮🇳                       │
-│  vibe       : coding enthusiast              │
-│  student    : nah. just a guy who codes.     │
-│  why        : because it's fun, that's why   │
-│                                              │
-│  what I do:                                  │
-│    → build stuff nobody asked for            │
-│    → upload it at 3 AM                       │
-│    → mass upload repos like a madman         │
-│    → drink chai, repeat                      │
-│                                              │
-│  languages  : 11 and counting               │
-│  repos      : 197+ (and I'm not stopping)   │
-│  motto      : "just build it bro"           │
-│                                              │
-│  today      : {day}                    │
-│  theme      : {t["emoji"]} {t["name"]:<20}         │
-│  status     : {t["status"]:<30} │
-└──────────────────────────────────────────────┘
-```
-
-<br clear="both"/>
-
-> 🇮🇳 *Indian guy who just loves coding. No fancy title. No degree flex. I see a problem → I build a solution → I upload it. That's the whole story.*
+<details>
+<summary><b>📂 /home/varshuai/about.txt</b> — <i>cat about.txt</i></summary>
 
 <br>
 
-<!-- SNAKE ANIMATION -->
+```
+varshuai@mass-coder:~$ cat about.txt
+```
+
+```yaml
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │                                                             │
+  │  Name        Varshan Gowda                                  │
+  │  Handle      @VarshuAi                                      │
+  │  Location    India                                          │
+  │  Title       just a guy who codes                           │
+  │  Student     nope                                           │
+  │  Degree      doesn't matter                                 │
+  │  Why I code  because its fun                                │
+  │                                                             │
+  │  What I actually do:                                        │
+  │    > see a problem                                          │
+  │    > build a solution                                       │
+  │    > mass upload to GitHub at 3 AM                          │
+  │    > drink chai                                             │
+  │    > repeat                                                 │
+  │                                                             │
+  │  Repos       197+ and counting                              │
+  │  Languages   11 (lost count honestly)                       │
+  │  Sleep       optional                                       │
+  │  Chai        mandatory                                      │
+  │                                                             │
+  │  I'm not a "developer" or an "engineer".                    │
+  │  I'm an Indian guy who just loves coding                    │
+  │  and uploading stuff. That's the whole bio.                 │
+  │                                                             │
+  └─────────────────────────────────────────────────────────────┘
+
+```
+
+```
+varshuai@mass-coder:~$ _
+```
+
+</details>
+
+---
+
+<details>
+<summary><b>📦 /usr/bin/{d["pkg_mgr"]}</b> — <i>{d["pkg_mgr"]} list --installed</i> (Tech Stack)</summary>
+
+<br>
+
+```
+varshuai@mass-coder:~$ {d["pkg_mgr"]} list --installed | grep -E "(lang|framework|tool)"
+```
+
+```apache
+PACKAGE                          VERSION        STATUS       PROFICIENCY
+─────────────────────────────────────────────────────────────────────────
+python3                          3.12.4         installed    ████████████████████ 93%
+javascript/node                  22.0.0         installed    ███████████████████░ 90%
+typescript                       5.5.0          installed    ██████████████████░░ 87%
+golang                           1.22.0         installed    █████████████████░░░ 82%
+rust                             nightly        installed    ███████████████░░░░░ 75%
+cpp/gcc                          14.0.0         installed    ████████████████░░░░ 78%
+dart                             3.4.0          installed    ████████████████░░░░ 80%
+java/openjdk                     21.0.0         installed    █████████████████░░░ 85%
+kotlin                           2.0.0          installed    ████████████████░░░░ 76%
+bash                             5.2.0          installed    ███████████████████░ 90%
+sql/postgresql                   16.0           installed    █████████████████░░░ 85%
+```
+
+```
+varshuai@mass-coder:~$ {d["pkg_mgr"]} list --installed | grep "framework"
+```
+
+```apache
+PACKAGE                          VERSION        STATUS       TYPE
+─────────────────────────────────────────────────────────────────────────
+react                            18.3.0         installed    frontend
+nextjs                           14.2.0         installed    fullstack
+nodejs/express                   4.19.0         installed    backend
+fastapi                          0.111.0        installed    backend
+flask                            3.0.0          installed    backend
+django                           5.0.0          installed    backend
+flutter                          3.22.0         installed    mobile
+tailwindcss                      3.4.0          installed    css
+vue                              3.4.0          installed    frontend
+svelte                           4.2.0          installed    frontend
+graphql                          16.8.0         installed    api
+```
+
+```
+varshuai@mass-coder:~$ {d["pkg_mgr"]} list --installed | grep "cloud"
+```
+
+```apache
+PACKAGE                          VERSION        STATUS
+─────────────────────────────────────────────────────────────────
+aws-cli                          2.15.0         installed
+gcloud-sdk                       472.0          installed
+azure-cli                        2.60.0         installed
+firebase-tools                   13.0.0         installed
+docker-ce                        26.0.0         installed
+kubectl                          1.30.0         installed
+terraform                        1.8.0          installed
+```
+
+```
+varshuai@mass-coder:~$ {d["pkg_mgr"]} list --installed | grep "ai"
+```
+
+```apache
+PACKAGE                          VERSION        STATUS
+─────────────────────────────────────────────────────────────────
+tensorflow                       2.16.0         installed
+pytorch                          2.3.0          installed
+openai-sdk                       1.30.0         installed
+huggingface-hub                  0.23.0         installed
+langchain                        0.2.0          installed
+```
+
+```
+varshuai@mass-coder:~$ echo "total packages: mass_amount"
+total packages: mass_amount
+varshuai@mass-coder:~$ _
+```
+
+</details>
+
+---
+
+<details>
+<summary><b>🔐 /opt/security-arsenal</b> — <i>ls -la /opt/security-arsenal/</i></summary>
+
+<br>
+
+```
+varshuai@mass-coder:~$ ls -la /opt/security-arsenal/
+total 150+
+```
+
+```
+drwxr-xr-x  varshuai  recon/
+  ├── nmap                    # network discovery & port scanning
+  ├── masscan                 # mass IP port scanner  
+  ├── amass                   # subdomain enumeration
+  ├── subfinder               # passive subdomain discovery
+  └── shodan-cli              # internet-wide scanning
+
+drwxr-xr-x  varshuai  exploitation/
+  ├── metasploit-framework    # penetration testing framework
+  ├── sqlmap                  # SQL injection automation
+  ├── burpsuite-pro           # web vulnerability scanner
+  ├── cobalt-strike           # adversary simulation
+  └── hydra                   # brute force tool
+
+drwxr-xr-x  varshuai  analysis/
+  ├── wireshark               # packet analysis
+  ├── ghidra                  # reverse engineering (NSA)
+  ├── ida-pro                 # disassembler
+  ├── radare2                 # RE framework
+  └── volatility              # memory forensics
+
+drwxr-xr-x  varshuai  wireless/
+  ├── aircrack-ng             # WiFi security auditing
+  ├── wifite                  # automated wireless attack
+  └── bettercap               # MITM framework
+
+drwxr-xr-x  varshuai  web/
+  ├── owasp-zap               # web app scanner
+  ├── nikto                   # web server scanner
+  ├── ffuf                    # web fuzzer
+  └── nuclei                  # vulnerability scanner
+
+drwxr-xr-x  varshuai  osint/
+  ├── maltego                 # OSINT & graphing
+  ├── theHarvester            # email/domain recon
+  └── sherlock                # social media hunter
+
+150+ tools loaded. arsenal status: ARMED.
+```
+
+```
+varshuai@mass-coder:~$ _
+```
+
+</details>
+
+---
+
+<details>
+<summary><b>📊 /proc/github-stats</b> — <i>cat /proc/github-stats</i> (Live Metrics)</summary>
+
+<br>
+
+```
+varshuai@mass-coder:~$ cat /proc/github-stats
+```
+
+<div align="center">
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <a href="https://github.com/VarshuAi">
+        <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=VarshuAi&show_icons=true&bg_color=0D1117&border_color={d["border"]}&title_color={d["accent"]}&icon_color={d["accent2"]}&text_color=8B949E&count_private=true&include_all_commits=true" alt="Stats" height="195px">
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/VarshuAi">
+        <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=VarshuAi&layout=compact&bg_color=0D1117&border_color={d["border"]}&title_color={d["accent"]}&text_color=8B949E&langs_count=10&card_width=400" alt="Langs" height="195px">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <br>
+      <img src="https://streak-stats.demolab.com?user=VarshuAi&background=0D1117&border={d["border"]}&ring={d["accent"]}&fire={d["accent2"]}&currStreakLabel={d["accent2"]}&sideLabels={d["accent"]}&currStreakNum=C9D1D9&sideNums=C9D1D9&dates=555555" alt="Streak" height="195px">
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=VarshuAi&bg_color=0D1117&color={d["accent"]}&line={d["accent2"]}&point={d["accent"]}&area_color={d["accent"]}22&area=true&hide_border=true&custom_title=varshuai@mass-coder:~$+cat+/var/log/commits.log" width="98%">
+
+</div>
+
+```
+varshuai@mass-coder:~$ _
+```
+
+</details>
+
+---
+
+<details>
+<summary><b>📁 /home/varshuai/projects/</b> — <i>ls -la ~/projects/</i> (Featured Work)</summary>
+
+<br>
+
+```
+varshuai@mass-coder:~$ ls -la ~/projects/
+
+drwxr-xr-x  varshuai  go-ssh-auditor/       # SSH security audit tool
+drwxr-xr-x  varshuai  py-packet-sniffer/    # raw socket packet capture
+drwxr-xr-x  varshuai  rust-port-scanner/    # async port scanner
+drwxr-xr-x  varshuai  bash-sys-monitor/     # system monitoring dashboard
+drwxr-xr-x  varshuai  ...194 more repos...  # I told you, MASS uploads
+```
+
+<div align="center">
+
+<table>
+<tr>
+<td width="50%">
+<a href="https://github.com/VarshuAi/go-ssh-auditor"><img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=go-ssh-auditor&bg_color=0D1117&border_color={d["border"]}&title_color={d["accent"]}&icon_color={d["accent2"]}&text_color=8B949E" alt="go-ssh-auditor"></a>
+</td>
+<td width="50%">
+<a href="https://github.com/VarshuAi/py-packet-sniffer"><img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=py-packet-sniffer&bg_color=0D1117&border_color={d["border"]}&title_color={d["accent"]}&icon_color={d["accent2"]}&text_color=8B949E" alt="py-packet-sniffer"></a>
+</td>
+</tr>
+<tr>
+<td width="50%">
+<a href="https://github.com/VarshuAi/rust-port-scanner"><img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=rust-port-scanner&bg_color=0D1117&border_color={d["border"]}&title_color={d["accent"]}&icon_color={d["accent2"]}&text_color=8B949E" alt="rust-port-scanner"></a>
+</td>
+<td width="50%">
+<a href="https://github.com/VarshuAi/bash-sys-monitor"><img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=bash-sys-monitor&bg_color=0D1117&border_color={d["border"]}&title_color={d["accent"]}&icon_color={d["accent2"]}&text_color=8B949E" alt="bash-sys-monitor"></a>
+</td>
+</tr>
+</table>
+
+</div>
+
+```
+varshuai@mass-coder:~$ _
+```
+
+</details>
+
+---
+
+<details>
+<summary><b>🗺️ /etc/varshuai/domains.conf</b> — <i>cat /etc/varshuai/domains.conf</i></summary>
+
+<br>
+
+```
+varshuai@mass-coder:~$ cat /etc/varshuai/domains.conf
+```
+
+```nginx
+# ╔═══════════════════════════════════════════════════════════════════╗
+# ║               VARSHUAI COMPETENCY MAP                            ║
+# ╠═══════════════════════════════════════════════════════════════════╣
+# ║                                                                   ║
+# ║   DOMAIN              SKILLS                       LEVEL          ║
+# ║   ─────────────────────────────────────────────────────────       ║
+# ║                                                                   ║
+# ║   Security            Pentesting, Vuln Research,   ██████ EXPERT  ║
+# ║                       SIEM, Red Teaming                           ║
+# ║                                                                   ║
+# ║   Backend             Microservices, APIs,         ██████ EXPERT  ║
+# ║                       Distributed Systems                         ║
+# ║                                                                   ║
+# ║   DevOps              CI/CD, IaC, K8s,             ██████ EXPERT  ║
+# ║                       Container Orchestration                     ║
+# ║                                                                   ║
+# ║   Cloud               Multi-cloud, Serverless,     ██████ EXPERT  ║
+# ║                       AWS + GCP + Azure                           ║
+# ║                                                                   ║
+# ║   Frontend            React, Next.js, Vue,         █████░ ADV     ║
+# ║                       Animation, WebGL                            ║
+# ║                                                                   ║
+# ║   AI/ML               NLP, CV, LLM Fine-tuning,   █████░ ADV     ║
+# ║                       RAG, Agents                                 ║
+# ║                                                                   ║
+# ║   Mobile              Flutter, React Native,       █████░ ADV     ║
+# ║                       Native Android                              ║
+# ║                                                                   ║
+# ╚═══════════════════════════════════════════════════════════════════╝
+```
+
+```
+varshuai@mass-coder:~$ _
+```
+
+</details>
+
+---
+
+<details>
+<summary><b>🐍 /var/log/contributions.log</b> — <i>tail -f /var/log/contributions.log</i></summary>
+
+<br>
+
+```
+varshuai@mass-coder:~$ tail -f /var/log/contributions.log
+```
+
 <div align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake-dark.svg">
@@ -317,236 +475,113 @@ def build_readme(t):
 </picture>
 </div>
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-<!-- ═══════════════════════════════════════════════════════════ -->
-<!--                     WHAT I USE                              -->
-<!-- ═══════════════════════════════════════════════════════════ -->
-
-## {t["emoji"]} `// WHAT I CODE WITH`
-
-<div align="center">
-
-#### `⚡ LANGUAGES I THINK IN`
-
-<p>
-  <img src="https://skillicons.dev/icons?i=python,javascript,typescript,go,rust,cpp,dart,java,kotlin,bash&perline=10&theme=dark" />
-</p>
-
-#### `🛠️ FRAMEWORKS I BUILD WITH`
-
-<p>
-  <img src="https://skillicons.dev/icons?i=react,nextjs,nodejs,express,fastapi,flask,django,flutter,tailwind,vue,svelte,graphql&perline=12&theme=dark" />
-</p>
-
-#### `🔐 SECURITY & INFRA`
-
-<p>
-  <img src="https://skillicons.dev/icons?i=kali,docker,kubernetes,terraform,githubactions,linux,nginx,ansible&perline=8&theme=dark" />
-</p>
-
-#### `☁️ CLOUD & DATA`
-
-<p>
-  <img src="https://skillicons.dev/icons?i=aws,gcp,azure,firebase,mongodb,postgres,redis,supabase&perline=8&theme=dark" />
-</p>
-
-#### `🧠 AI & ML`
-
-<p>
-  <img src="https://skillicons.dev/icons?i=tensorflow,pytorch&perline=5&theme=dark" />
-  <br>
-  <img src="https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI">
-  <img src="https://img.shields.io/badge/HuggingFace-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="HF">
-  <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white" alt="LangChain">
-</p>
-
-</div>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-<!-- ═══════════════════════════════════════════════════════════ -->
-<!--                    HOW HARD I GO                            -->
-<!-- ═══════════════════════════════════════════════════════════ -->
-
-## {t["emoji"]} `// HOW HARD I GO`
-
-```text
-Security         ████████████████████████░   95%   ← this is where the fun is
-Python           ███████████████████████░░   93%   ← first love
-System Design    ███████████████████████░░   93%   ← big brain stuff
-Cloud / DevOps   ██████████████████████░░░   92%   ← deploy everything
-JavaScript       █████████████████████░░░░   90%   ← the universal language
-Bash Scripting   █████████████████████░░░░   90%   ← automate ALL the things
-TypeScript       ████████████████████░░░░░   87%   ← JS but make it strict
-Java             ████████████████████░░░░░   85%   ← old reliable
-Go               ███████████████████░░░░░░   82%   ← fast and clean
-AI / ML          ████████████████████░░░░░   80%   ← building the future
-Rust             ██████████████████░░░░░░░   75%   ← learning daily
+```
+varshuai@mass-coder:~$ _
 ```
 
-<div align="center">
+</details>
 
-<img src="https://img.shields.io/badge/197+-REPOS_UPLOADED-{t["accent"]}?style=for-the-badge&labelColor=0D1117&logo=github&logoColor={t["accent"]}" alt="Repos">
-<img src="https://img.shields.io/badge/11-LANGUAGES-{t["accent2"]}?style=for-the-badge&labelColor=0D1117&logo=stackblitz&logoColor={t["accent2"]}" alt="Languages">
-<img src="https://img.shields.io/badge/150+-SECURITY_TOOLS-{t["accent"]}?style=for-the-badge&labelColor=0D1117&logo=hackthebox&logoColor={t["accent"]}" alt="Tools">
-<img src="https://img.shields.io/badge/12+-FRAMEWORKS-{t["accent2"]}?style=for-the-badge&labelColor=0D1117&logo=buffer&logoColor={t["accent2"]}" alt="Frameworks">
+---
 
-</div>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-<!-- ═══════════════════════════════════════════════════════════ -->
-<!--                       STATS                                 -->
-<!-- ═══════════════════════════════════════════════════════════ -->
-
-## {t["emoji"]} `// THE NUMBERS`
-
-<div align="center">
-
-<table align="center">
-  <tr>
-    <td align="center">
-      <a href="https://github.com/VarshuAi">
-        <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=VarshuAi&show_icons=true&bg_color={t["bg"]}&border_color={t["border"]}&title_color={t["accent"]}&icon_color={t["accent2"]}&text_color={t["text"]}&count_private=true&include_all_commits=true" alt="Stats" height="195px">
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/VarshuAi">
-        <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=VarshuAi&layout=compact&bg_color={t["bg"]}&border_color={t["border"]}&title_color={t["accent"]}&text_color={t["text"]}&langs_count=10&card_width=400" alt="Langs" height="195px">
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" colspan="2">
-      <br>
-      <img src="https://streak-stats.demolab.com?user=VarshuAi&background={t["bg"]}&border={t["border"]}&ring={t["accent"]}&fire={t["accent2"]}&currStreakLabel={t["accent2"]}&sideLabels={t["accent"]}&currStreakNum={t["text"]}&sideNums={t["text"]}&dates=555555" alt="Streak" height="195px">
-    </td>
-  </tr>
-</table>
-
-<br>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=VarshuAi&bg_color={t["bg"]}&color={t["accent"]}&line={t["accent2"]}&point={t["accent"]}&area_color={t["accent"]}33&area=true&hide_border=true&custom_title=%3E_+VarshuAi+%2F%2F+Contribution+Graph" width="98%" alt="Activity Graph">
-
-</div>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-<!-- ═══════════════════════════════════════════════════════════ -->
-<!--                   FEATURED PROJECTS                         -->
-<!-- ═══════════════════════════════════════════════════════════ -->
-
-## {t["emoji"]} `// STUFF I BUILT`
-
-<div align="center">
-
-<table>
-<tr>
-<td width="50%">
-<a href="https://github.com/VarshuAi/go-ssh-auditor"><img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=go-ssh-auditor&bg_color={t["bg"]}&border_color={t["border"]}&title_color={t["accent"]}&icon_color={t["accent2"]}&text_color={t["text"]}" alt="go-ssh-auditor"></a>
-</td>
-<td width="50%">
-<a href="https://github.com/VarshuAi/py-packet-sniffer"><img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=py-packet-sniffer&bg_color={t["bg"]}&border_color={t["border"]}&title_color={t["accent"]}&icon_color={t["accent2"]}&text_color={t["text"]}" alt="py-packet-sniffer"></a>
-</td>
-</tr>
-<tr>
-<td width="50%">
-<a href="https://github.com/VarshuAi/rust-port-scanner"><img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=rust-port-scanner&bg_color={t["bg"]}&border_color={t["border"]}&title_color={t["accent"]}&icon_color={t["accent2"]}&text_color={t["text"]}" alt="rust-port-scanner"></a>
-</td>
-<td width="50%">
-<a href="https://github.com/VarshuAi/bash-sys-monitor"><img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=VarshuAi&repo=bash-sys-monitor&bg_color={t["bg"]}&border_color={t["border"]}&title_color={t["accent"]}&icon_color={t["accent2"]}&text_color={t["text"]}" alt="bash-sys-monitor"></a>
-</td>
-</tr>
-</table>
-
-</div>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-<!-- ═══════════════════════════════════════════════════════════ -->
-<!--                     THEME GUIDE                             -->
-<!-- ═══════════════════════════════════════════════════════════ -->
-
-## 🔄 `// THIS README HAS 7 LIVES`
-
-> **This profile auto-rotates its entire theme every day of the week.**
-> Come back on a different day — the colors, mood, vibes, and energy will be completely different.
-
-<div align="center">
-
-```
-╔══════════════════════════════════════════════════════════════╗
-║  DAY          THEME              VIBE                       ║
-╠══════════════════════════════════════════════════════════════╣
-║  Monday       🔴 WARZONE         Attack mode. Ship hard.    ║
-║  Tuesday      🔵 DEEP OCEAN      Deep focus. No distractions║
-║  Wednesday    🟣 NEON ARCADE      Midweek madness.           ║
-║  Thursday     🟢 EMERALD FOREST   Growth mode. Plant seeds.  ║
-║  Friday       🟡 GOLDEN HOUR     Victory lap. Deploy day.   ║
-║  Saturday     🩷 CYBER PUNK       Side projects. No rules.   ║
-║  Sunday       🟠 SUNSET CHILL    Recharge. (but still code) ║
-╠══════════════════════════════════════════════════════════════╣
-║                                                              ║
-║  📅 TODAY: {day.upper():<10}  {t["emoji"]} {t["name"]:<16}                      ║
-║  🔄 NEXT ROTATION: Tomorrow at midnight IST                 ║
-║                                                              ║
-╚══════════════════════════════════════════════════════════════╝
-```
-
-</div>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-<!-- ═══════════════════════════════════════════════════════════ -->
-<!--                      FOOTER                                 -->
-<!-- ═══════════════════════════════════════════════════════════ -->
-
-<div align="center">
+<details>
+<summary><b>⚙️ /etc/varshuai/distro-rotation.conf</b> — <i>How this README works</i></summary>
 
 <br>
 
 ```
-  "{t["quote"]}"
+varshuai@mass-coder:~$ cat /etc/varshuai/distro-rotation.conf
+```
+
+```bash
+# ╔══════════════════════════════════════════════════════════════════╗
+# ║         VARSHUOS DAILY DISTRO ROTATION TABLE                    ║
+# ╠══════════════════════════════════════════════════════════════════╣
+# ║                                                                  ║
+# ║   DAY          DISTRO             CODENAME     VIBE              ║
+# ║   ──────────────────────────────────────────────────────────     ║
+# ║   Monday       RedStrike OS       Inferno      attack mode       ║
+# ║   Tuesday      DeepBlue OS        Abyss        deep focus        ║
+# ║   Wednesday    NeonArc OS         Glitch       midweek chaos     ║
+# ║   Thursday     ForestRoot OS      Banyan       growth mode       ║
+# ║   Friday       GoldRush OS        Midas        ship everything   ║
+# ║   Saturday     CyberKali OS       Phantom      side projects     ║
+# ║   Sunday       ZenMint OS         Satori       chill (but code)  ║
+# ║                                                                  ║
+# ║   * This README auto-rotates at midnight IST via GitHub Actions  ║
+# ║   * Each distro has its own kernel, colors, and personality      ║
+# ║   * Come back tomorrow to see a different OS boot up             ║
+# ║                                                                  ║
+# ║   TODAY: {day} — {d["distro"]} v{d["ver"]} "{d["codename"]}"
+# ║                                                                  ║
+# ╚══════════════════════════════════════════════════════════════════╝
+```
+
+```
+varshuai@mass-coder:~$ _
+```
+
+</details>
+
+---
+
+<div align="center">
+
+```
+varshuai@mass-coder:~$ neofetch
+```
+
+```
+                            varshuai@mass-coder
+        .--.               ─────────────────────
+       |o_o |              OS      {d["distro"]} v{d["ver"]} "{d["codename"]}"
+       |:_/ |              Kernel  {d["kernel"]}
+      //   \ \             Shell   /bin/mass_code
+     (|     | )            Uptime  mass_days (since mass_day_one)
+    /'\_   _/`\            Repos   197+
+    \___)=(___/            Lang    Python, JS, TS, Go, Rust, C++,
+                                   Dart, Java, Kotlin, Bash, SQL
+                           Chai    filter > instant (always)
+                           Editor  VS Code / Vim (depends on mood)
+                           Theme   {d["distro"]} [{day}]
+                           Status  {d["motd"]}
+```
+
+```
+varshuai@mass-coder:~$ uptime
+ mass_time up mass_days, 1 user, mass_load average: coding, coding, coding
+
+varshuai@mass-coder:~$ echo "thanks for visiting. star a repo if you vibe."
+thanks for visiting. star a repo if you vibe.
+
+varshuai@mass-coder:~$ exit
+logout
+Connection to github.com/VarshuAi closed.
 ```
 
 <br>
 
-<img src="https://komarev.com/ghpvc/?username=VarshuAi&label=PROFILE+VIEWS&style=for-the-badge&color={t["accent"]}" alt="Profile Views">
-
-<br><br>
-
-<sub>
-
-`🤖 this README was auto-generated at {today.strftime("%I:%M %p IST, %d %b %Y")} · theme: {t["emoji"]} {t["name"]} · powered by GitHub Actions`
-
-</sub>
+<img src="https://komarev.com/ghpvc/?username=VarshuAi&label=ssh+connections&style=flat-square&color={d["accent"]}" alt="visitors">
 
 <br>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color={t["header_gradient"]}&height=120&section=footer" width="100%"/>
+<sub><code>VarshuOS v{d["ver"]} "{d["codename"]}" | kernel {d["kernel"]} | auto-rotated on {short_date} | powered by mass chai</code></sub>
+
+<br>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:{d["accent"]},100:0D1117&height=100&section=footer" width="100%"/>
 
 </div>
 """
 
+# ── WRITE ──
+script_dir = os.path.dirname(os.path.abspath(__file__))
+repo_root = os.path.dirname(script_dir)
+readme_path = os.path.join(repo_root, "README.md")
 
-# ──────────────────────────────────────────────
-# MAIN: Generate and write README.md
-# ──────────────────────────────────────────────
+with open(readme_path, "w", encoding="utf-8") as f:
+    f.write(readme)
 
-if __name__ == "__main__":
-    theme = THEMES[day]
-    readme_content = build_readme(theme)
-
-    # Write to repo root
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    repo_root = os.path.dirname(script_dir)
-    readme_path = os.path.join(repo_root, "README.md")
-
-    with open(readme_path, "w", encoding="utf-8") as f:
-        f.write(readme_content)
-
-    print(f"[OK] README.md generated!")
-    print(f"Day: {day}")
-    print(f"Theme: {theme['name']}")
-    print(f"Written to: {readme_path}")
+print(f"[OK] VarshuOS README generated!")
+print(f"Day: {day}")
+print(f"Distro: {d['distro']} v{d['ver']} ({d['codename']})")
+print(f"Written to: {readme_path}")
