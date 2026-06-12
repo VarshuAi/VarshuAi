@@ -7,6 +7,7 @@ Run via GitHub Actions cron or manually with: python scripts/generate_readme.py
 
 import datetime
 import os
+import urllib.parse
 
 # ──────────────────────────────────────────────
 # TIMEZONE: IST (UTC+5:30)
@@ -33,10 +34,10 @@ THEMES = {
         "vibe": "ATTACK MODE ACTIVATED",
         "mood": "Monday doesn't scare me. I scare Monday.",
         "typing_lines": [
-            "☕ chai loaded... mass coding begins",
-            "🔴 Monday? More like MONSTERday — let's build",
-            "💻 new week = new repos. no excuses.",
-            "⚔️ shipping code before the world wakes up",
+            "$ chai --load && mass_coding --begin",
+            "Monday? More like MONSTERday. Let's build.",
+            "new week = new repos. no excuses.",
+            "shipping code before the world wakes up.",
         ],
         "ascii_top": """
  ███╗   ███╗ ██████╗ ███╗   ██╗██████╗  █████╗ ██╗   ██╗
@@ -61,10 +62,10 @@ THEMES = {
         "vibe": "DEEP FOCUS ENGAGED",
         "mood": "Silence. Keyboard. Code. Repeat.",
         "typing_lines": [
-            "🌊 diving deep into the codebase...",
-            "🔵 flow state = ON | distractions = OFF",
-            "🧠 brain.exe running at 100% — don't interrupt",
-            "☕ second chai hit different on Tuesdays",
+            "$ diving deep into the codebase...",
+            "flow_state = ON | distractions = OFF",
+            "brain.exe running at 100 percent. don't interrupt.",
+            "second chai hit different on Tuesdays.",
         ],
         "ascii_top": """
  ████████╗██╗   ██╗███████╗███████╗██████╗  █████╗ ██╗   ██╗
@@ -89,10 +90,10 @@ THEMES = {
         "vibe": "MIDWEEK MADNESS",
         "mood": "Halfway through the week. Code output: MAXIMUM.",
         "typing_lines": [
-            "🕹️ wednesday = level 4 of 7. boss fight incoming",
-            "🟣 midweek energy? nah, EVERY day energy",
-            "💜 code hits different at 2 AM with lo-fi on",
-            "🎮 treating every bug like a game boss — and winning",
+            "wednesday = level 4 of 7. boss fight incoming.",
+            "midweek energy? nah, EVERY day energy.",
+            "code hits different at 2 AM with lo-fi on.",
+            "treating every bug like a game boss -- and winning.",
         ],
         "ascii_top": """
  ██╗    ██╗███████╗██████╗ ███╗   ██╗███████╗███████╗██████╗  █████╗ ██╗   ██╗
@@ -117,10 +118,10 @@ THEMES = {
         "vibe": "GROWTH MODE",
         "mood": "Plant seeds today. Watch them compile tomorrow.",
         "typing_lines": [
-            "🌿 growing one commit at a time",
-            "🟢 thursday = almost there. keep pushing.",
-            "🌱 every project starts with one 'git init'",
-            "☕ filter coffee > energy drink. always.",
+            "$ growing one commit at a time.",
+            "thursday = almost there. keep pushing.",
+            "every project starts with one git init.",
+            "filter coffee is greater than energy drink. always.",
         ],
         "ascii_top": """
  ████████╗██╗  ██╗██╗   ██╗██████╗ ███████╗██████╗  █████╗ ██╗   ██╗
@@ -145,10 +146,10 @@ THEMES = {
         "vibe": "VICTORY LAP",
         "mood": "Friday night = deploy night. Ship it and chill.",
         "typing_lines": [
-            "🏆 friday deploy? living on the edge 😎",
-            "🟡 week survived. code shipped. chai earned.",
-            "🎉 pushing to main on friday because YOLO",
-            "💛 weekend loading... but first, one more commit",
+            "$ friday deploy? living on the edge.",
+            "week survived. code shipped. chai earned.",
+            "pushing to main on friday because YOLO.",
+            "weekend loading... but first, one more commit.",
         ],
         "ascii_top": """
  ███████╗██████╗ ██╗██████╗  █████╗ ██╗   ██╗
@@ -173,10 +174,10 @@ THEMES = {
         "vibe": "WEEKEND WARRIOR",
         "mood": "No deadlines. No pressure. Pure passion projects.",
         "typing_lines": [
-            "⚡ saturday = side project day. let's get weird.",
-            "🩷 no boss. no deadline. just me and vim.",
-            "🎧 lo-fi + dark room + code = perfection",
-            "💿 building things nobody asked for. that's the fun.",
+            "saturday = side project day. let's get weird.",
+            "no boss. no deadline. just me and vim.",
+            "lo-fi + dark room + code = perfection.",
+            "building things nobody asked for. that's the fun.",
         ],
         "ascii_top": """
  ███████╗ █████╗ ████████╗██╗   ██╗██████╗ ██████╗  █████╗ ██╗   ██╗
@@ -201,10 +202,10 @@ THEMES = {
         "vibe": "REST & RECHARGE",
         "mood": "Even machines need a reboot. But maybe one tiny commit...",
         "typing_lines": [
-            "🌅 sunday chill... opens laptop anyway",
-            "🟠 'rest day' = refactoring day. same thing right?",
-            "☕ sunday morning chai + cleaning up old code",
-            "🧘 today's commit: inner peace. and maybe a bugfix.",
+            "$ sunday chill... opens laptop anyway.",
+            "rest day = refactoring day. same thing right?",
+            "sunday morning chai + cleaning up old code.",
+            "today's commit: inner peace. and maybe a bugfix.",
         ],
         "ascii_top": """
  ███████╗██╗   ██╗███╗   ██╗██████╗  █████╗ ██╗   ██╗
@@ -221,11 +222,12 @@ THEMES = {
 
 def generate_typing_url(lines, color):
     """Generate readme-typing-svg URL from list of lines."""
-    encoded = ";".join(lines).replace(" ", "+").replace("&", "%26").replace("=", "%3D").replace("#", "%23")
+    encoded_lines = [urllib.parse.quote(line, safe='') for line in lines]
+    lines_param = ";".join(encoded_lines)
     return (
         f"https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=18"
         f"&duration=3000&pause=1000&color={color}&center=true&vCenter=true"
-        f"&multiline=true&repeat=true&random=false&width=700&height=80&lines={encoded}"
+        f"&multiline=true&repeat=true&random=false&width=700&height=80&lines={lines_param}"
     )
 
 
