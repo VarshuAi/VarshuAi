@@ -226,7 +226,7 @@ def make_readme():
 <table>
 <tr>
 <td width="40%" align="center">
-<img src="https://media1.tenor.com/m/LBBYhPFbmRgAAAAd/itachi-uchiha-itachi.gif" width="280px" alt="anime"/>
+<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="280px" alt="coding"/>
 </td>
 <td width="60%">
 
