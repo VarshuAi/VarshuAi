@@ -1,67 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="850" height="380" viewBox="0 0 850 380">
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="298" viewBox="0 0 850 298">
   <style>
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
-    @keyframes glowPulse { 0%,100% { opacity: 0.2; } 50% { opacity: 0.5; } }
-
-    .bg { fill: #0D1117; }
-    .border { fill: none; stroke: #FFD700; stroke-width: 1; opacity: 0.3; }
-    .label { font-family: 'Courier New', monospace; font-size: 13px; fill: #FFD700; font-weight: bold; }
-    .value { font-family: 'Courier New', monospace; font-size: 13px; fill: #8B949E; }
-    .ascii { font-family: 'Courier New', monospace; font-size: 14px; fill: #FFD700; }
-    .user { font-family: 'Courier New', monospace; font-size: 14px; fill: #FFE066; font-weight: bold; }
-    .sep { font-family: 'Courier New', monospace; font-size: 13px; fill: #FFD700; opacity: 0.5; }
-    .line { animation: fadeIn 0.4s forwards; opacity: 0; }
-    .cursor { animation: blink 1s infinite; }
-    .glow { fill: #FFD70055; filter: blur(50px); animation: glowPulse 3s infinite; }
-    .cmd { font-family: 'Courier New', monospace; font-size: 13px; fill: #FFD700; }
+    .lbl { font-family: 'Courier New', monospace; font-size: 12.5px; fill: #FFD700; font-weight: bold; }
+    .val { font-family: 'Courier New', monospace; font-size: 12.5px; fill: #8B949E; }
+    .asc { font-family: 'Courier New', monospace; font-size: 13px; fill: #FFD700; }
   </style>
 
-  <rect width="850" height="380" class="bg"/>
-  <rect x="5" y="5" width="840" height="370" rx="8" class="border"/>
-  <ellipse cx="200" cy="180" rx="120" ry="80" class="glow"/>
+  <rect width="850" height="298" fill="#0D1117"/>
+  <rect x="4" y="4" width="842" height="290" rx="8" fill="none" stroke="#FFD700" stroke-width="1" opacity="0.25"/>
 
-  <!-- Command -->
-  <text x="30" y="35" class="cmd" style="animation: fadeIn 0.3s forwards; opacity:0">varshuai@mass-coder:~$ neofetch</text>
+  <text x="30" y="30" style="font-family:'Courier New',monospace;font-size:13px;fill:#FFD700;font-weight:bold;animation:fadeIn 0.3s forwards;opacity:0">varshuai@mass-coder:~$ neofetch</text>
 
-  <!-- ASCII Art -->
-  <text x="40" y="80" class="ascii line" style="animation-delay:0.5s">        .--.       </text>
-  <text x="40" y="98" class="ascii line" style="animation-delay:0.6s">       |o_o |      </text>
-  <text x="40" y="116" class="ascii line" style="animation-delay:0.7s">       |:_/ |      </text>
-  <text x="40" y="134" class="ascii line" style="animation-delay:0.8s">      //   \ \   </text>
-  <text x="40" y="152" class="ascii line" style="animation-delay:0.9s">     (|     | )    </text>
-  <text x="40" y="170" class="ascii line" style="animation-delay:1.0s">    /'\\_   _/`\  </text>
-  <text x="40" y="188" class="ascii line" style="animation-delay:1.1s">    \___)=(___/   </text>
+  <text x="50" y="68" class="asc" style="animation:fadeIn 0.3s 0.2s forwards;opacity:0">    .--.    </text>
+  <text x="50" y="86" class="asc" style="animation:fadeIn 0.3s 0.25s forwards;opacity:0">   |o_o |   </text>
+  <text x="50" y="104" class="asc" style="animation:fadeIn 0.3s 0.3s forwards;opacity:0">   |:_/ |   </text>
+  <text x="50" y="122" class="asc" style="animation:fadeIn 0.3s 0.35s forwards;opacity:0">  //   \ \ </text>
+  <text x="50" y="140" class="asc" style="animation:fadeIn 0.3s 0.4s forwards;opacity:0"> (|     | ) </text>
+  <text x="50" y="158" class="asc" style="animation:fadeIn 0.3s 0.45s forwards;opacity:0">/'\_ _/`\ </text>
+  <text x="50" y="176" class="asc" style="animation:fadeIn 0.3s 0.5s forwards;opacity:0">\___)=(___/</text>
 
-  <!-- Info -->
-  <text x="260" y="80" class="line" style="animation-delay:0.5s"><tspan class="user">varshuai</tspan><tspan class="sep">@</tspan><tspan class="user">mass-coder</tspan></text>
-  <text x="260" y="98" class="sep line" style="animation-delay:0.6s">------------------------</text>
-  <text x="260" y="118" class="line" style="animation-delay:0.7s"><tspan class="label">OS      </tspan><tspan class="value">GoldRush OS v40.1 "Midas"</tspan></text>
-  <text x="260" y="138" class="line" style="animation-delay:0.8s"><tspan class="label">Kernel  </tspan><tspan class="value">6.8.0-goldrush</tspan></text>
-  <text x="260" y="158" class="line" style="animation-delay:0.9s"><tspan class="label">Shell   </tspan><tspan class="value">/bin/mass_code</tspan></text>
-  <text x="260" y="178" class="line" style="animation-delay:1.0s"><tspan class="label">Uptime  </tspan><tspan class="value">mass_days (since day one)</tspan></text>
-  <text x="260" y="198" class="line" style="animation-delay:1.1s"><tspan class="label">Repos   </tspan><tspan class="value">197+ (and counting)</tspan></text>
-  <text x="260" y="218" class="line" style="animation-delay:1.2s"><tspan class="label">Lang    </tspan><tspan class="value">Python, JS, TS, Go, Rust, C++</tspan></text>
-  <text x="260" y="238" class="line" style="animation-delay:1.3s"><tspan class="label">        </tspan><tspan class="value">Dart, Java, Kotlin, Bash, SQL</tspan></text>
-  <text x="260" y="258" class="line" style="animation-delay:1.4s"><tspan class="label">Chai    </tspan><tspan class="value">filter &gt; instant (always)</tspan></text>
-  <text x="260" y="278" class="line" style="animation-delay:1.5s"><tspan class="label">Editor  </tspan><tspan class="value">VS Code / Vim (depends on mood)</tspan></text>
-  <text x="260" y="298" class="line" style="animation-delay:1.6s"><tspan class="label">Theme   </tspan><tspan class="value">GoldRush OS [Friday]</tspan></text>
-  <text x="260" y="318" class="line" style="animation-delay:1.7s"><tspan class="label">Status  </tspan><tspan class="value">Ship it. Its Friday. YOLO.</tspan></text>
+  <text x="240" y="58" style="font-family:'Courier New',monospace;font-size:13px;fill:#FFE066;font-weight:bold;animation:fadeIn 0.3s 0.3s forwards;opacity:0">varshuai@mass-coder</text>
+  <text x="240" y="68" style="font-family:'Courier New',monospace;font-size:12px;fill:#FFD700;opacity:0.4;animation:fadeIn 0.3s 0.35s forwards;opacity:0">───────────────────</text>
 
-  <!-- Color blocks -->
-  <g class="line" style="animation-delay:1.9s">
-    <rect x="260" y="335" width="20" height="20" fill="#0D1117"/>
-    <rect x="283" y="335" width="20" height="20" fill="#FF0000"/>
-    <rect x="306" y="335" width="20" height="20" fill="#00FF41"/>
-    <rect x="329" y="335" width="20" height="20" fill="#FFD700"/>
-    <rect x="352" y="335" width="20" height="20" fill="#0074D9"/>
-    <rect x="375" y="335" width="20" height="20" fill="#FF00FF"/>
-    <rect x="398" y="335" width="20" height="20" fill="#00FFFF"/>
-    <rect x="421" y="335" width="20" height="20" fill="#FFFFFF"/>
+  
+    <text x="240" y="75" style="animation:fadeIn 0.3s 0.4s forwards;opacity:0"><tspan class="lbl">OS      </tspan><tspan class="val">GoldRush OS v40.1 "Midas"</tspan></text>
+    <text x="240" y="97" style="animation:fadeIn 0.3s 0.55s forwards;opacity:0"><tspan class="lbl">Kernel  </tspan><tspan class="val">6.8.0-goldrush</tspan></text>
+    <text x="240" y="119" style="animation:fadeIn 0.3s 0.7s forwards;opacity:0"><tspan class="lbl">Shell   </tspan><tspan class="val">/bin/mass_code</tspan></text>
+    <text x="240" y="141" style="animation:fadeIn 0.3s 0.85s forwards;opacity:0"><tspan class="lbl">Repos   </tspan><tspan class="val">197+ (mass uploaded)</tspan></text>
+    <text x="240" y="163" style="animation:fadeIn 0.3s 1.0s forwards;opacity:0"><tspan class="lbl">Lang    </tspan><tspan class="val">Python JS TS Go Rust C++ Dart Java Kotlin Bash SQL</tspan></text>
+    <text x="240" y="185" style="animation:fadeIn 0.3s 1.15s forwards;opacity:0"><tspan class="lbl">Chai    </tspan><tspan class="val">filter > instant (always)</tspan></text>
+    <text x="240" y="207" style="animation:fadeIn 0.3s 1.2999999999999998s forwards;opacity:0"><tspan class="lbl">Editor  </tspan><tspan class="val">VS Code / Vim</tspan></text>
+    <text x="240" y="229" style="animation:fadeIn 0.3s 1.4500000000000002s forwards;opacity:0"><tspan class="lbl">Status  </tspan><tspan class="val">Ship it. Its Friday. YOLO.</tspan></text>
+
+  <g style="animation:fadeIn 0.3s 1.8s forwards;opacity:0">
+    <rect x="240" y="263" width="18" height="18" rx="2" fill="#0D1117" stroke="#333" stroke-width="0.5"/>
+    <rect x="262" y="263" width="18" height="18" rx="2" fill="#FF0000"/>
+    <rect x="284" y="263" width="18" height="18" rx="2" fill="#00FF41"/>
+    <rect x="306" y="263" width="18" height="18" rx="2" fill="#FFD700"/>
+    <rect x="328" y="263" width="18" height="18" rx="2" fill="#0074D9"/>
+    <rect x="350" y="263" width="18" height="18" rx="2" fill="#FF00FF"/>
+    <rect x="372" y="263" width="18" height="18" rx="2" fill="#00FFFF"/>
+    <rect x="394" y="263" width="18" height="18" rx="2" fill="#C9D1D9"/>
   </g>
-
-  <!-- Scanline -->
-  <rect x="0" y="0" width="850" height="2" fill="#FFD700" opacity="0.03">
-    <animate attributeName="y" from="0" to="380" dur="3s" repeatCount="indefinite"/>
-  </rect>
 </svg>
