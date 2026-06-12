@@ -163,66 +163,6 @@ def make_skills_svg():
 # SVG 3: NEOFETCH (compact)
 # ═══════════════════════════════════════════════
 
-def make_neofetch_svg():
-    info = [
-        ("OS", f'{d["distro"]} v{d["ver"]} "{d["codename"]}"'),
-        ("Kernel", d["kernel"]),
-        ("Shell", "/bin/mass_code"),
-        ("Repos", "197+ (mass uploaded)"),
-        ("Lang", "Python JS TS Go Rust C++ Dart Java Kotlin Bash SQL"),
-        ("Chai", "filter > instant (always)"),
-        ("Editor", "VS Code / Vim"),
-        ("Status", d["motd"]),
-    ]
-
-    info_lines = ""
-    for i, (k, v) in enumerate(info):
-        delay = 0.4 + i * 0.15
-        y = 75 + i * 22
-        info_lines += f'''
-    <text x="240" y="{y}" style="animation:fadeIn 0.3s {delay}s forwards;opacity:0"><tspan class="lbl">{k:<8}</tspan><tspan class="val">{v}</tspan></text>'''
-
-    color_y = 75 + len(info) * 22 + 12
-    h = color_y + 35
-
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="850" height="{h}" viewBox="0 0 850 {h}">
-  <style>
-    @keyframes fadeIn {{ from {{ opacity: 0; }} to {{ opacity: 1; }} }}
-    @keyframes blink {{ 0%,100% {{ opacity: 1; }} 50% {{ opacity: 0; }} }}
-    .lbl {{ font-family: 'Courier New', monospace; font-size: 12.5px; fill: {ac}; font-weight: bold; }}
-    .val {{ font-family: 'Courier New', monospace; font-size: 12.5px; fill: #8B949E; }}
-    .asc {{ font-family: 'Courier New', monospace; font-size: 13px; fill: {ac}; }}
-  </style>
-
-  <rect width="850" height="{h}" fill="{bg}"/>
-  <rect x="4" y="4" width="842" height="{h - 8}" rx="8" fill="none" stroke="{ac}" stroke-width="1" opacity="0.25"/>
-
-  <text x="30" y="30" style="font-family:'Courier New',monospace;font-size:13px;fill:{ac};font-weight:bold;animation:fadeIn 0.3s forwards;opacity:0">varshuai@mass-coder:~$ neofetch</text>
-
-  <text x="50" y="68" class="asc" style="animation:fadeIn 0.3s 0.2s forwards;opacity:0">    .--.    </text>
-  <text x="50" y="86" class="asc" style="animation:fadeIn 0.3s 0.25s forwards;opacity:0">   |o_o |   </text>
-  <text x="50" y="104" class="asc" style="animation:fadeIn 0.3s 0.3s forwards;opacity:0">   |:_/ |   </text>
-  <text x="50" y="122" class="asc" style="animation:fadeIn 0.3s 0.35s forwards;opacity:0">  //   \\ \\ </text>
-  <text x="50" y="140" class="asc" style="animation:fadeIn 0.3s 0.4s forwards;opacity:0"> (|     | ) </text>
-  <text x="50" y="158" class="asc" style="animation:fadeIn 0.3s 0.45s forwards;opacity:0">/'\\_ _/`\\ </text>
-  <text x="50" y="176" class="asc" style="animation:fadeIn 0.3s 0.5s forwards;opacity:0">\\___)=(___/</text>
-
-  <text x="240" y="58" style="font-family:'Courier New',monospace;font-size:13px;fill:{ac2};font-weight:bold;animation:fadeIn 0.3s 0.3s forwards;opacity:0">varshuai@mass-coder</text>
-  <text x="240" y="68" style="font-family:'Courier New',monospace;font-size:12px;fill:{ac};opacity:0.4;animation:fadeIn 0.3s 0.35s forwards;opacity:0">───────────────────</text>
-
-  {info_lines}
-
-  <g style="animation:fadeIn 0.3s 1.8s forwards;opacity:0">
-    <rect x="240" y="{color_y}" width="18" height="18" rx="2" fill="#0D1117" stroke="#333" stroke-width="0.5"/>
-    <rect x="262" y="{color_y}" width="18" height="18" rx="2" fill="#FF0000"/>
-    <rect x="284" y="{color_y}" width="18" height="18" rx="2" fill="#00FF41"/>
-    <rect x="306" y="{color_y}" width="18" height="18" rx="2" fill="#FFD700"/>
-    <rect x="328" y="{color_y}" width="18" height="18" rx="2" fill="#0074D9"/>
-    <rect x="350" y="{color_y}" width="18" height="18" rx="2" fill="#FF00FF"/>
-    <rect x="372" y="{color_y}" width="18" height="18" rx="2" fill="#00FFFF"/>
-    <rect x="394" y="{color_y}" width="18" height="18" rx="2" fill="#C9D1D9"/>
-  </g>
-</svg>'''
 
 
 # ═══════════════════════════════════════════════
@@ -282,10 +222,35 @@ def make_readme():
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 <br>
 
-<!-- ANIMATED NEOFETCH -->
-<img src="https://raw.githubusercontent.com/VarshuAi/VarshuAi/main/assets/neofetch.svg" width="100%"/>
+<!-- ANIME NEOFETCH -->
+<table>
+<tr>
+<td width="40%" align="center">
+<img src="https://media1.tenor.com/m/LBBYhPFbmRgAAAAd/itachi-uchiha-itachi.gif" width="280px" alt="anime"/>
+</td>
+<td width="60%">
 
-<br><br>
+```bash
+varshuai@mass-coder:~$ neofetch
+
+  OS      {d["distro"]} v{d["ver"]} "{d["codename"]}"
+  Kernel  {d["kernel"]}
+  Shell   /bin/mass_code
+  Uptime  mass_days (since day one)
+  Repos   197+ (mass uploaded)
+  Lang    Python JS TS Go Rust C++
+          Dart Java Kotlin Bash SQL
+  Chai    filter > instant (always)
+  Editor  VS Code / Vim
+  Theme   {d["distro"]} [{day}]
+  Status  {d["motd"]}
+```
+
+</td>
+</tr>
+</table>
+
+<br>
 
 <img src="https://komarev.com/ghpvc/?username=VarshuAi&label=ssh+connections&style=flat-square&color={ah}"/>
 
@@ -315,8 +280,6 @@ if __name__ == "__main__":
         f.write(make_boot_svg())
     with open(os.path.join(assets_dir, "skills.svg"), "w", encoding="utf-8") as f:
         f.write(make_skills_svg())
-    with open(os.path.join(assets_dir, "neofetch.svg"), "w", encoding="utf-8") as f:
-        f.write(make_neofetch_svg())
     with open(os.path.join(repo_root, "README.md"), "w", encoding="utf-8") as f:
         f.write(make_readme())
 

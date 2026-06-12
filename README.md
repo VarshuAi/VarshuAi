@@ -46,10 +46,35 @@
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 <br>
 
-<!-- ANIMATED NEOFETCH -->
-<img src="https://raw.githubusercontent.com/VarshuAi/VarshuAi/main/assets/neofetch.svg" width="100%"/>
+<!-- ANIME NEOFETCH -->
+<table>
+<tr>
+<td width="40%" align="center">
+<img src="https://media1.tenor.com/m/LBBYhPFbmRgAAAAd/itachi-uchiha-itachi.gif" width="280px" alt="anime"/>
+</td>
+<td width="60%">
 
-<br><br>
+```bash
+varshuai@mass-coder:~$ neofetch
+
+  OS      GoldRush OS v40.1 "Midas"
+  Kernel  6.8.0-goldrush
+  Shell   /bin/mass_code
+  Uptime  mass_days (since day one)
+  Repos   197+ (mass uploaded)
+  Lang    Python JS TS Go Rust C++
+          Dart Java Kotlin Bash SQL
+  Chai    filter > instant (always)
+  Editor  VS Code / Vim
+  Theme   GoldRush OS [Friday]
+  Status  Ship it. Its Friday. YOLO.
+```
+
+</td>
+</tr>
+</table>
+
+<br>
 
 <img src="https://komarev.com/ghpvc/?username=VarshuAi&label=ssh+connections&style=flat-square&color=FFD700"/>
 
