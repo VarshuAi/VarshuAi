@@ -28,7 +28,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "Theme Bot 🤖"
-          git add README.md
+          git add README.md assets/
           # Only commit if there are changes
           git diff --staged --quiet || git commit -m "🎨 auto: rotated to $(date +%A)'s theme"
           git push
