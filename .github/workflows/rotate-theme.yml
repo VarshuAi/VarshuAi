@@ -1,4 +1,4 @@
-name: 🎨 Daily Theme Rotation
+name: 🎨 Daily Theme Rotation — All Repos
 
 on:
   schedule:
@@ -21,13 +21,21 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Generate today's theme
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Generate today's theme (profile README + SVGs)
         run: python scripts/generate_readme.py
 
-      - name: Commit and push
+      - name: Commit profile README changes
         run: |
           git config user.email "action@github.com"
           git config user.name "VarshuOS Bot"
           git add README.md assets/
-          git diff --staged --quiet || git commit -m "theme: $(TZ='Asia/Kolkata' date '+%A') rotation"
+          git diff --staged --quiet || git commit -m "theme: $(TZ='Asia/Kolkata' date '+%A') rotation on profile"
           git push
+
+      - name: Rotate theme across ALL other repos
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: python scripts/rotate_all_repos.py
