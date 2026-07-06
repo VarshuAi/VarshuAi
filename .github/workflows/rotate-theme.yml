@@ -1,34 +1,33 @@
-name: 🎨 Auto Rotate README Theme
+name: 🎨 Daily Theme Rotation
 
 on:
   schedule:
-    # Runs every day at 00:05 IST (18:35 UTC previous day)
+    # Every day at 00:05 IST (18:35 UTC)
     - cron: '35 18 * * *'
-  workflow_dispatch: # Manual trigger button
+  workflow_dispatch: # Run manually from Actions tab anytime
 
 jobs:
-  update-readme:
+  rotate-theme:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
+
     steps:
-      - name: 📥 Checkout repo
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: 🐍 Setup Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: 🎨 Generate today's theme
+      - name: Generate today's theme
         run: python scripts/generate_readme.py
 
-      - name: 📤 Commit & Push
+      - name: Commit and push
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "Theme Bot 🤖"
+          git config user.email "action@github.com"
+          git config user.name "VarshuOS Bot"
           git add README.md assets/
-          # Only commit if there are changes
-          git diff --staged --quiet || git commit -m "🎨 auto: rotated to $(date +%A)'s theme"
+          git diff --staged --quiet || git commit -m "theme: $(TZ='Asia/Kolkata' date '+%A') rotation"
           git push
