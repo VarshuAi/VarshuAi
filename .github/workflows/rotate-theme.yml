@@ -1,10 +1,10 @@
 name: 🎨 Daily Theme Rotation — All Repos
 
-on:
-  schedule:
-    # Every day at 00:05 IST (18:35 UTC)
-    - cron: '35 18 * * *'
-  workflow_dispatch: # Run manually from Actions tab anytime
+# on:
+#   schedule:
+#     # Every day at 00:05 IST (18:35 UTC)
+#     - cron: '35 18 * * *'
+#   workflow_dispatch: # Run manually from Actions tab anytime
 
 jobs:
   rotate-theme:
