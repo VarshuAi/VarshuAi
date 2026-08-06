@@ -74,18 +74,18 @@ val varshuAi = developer {
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img height="180" src="https://github-readme-stats.vercel.app/api?username=VarshuAi&show_icons=true&hide_border=true&bg_color=00000000&title_color=E5484D&icon_color=8B5CF6&text_color=c9d1d9&ring_color=E5484D&rank_icon=github" alt="GitHub stats"/>
+  <img height="180" src="https://github-stats-extended.vercel.app/api?username=VarshuAi&show_icons=true&hide_border=true&bg_color=00000000&title_color=E5484D&icon_color=8B5CF6&text_color=c9d1d9&ring_color=E5484D&rank_icon=github" alt="GitHub stats"/>
   <img height="180" src="https://streak-stats.demolab.com?user=VarshuAi&hide_border=true&background=00000000&stroke=3f3f46&ring=E5484D&fire=F59E0B&currStreakLabel=E5484D&sideNums=c9d1d9&currStreakNum=FFFFFF&sideLabels=8b949e&dates=6e7681" alt="GitHub streak"/>
 </div>
 
 <div align="center">
-  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=VarshuAi&layout=compact&hide_border=true&bg_color=00000000&title_color=E5484D&text_color=c9d1d9" alt="Top languages"/>
+  <img height="180" src="https://github-stats-extended.vercel.app/api/top-langs/?username=VarshuAi&layout=compact&hide_border=true&bg_color=00000000&title_color=E5484D&text_color=c9d1d9" alt="Top languages"/>
 </div>
 
 ## 🏆 Trophies
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=VarshuAi&theme=onedark&no-frame=true&no-bg=true&margin-w=6&column=7" alt="trophies"/>
+  <img src="https://github-profile-trophy-winning.vercel.app/?username=VarshuAi&theme=onedark&no-frame=true&no-bg=true&margin-w=6&column=7" alt="trophies"/>
 </div>
 
 ## 📈 Activity Graph
