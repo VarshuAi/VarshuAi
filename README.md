@@ -85,7 +85,7 @@ val varshuAi = developer {
 ## 🏆 Trophies
 
 <div align="center">
-  <img src="https://github-profile-trophy-winning.vercel.app/?username=VarshuAi&theme=onedark&no-frame=true&no-bg=true&margin-w=6&column=7" alt="trophies"/>
+  <img src="https://github-trophies.devomb.com/?username=VarshuAi&theme=onedark&no-frame=true&no-bg=true&margin-w=6&column=7" alt="trophies"/>
 </div>
 
 ## 📈 Activity Graph
