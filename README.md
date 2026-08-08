@@ -111,8 +111,8 @@ val varshuAi = developer {
 <div align="center">
 
 [![GitHub](https://img.shields.io/badge/GitHub-VarshuAi-181717?style=for-the-badge&logo=github&labelColor=1a1a22)](https://github.com/VarshuAi)
-[![Raaga App](https://img.shields.io/badge/Raaga-a1raaga.vercel.app-E5484D?style=for-the-badge&labelColor=1a1a22)](https://a1raaga.vercel.app)
-[![Email](https://img.shields.io/badge/Email-say%20hello-8B5CF6?style=for-the-badge&labelColor=1a1a22&logo=gmail&logoColor=white)](mailto:YOUR-EMAIL-HERE)
+[![Raaga App](https://img.shields.io/badge/Raaga-a1raaga.vercel.app-E5484D?style=for-the-badge&labelColor=1a1a22)](https://raaga-six.vercel.app)
+[![Email](https://img.shields.io/badge/Email-say%20hello-8B5CF6?style=for-the-badge&labelColor=1a1a22&logo=gmail&logoColor=white)](mailto:alterh4x@gmail.com)
 
 </div>
 
