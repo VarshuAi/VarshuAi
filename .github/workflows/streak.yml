@@ -1,0 +1,68 @@
+name: 🔥 Maintain Daily Streak & Telemetry
+
+on:
+  schedule:
+    # Runs at 00:05 IST every single day (18:35 UTC previous day)
+    - cron: '35 18 * * *'
+  workflow_dispatch: # Can also be triggered manually anytime
+
+permissions:
+  contents: write
+
+jobs:
+  update-streak:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 🕒 Update Date & Day in README
+        run: |
+          python -c '
+          import datetime
+          import re
+
+          # IST Timezone (UTC + 5:30)
+          ist = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
+          now = datetime.datetime.now(ist)
+
+          day_name = now.strftime("%A")
+          date_str = now.strftime("%d %b %Y")
+          iso_date = now.strftime("%Y-%m-%d")
+
+          # Format 82 characters wide box row
+          content = f"│  > ACTIVE NODE    : {day_name}, {date_str} // TIMEZONE: ASIA/KOLKATA (IST)"
+          # Pad to 83 characters before closing border
+          row = f"{content:<83}│"
+
+          with open("README.md", "r", encoding="utf-8") as f:
+              readme = f.read()
+
+          pattern = r"<!-- TELEMETRY_START -->.*?<!-- TELEMETRY_END -->"
+          replacement = f"<!-- TELEMETRY_START -->\n{row}\n<!-- TELEMETRY_END -->"
+
+          new_readme = re.sub(pattern, replacement, readme, flags=re.DOTALL)
+
+          with open("README.md", "w", encoding="utf-8") as f:
+              f.write(new_readme)
+
+          print(f"Updated README with date: {day_name}, {date_str}")
+          '
+
+      - name: 🚀 Commit & Push to Save Daily Streak
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --staged --quiet; then
+            echo "No changes detected."
+          else
+            DATE_STAMP=$(TZ='Asia/Kolkata' date '+%Y-%m-%d (%A)')
+            git commit -m "🔥 streak: node ping $DATE_STAMP [skip ci]"
+            git push
+          fi
