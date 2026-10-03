@@ -1,6 +1,6 @@
 <div align="center">
 
-<!-- Hero Cyberpunk Animated Banner -->
+<!-- Hero Cyberpunk Animated ...Banner -->
 <img src="https://raw.githubusercontent.com/VarshuAi/VarshuAi/main/assets/banner.svg" width="100%" alt="VarshuAi Cyber Banner" />
 
 <br/><br/>
